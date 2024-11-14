@@ -6,10 +6,15 @@ class AppColor {
   static Color gold = const Color(0xFFBC976E);
 
   static Color lightGrey = const Color(0xFFC0C1C7);
+  static Color primary = const Color(0xFF0E1026);
+  static Color secondary = const Color(0xFF1B1D35);
 
   static Color commonGrey = const Color(0xFFD9D9D9);
   static Color darkGrey = const Color(0xFF6E798C);
   static Color grey =  Colors.grey;
+  static Color checkBgColor =  const Color(0xFF494B6A);
+  static Color background =  const Color(0xFF35383F);
+
 
 
   static Color borderColor = const Color(0xFF31334B);

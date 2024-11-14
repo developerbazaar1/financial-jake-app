@@ -14,7 +14,7 @@
 // import 'package:multi_service/core/routes/route_constant.dart';
 // import 'package:multi_service/data/repositories/user_repository.dart';
 //
-// import 'package:multi_service/features/registration/controller/registration_controller.dart';
+// import 'package:multi_service/features/registration/controller/signup_controller.dart';
 //
 // import '../../core/common/common_method.dart';
 //

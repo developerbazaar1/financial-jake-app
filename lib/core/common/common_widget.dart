@@ -108,7 +108,7 @@ class CW {
           fontSize: mediaQueryData.size.width * 0.036),
       decoration: InputDecoration(
         hintText: hintText,
-        fillColor: fillColor ?? Colors.white,
+        fillColor: fillColor ?? AppColor.lightGrey,
         alignLabelWithHint: true,
         filled: true,
         prefixIcon: prefixIcon,
@@ -129,23 +129,23 @@ class CW {
             ),
         focusedBorder: OutlineInputBorder(
             borderSide: wantBorder
-                ? BorderSide(color: borderColor??theme.primaryColor, width: 2)
+                ? BorderSide(color: borderColor??AppColor.lightGrey.withOpacity(0.09), width: 1.5)
                 : BorderSide.none,
             borderRadius: BorderRadius.circular(borderRadius ?? 5)),
         disabledBorder: OutlineInputBorder(
             borderSide: wantBorder
-                ? BorderSide(color: borderColor??theme.primaryColor, width: 2)
+                ? BorderSide(color: borderColor??AppColor.lightGrey.withOpacity(0.09), width: 1)
                 : BorderSide.none,
             borderRadius: BorderRadius.circular(borderRadius ?? 5)),
         border: OutlineInputBorder(
             borderSide: wantBorder
-                ? BorderSide(color: borderColor??AppColor.grey, width: 2)
+                ? BorderSide(color: borderColor??AppColor.lightGrey.withOpacity(0.9), width: 1)
                 : BorderSide.none,
             borderRadius: BorderRadius.circular(borderRadius ?? 5)),
         enabledBorder: OutlineInputBorder(
             borderSide: wantBorder
                 ? BorderSide(
-                    color: initialBorderColor ?? AppColor.grey,
+                    color: initialBorderColor ?? AppColor.lightGrey.withOpacity(0.09),
                     width: initialBorderWidth ?? 1)
                 : BorderSide.none,
             borderRadius: BorderRadius.circular(borderRadius ?? 5)),

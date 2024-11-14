@@ -127,67 +127,67 @@ class ThemeHelper {
 class TextThemes {
   static TextTheme textTheme(ColorScheme colorScheme) => TextTheme(
         bodyLarge: TextStyle(
-          color: AppColor.black,
+          color: AppColor.white,
           fontSize: mediaQueryData.size.width * 0.041,//16
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w400,
         ),
         bodyMedium: TextStyle(
-          color: AppColor.black,
+          color: AppColor.white,
           fontSize: mediaQueryData.size.width * 0.036,//14
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w400,
         ),
         bodySmall: TextStyle(
-          color: AppColor.black,
+          color: AppColor.white,
           fontSize: mediaQueryData.size.width * 0.031, //12
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w400,
         ),
         headlineLarge: TextStyle(
-          color: AppColor.black,
+          color: AppColor.white,
           fontSize: mediaQueryData.size.width * 0.075, //30
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w700,
         ),
         headlineMedium: TextStyle(
-          color: AppColor.black,
+          color: AppColor.white,
           fontSize: mediaQueryData.size.width * 0.061, //24
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w700,
         ),
         headlineSmall: TextStyle(
-          color: AppColor.black,
+          color: AppColor.white,
           fontSize: mediaQueryData.size.width * 0.051,//20
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w700,
         ),
         labelLarge: TextStyle(
-          color: AppColor.black,
+          color: AppColor.white,
           fontSize: mediaQueryData.size.width * 0.031, //12
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w500,
         ),
         labelMedium: TextStyle(
-          color: AppColor.black,
+          color: AppColor.white,
           fontSize: mediaQueryData.size.width * 0.031, //12
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w400,
         ),
         titleLarge: TextStyle(
-          color: AppColor.black,
+          color: AppColor.white,
           fontSize: mediaQueryData.size.width * 0.046,//18
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w500,
         ),
         titleMedium: TextStyle(
-          color: AppColor.black,
+          color: AppColor.white,
           fontSize: mediaQueryData.size.width * 0.041, //16
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w500,
         ),
         titleSmall: TextStyle(
-          color: AppColor.black,
+          color: AppColor.white,
           fontSize: mediaQueryData.size.width * 0.036, //14
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w500,

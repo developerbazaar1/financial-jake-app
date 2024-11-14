@@ -1,13 +1,16 @@
 class AppSvg {
-  static String basePath = 'assets/svg';
-  static String servicePath = 'assets/svg/service';
+  static String basePath = 'assets/svgs';
+
 
 
   // -- Svg Icons
 
 
   //Splash screen
-  static String logo = '$basePath/logo.svg';
+  static String apple = '$basePath/apple.svg';
+  static String facebook = '$basePath/facebook.svg';
+  static String google = '$basePath/google.svg';
+  static String linkedin = '$basePath/linkedin.svg';
 
 
 

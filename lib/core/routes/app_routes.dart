@@ -1,4 +1,7 @@
 import 'package:financial_wellbeing/core/routes/route_constant.dart';
+import 'package:financial_wellbeing/features/sign_up/controllers/signup_controller.dart';
+import 'package:financial_wellbeing/features/sign_up/views/screen/signup_screen.dart';
+import 'package:financial_wellbeing/features/signin/views/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -20,10 +23,21 @@ class AppRouter {
       name: RouteConstants.onboardingScreen,
       path: AppRoutes.onboardingScreen,
       builder: (context, state) => OnboardingScreen(),
-    ), GoRoute(
+    ),
+    GoRoute(
       name: RouteConstants.createAccount,
       path: AppRoutes.createAccount,
       builder: (context, state) => CreateAccountScreen(),
+    ),
+    GoRoute(
+      name: RouteConstants.signupScreen,
+      path: AppRoutes.signupScreen,
+      builder: (context, state) => SignUpScreen(),
+    ),
+    GoRoute(
+      name: RouteConstants.signinScreen,
+      path: AppRoutes.signinScreen,
+      builder: (context, state) => SignInScreen(),
     ),
 
   ]);

@@ -88,7 +88,8 @@ class OnboardingScreen extends StatelessWidget {
 
           ],
         ),
-      ),bottomNavigationBar: Padding(
+      ),
+   bottomNavigationBar: Padding(
         padding:  EdgeInsets.only(bottom: height* 0.05,
         left: width * 0.07,right: width * 0.07,),
         child: CW.commonElevatedButton(onPressed: (){

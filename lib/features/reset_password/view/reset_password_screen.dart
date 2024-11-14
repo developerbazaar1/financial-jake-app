@@ -125,7 +125,7 @@ final agr = Get.arguments;
                   width: width,
                   height: height * 0.05,
                   onPressed: () {
-                    GoRouter.of(context).goNamed(RouteConstants.login);
+                    GoRouter.of(context).goNamed(RouteConstants.signinScreen);
                   },
                   child: Text(
                     'Back to Login',
