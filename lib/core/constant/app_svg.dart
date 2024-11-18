@@ -16,6 +16,18 @@ class AppSvg {
   static String plaid = '$basePath/plaid.svg';
 
 
+  //bottom navigation bar
+  static String chart = '$basePath/chart.svg';
+  static String chartActive = '$basePath/chart_active.svg';
+  static String home = '$basePath/home.svg';
+  static String homeActive = '$basePath/home_active.svg';
+  static String setting = '$basePath/setting.svg';
+  static String settingActive = '$basePath/setting_active.svg';
+  static String wallet = '$basePath/wallet.svg';
+  static String walletActive = '$basePath/wallet_active.svg';
+
+
+
 
 
 

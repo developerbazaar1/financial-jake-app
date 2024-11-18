@@ -76,5 +76,20 @@ class AppRouter {
       builder: (context, state) => Homescreen(),
     ),
 
+    GoRoute(
+      path: '/',
+      redirect: (context, state) => '/home_screen',
+    ),
+    GoRoute(
+      path: '/home_screen',
+      name: RouteConstants.bottomNavigation,
+      pageBuilder: (context, state) {
+        // Extract the tab index from query parameters (default to 0 if not present)
+        final tabIndex = int.parse(state.uri.queryParameters['index'] ?? '0'); // Corrected spelling
+        return MaterialPage(
+          child: NavigationMenuScreen(initialTabIndex: tabIndex),
+        );
+      },
+    ),
   ]);
 }

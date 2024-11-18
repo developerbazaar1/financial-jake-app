@@ -31,17 +31,17 @@ class BottomNavBarItem extends StatelessWidget {
               onTap: () => controller.onItemTapped(index),
               child: Column(
                 children: [
-                  // SvgPicture.asset(
-                  //   isSelected
-                  //       ? AppList.bottomBarItems[index].unselectedIcon
-                  //       : AppList.bottomBarItems[index].selectedIcon,
-                  //   height: height * 0.03,
-                  //   placeholderBuilder: (context) => SizedBox(
-                  //     height: height * 0.02,
-                  //     width: height * 0.02,
-                  //     child: const CircularProgressIndicator(),
-                  //   ),
-                  // ),
+                  SvgPicture.asset(
+                    isSelected
+                        ? AppList.bottomBarItems[index].unselectedIcon
+                        : AppList.bottomBarItems[index].selectedIcon,
+                    height: height * 0.03,
+                    placeholderBuilder: (context) => SizedBox(
+                      height: height * 0.02,
+                      width: height * 0.02,
+                      child: const CircularProgressIndicator(),
+                    ),
+                  ),
                   SizedBox(height: height * 0.004),
                   LayoutBuilder(builder: (context, constraints) {
                     // Get the width of the text widget using the `TextPainter` class.
@@ -52,7 +52,7 @@ class BottomNavBarItem extends StatelessWidget {
                           fontSize: width * 0.031,
                           fontWeight: FontWeight.w400,
                           color:
-                              isSelected ? theme.primaryColor : AppColor.grey,
+                              isSelected ? AppColor.white : AppColor.grey,
                         ),
                       ),
                       textDirection: TextDirection.ltr,
@@ -60,31 +60,32 @@ class BottomNavBarItem extends StatelessWidget {
 
                     final textWidth = textPainter.size.width;
                     Text(
-                        "AppList.bottomBarItems[index].title",
+                        AppList.bottomBarItems[index].title,
                         style: theme.textTheme.labelMedium?.copyWith(
                           fontSize: width * 0.031,
                           // fontSize: AppSizer.fontSize12,
                           fontWeight: FontWeight.w400,
                           color:
-                              isSelected ? theme.primaryColor : AppColor.grey,
+                              isSelected ? AppColor.white : AppColor.grey,
                         ));
 
 
                     return Column(
                       children: [
                         Text(
-                          "AppList.bottomBarItems[index].title",
+                          AppList.bottomBarItems[index].title,
                           style: theme.textTheme.labelMedium?.copyWith(
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w600,
                             fontSize: width * 0.031,
-                            color: isSelected ? theme.primaryColor : AppColor.grey,
+                            color: isSelected ? AppColor.white : AppColor.grey,
                           ),
                         ),
                         SizedBox(height: height * 0.005),
                         Container(
                           width: isSelected ? textWidth : textWidth * 0.8, // Adjust this factor if needed
                           height: 3,
-                          color: isSelected ? theme.primaryColor : Colors.white,
+                          color: isSelected ? AppColor.white : Colors.white,
+
                         ),
                       ],
                     );

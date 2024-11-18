@@ -494,7 +494,7 @@ class Homescreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: AppFooter(),
+
     );
   }
 }

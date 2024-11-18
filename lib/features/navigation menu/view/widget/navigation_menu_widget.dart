@@ -1,3 +1,4 @@
+import 'package:financial_wellbeing/theme/theme_helper.dart';
 import 'package:flutter/material.dart';
 
 
@@ -14,11 +15,8 @@ class NavigationMenu extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: AppColor.white,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
-        ),
+        color: AppColor.secondary,
+
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.05), // Adjust shadow color and opacity as needed
@@ -39,7 +37,7 @@ class NavigationMenu extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(100)),
           ),
         ),
-        padding: EdgeInsets.only(top: height * 0.02,left: width * 0.01,right: width * 0.01),
+        padding: EdgeInsets.only(top: height * 0.02,),
         height: height * 0.1,
         notchMargin: 8,
         color: Colors.transparent, // Make the BottomAppBar color transparent to avoid hiding the shadow
@@ -53,7 +51,7 @@ class NavigationMenu extends StatelessWidget {
                   BottomNavBarItem(index: 1),
                   BottomNavBarItem(index: 2),
                   BottomNavBarItem(index: 3),
-                  BottomNavBarItem(index: 4),
+
                 ],
               ),
             ),

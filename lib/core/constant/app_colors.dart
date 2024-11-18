@@ -11,7 +11,8 @@ class AppColor {
 
   static Color commonGrey = const Color(0xFFD9D9D9);
   static Color darkGrey = const Color(0xFF6E798C);
-  static Color grey =  Colors.grey;
+
+  static Color grey = const Color(0xFF706F70);
   static Color checkBgColor =  const Color(0xFF494B6A);
   static Color background =  const Color(0xFF35383F);
 
