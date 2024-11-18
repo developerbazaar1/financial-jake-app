@@ -156,7 +156,7 @@ class CreateAccountScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: height * 0.012,
+                  height: height * 0.02,
                 ),
               ],
             )

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/constant/app_colors.dart';
 import '../../../../theme/theme_helper.dart';
-class HeadingText extends StatelessWidget {
-  const HeadingText({
+class HeadingSubheadingText extends StatelessWidget {
+  const HeadingSubheadingText({
     super.key, required this.heading, required this.subheading,
 
   });
@@ -26,11 +27,11 @@ class HeadingText extends StatelessWidget {
               fontWeight: FontWeight.w500,
               fontSize: width * 0.075),
         ),
-        SizedBox(height: height * 0.005),
+        SizedBox(height: height * 0.01),
         Text(
           subheading,
           style: theme.textTheme.headlineSmall?.copyWith(
-              fontSize: width * 0.051, fontWeight: FontWeight.w400),
+              fontSize: width * 0.051, fontWeight: FontWeight.w400,color: AppColor.lightGrey),
 
         ),
         SizedBox(height: height * 0.04),

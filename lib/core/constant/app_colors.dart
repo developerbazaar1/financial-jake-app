@@ -22,6 +22,7 @@ class AppColor {
   static Color gradiantColor1 = const Color(0xFF725B42);
   static Color gradiantColor2 = const Color(0xFFD3C2AF);
   static Color gradiantColor3= const Color(0xFF746351);
+  static const Color redColor = Color(0xFFF35D6F); // Red
 
 
 

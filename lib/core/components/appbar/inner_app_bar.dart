@@ -8,11 +8,11 @@ import '../../constant/app_sizer.dart';
 class InnerAppBar extends StatelessWidget {
   InnerAppBar(
       {super.key,
-      required this.title,
+       this.title,
       this.onTap,
       this.arrowColor,
       this.isBack, this.actions});
-  final String title;
+  final String? title;
   GestureTapCallback? onTap;
   Color? arrowColor;
   bool? isBack;
@@ -24,7 +24,7 @@ class InnerAppBar extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(top: height * 0.02),
       decoration: BoxDecoration(
-        color: AppColor.white,
+
         boxShadow: [
           BoxShadow(
             color: AppColor.black.withOpacity(0.1),
@@ -44,8 +44,8 @@ class InnerAppBar extends StatelessWidget {
             ? SizedBox()
             : IconButton(
                 icon: Icon(
-                  Icons.arrow_back_ios,
-                  color: arrowColor ?? theme.primaryColor,
+                  Icons.arrow_back,
+                  color: arrowColor ?? Colors.white,
                   size: height * 0.02,
                 ),
                 onPressed: onTap ??
@@ -54,7 +54,7 @@ class InnerAppBar extends StatelessWidget {
                     }),
         centerTitle: false,
         title: Text(
-          title,
+          title??'',
           style: theme.textTheme.headlineMedium!.copyWith(
             color: Colors.black,
             fontWeight: FontWeight.w600,

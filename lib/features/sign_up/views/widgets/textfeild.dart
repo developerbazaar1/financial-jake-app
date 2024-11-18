@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../../core/common/common_widget.dart';
 import '../../../../theme/theme_helper.dart';
 class CustomeTextFeild extends StatelessWidget {
 
-  const CustomeTextFeild({super.key, required this.label, required this.hintText});
+   CustomeTextFeild({super.key, required this.label, required this.hintText,this.suffixIcon,
+   this.inputFormatters,this.onChanged,this.keyboardType,this.obscureText,this.validator,this.controller,this.readOnly});
   final String label,hintText;
+  Widget? suffixIcon;
+   FormFieldValidator<String>? validator;
+   bool? obscureText;
+       ValueChanged<String>? onChanged;
+   TextInputType? keyboardType;
+   List<TextInputFormatter>? inputFormatters;
+   TextEditingController? controller;
+   bool? readOnly;
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +30,25 @@ class CustomeTextFeild extends StatelessWidget {
             fontSize: width * 0.036,
           ),
         ),
-        SizedBox(height: height * 0.01 ),
+        SizedBox(height: height * 0.015 ),
         CW.commonTextField(
+          readOnly: readOnly??false,
+          controller: controller,
+
+          suffixIcon: suffixIcon,
           style: TextStyle(color: Colors.white),
 
           hintText: hintText,
           hintStyle: TextStyle(color: Colors.white38),
 
           fillColor: theme.colorScheme.secondary,
+          validator: validator,
+          keyboardType: keyboardType,
+          inputFormatters: inputFormatters,
+          onChanged: onChanged
 
         ),
+
       ],
     );
   }

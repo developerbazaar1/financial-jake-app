@@ -1,14 +1,7 @@
 class AppText {
-
-
   static Map<String, String> common = {'app_name': "Mostly Event"};
   static const String roboto = "Roboto";
   static const String poppins = "Poppins";
-
-
-
-
-
   static const String welcomeTo = "Welcome To";
   static const String freelanceType = "Freelance";
   static const String internshipType = "Internship";
@@ -16,8 +9,7 @@ class AppText {
   static const String projectManagerType = "Project Manager";
   static const String mostlyEvents = "Mostly Events";
   static const String onboarding1HeadingText = "Find Trusted Services Near You";
-  static const String onboarding2HeadingText =
-      "Set Your Budget";
+  static const String onboarding2HeadingText = "Set Your Budget";
   static const String onboarding3HeadingText =
       "Post Jobs & Get Quick Responses";
   static const String onboarding1Content =
@@ -34,11 +26,12 @@ class AppText {
   static const String signUp = "Sign Up";
   static const String signInCredentials = "Enter your credentials to Sign In";
 
-  static const String resetEmail = "Please enter your email to reset the password";
+  static const String resetEmail =
+      "Please enter your email to reset the password";
   static const String forgetPassword = "Forgot Password?";
 
   static const String continueWithGoogle = "Continue with Google";
-  static const String continueWithFacebook= "Continue with Facebook";
+  static const String continueWithFacebook = "Continue with Facebook";
   static const String HeadingTextSignIn = "Welcome Back";
   static const String enterEmail = "Enter Email Address/Phone no.";
   static const String enterEmailPhone = "Enter email or phone number";
@@ -80,15 +73,16 @@ class AppText {
 
   // -- Email Verification
   static const String emailVerification = "verify your email";
-  static const String linkSent = "Please check your email and follow the link to confirm your account.";
+  static const String linkSent =
+      "Please check your email and follow the link to confirm your account.";
   static const String awaitingConfirmation = "Awaiting email confirmation.";
-  static const String misspelled = "If you have misspelled your email address, correct it and click \'Resend\'.";
+  static const String misspelled =
+      "If you have misspelled your email address, correct it and click \'Resend\'.";
   static const String changeYourPasswordSubTitle =
       "Your Account Security is Our Priority! We've Sent You a Secure Link to Safely Change Your Password and Keep Your Account Protected.";
   static const String confirm = "Confirm";
   static const String resend = "Resend";
   static const String cancel = "Cancel";
-
 
   // Our Services
   static const String ourServices = "Our Services";
@@ -97,14 +91,8 @@ class AppText {
 
   static const String postJob = "Post a Job";
 
-
   //Personal Information
   static const String personalInformation = "Personal Information";
-
-
-
-
-
 
   // -- Internet
   static const String noInternetMessage =
@@ -114,28 +102,26 @@ class AppText {
       "You are currently offline. Please check your internet connection and try again.";
 
 // terms & condition
-  static const String  termsConditions = "Terms & Conditions";
+  static const String termsConditions = "Terms & Conditions";
 
   // privacy policy
 
-
-
-
-  static const String  enterDetails = "enter details";
+  static const String enterDetails = "enter details";
 // -- Internet
 
-  static const String  verification = "Verification";
+  static const String verification = "Verification";
 // -- Ratings
-  static const String  writeReviewhint = "Write feedback about company:";
+  static const String writeReviewhint = "Write feedback about company:";
 
-
-
-
-
-
-
-
-
-
-
+  //--home
+  static const String home = "Home";
+  //--myproduct
+  static const String myproduct = "Myproduct";
+  //--equity
+  static const String equity = "Equity";
+  //--setting
+  static const String setting = "Setting";
+  static const String uploaddoc = "Upload Documnets";
+  static const String fineducation = "Financila Education";
+  static const String chat = "Chat with us";
 }
