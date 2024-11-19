@@ -86,7 +86,8 @@ class ActivityTrackingScreen extends StatelessWidget {
             CW.commonElevatedButton(
               buttonColor: AppColor.secondary,
               onPressed: () {
-                // Add Don't Allow Action
+                context.pushReplacementNamed(
+                    RouteConstants.authenticateScreen);
               },
               height: height * 0.065,
               width: width,
