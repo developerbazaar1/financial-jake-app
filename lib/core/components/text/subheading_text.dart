@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../theme/theme_helper.dart';
+import '../../../theme/theme_helper.dart';
 class SubHeadingStyle extends StatelessWidget {
   const SubHeadingStyle({
     super.key,

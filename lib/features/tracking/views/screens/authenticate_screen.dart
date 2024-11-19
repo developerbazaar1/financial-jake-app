@@ -1,9 +1,9 @@
 import 'package:financial_wellbeing/core/components/appbar/filter_appbar.dart';
 import 'package:financial_wellbeing/core/constant/app_svg.dart';
 import 'package:financial_wellbeing/core/routes/route_constant.dart';
-import 'package:financial_wellbeing/features/tracking/views/widgets/content_text.dart';
-import 'package:financial_wellbeing/features/tracking/views/widgets/heading_text.dart';
-import 'package:financial_wellbeing/features/tracking/views/widgets/subheading_text.dart';
+import 'package:financial_wellbeing/core/components/text/content_text.dart';
+import 'package:financial_wellbeing/core/components/text/heading_text.dart';
+import 'package:financial_wellbeing/core/components/text/subheading_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -68,30 +68,9 @@ class AuthenticateScreen extends StatelessWidget {
               text:
                   "Connect securely with your bank through Plaid for instant access to your mortgages, loans, and credit card details. It’s fast, easy, and safe—your credentials stay private, and you control what we access.",
             ),
-            SizedBox(height: height * 0.1),
-            // Icons Section
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     IconValue(iconPath: AppSvg.mobile),
-            //     Icon(Icons.more_horiz,
-            //         size: height * 0.05, color: AppColor.lightGrey),
-            //     SizedBox(width: width * 0.05),
-            //     Center(
-            //       child: SvgPicture.asset(
-            //         AppSvg.plaid,
-            //         height: height * 0.08,
-            //       ),
-            //     ),
-            //     SizedBox(width: width * 0.05),
-            //     Icon(Icons.more_horiz,
-            //         size: height * 0.05, color: AppColor.lightGrey),
-            //     SizedBox(width: width * 0.05),
-            //     IconValue(
-            //       iconPath: AppSvg.bank,
-            //     ),
-            //   ],
-            // ),
+           SizedBox(height: height * 0.07),
+
+
 
             LayoutBuilder(
               builder: (BuildContext context, BoxConstraints constraints) {
@@ -182,7 +161,7 @@ class AuthenticateScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: height * 0.05),
+            SizedBox(height: height * 0.15),
           ],
         ),
       ),

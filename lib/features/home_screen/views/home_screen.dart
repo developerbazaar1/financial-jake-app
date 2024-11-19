@@ -4,7 +4,7 @@ import "package:flutter/material.dart";
 import "package:get/get.dart";
 import "package:go_router/go_router.dart";
 import "../../../core/common/common_widget.dart";
-import "../../../core/components/appfooter/view/app_footer.dart";
+
 import "../../../core/constant/app_colors.dart";
 
 import "../../../core/constant/app_images.dart";
@@ -273,7 +273,7 @@ class Homescreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           vertical: 14, horizontal: 18),
                       decoration: BoxDecoration(
-                          border: Border.all(color: AppColor.darkGrey),
+                          border: Border.all(color: AppColor.borderColor),
                           borderRadius: BorderRadius.circular(12),
                           color: AppColor.secondary),
                       child: Column(
@@ -341,89 +341,95 @@ class Homescreen extends StatelessWidget {
                           listdata.length,
                           (index) => Column(
                             children: [
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 22, horizontal: 18),
-                                decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: AppColor.darkGrey),
-                                    borderRadius: BorderRadius.circular(12),
-                                    color: AppColor.secondary),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              47 /
-                                              100,
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              3 /
-                                              100,
-                                          alignment: Alignment.center,
-                                          decoration: BoxDecoration(
-                                            color: const Color.fromARGB(
-                                                255, 172, 195, 172),
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                          ),
-                                          child: Text(
-                                            listdata[index]["heading"],
-                                            style: TextStyle(
-                                              color: AppColor.successColor,
-                                              fontSize:
-                                                  mediaQueryData.size.width *
-                                                      0.030,
-                                              fontWeight: FontWeight.w500,
+                              InkWell(
+                                onTap: (){
+                                  context.pushNamed(RouteConstants.mortgageFormScreen);
+
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 22, horizontal: 18),
+                                  decoration: BoxDecoration(
+                                      border:
+                                          Border.all(color: AppColor.darkGrey),
+                                      borderRadius: BorderRadius.circular(12),
+                                      color: AppColor.secondary),
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                47 /
+                                                100,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                3 /
+                                                100,
+                                            alignment: Alignment.center,
+                                            decoration: BoxDecoration(
+                                              color: const Color.fromARGB(
+                                                  255, 172, 195, 172),
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
                                             ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(height: height * 0.01),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              listdata[index]["name"],
+                                            child: Text(
+                                              listdata[index]["heading"],
                                               style: TextStyle(
-                                                color: AppColor.white,
+                                                color: AppColor.successColor,
                                                 fontSize:
                                                     mediaQueryData.size.width *
-                                                        0.040,
+                                                        0.030,
                                                 fontWeight: FontWeight.w500,
                                               ),
                                             ),
-                                            Container(
-                                              width: 200,
-                                              child: Text(
-                                                listdata[index]["details"],
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height: height * 0.01),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                listdata[index]["name"],
                                                 style: TextStyle(
                                                   color: AppColor.white,
-                                                  fontSize: mediaQueryData
-                                                          .size.width *
-                                                      0.025,
-                                                  fontWeight: FontWeight.w400,
+                                                  fontSize:
+                                                      mediaQueryData.size.width *
+                                                          0.040,
+                                                  fontWeight: FontWeight.w500,
                                                 ),
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                        Image.asset(
-                                          listdata[index]["image"],
-                                        )
-                                      ],
-                                    ),
-                                  ],
+                                              Container(
+                                                width: 200,
+                                                child: Text(
+                                                  listdata[index]["details"],
+                                                  style: TextStyle(
+                                                    color: AppColor.white,
+                                                    fontSize: mediaQueryData
+                                                            .size.width *
+                                                        0.025,
+                                                    fontWeight: FontWeight.w400,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Image.asset(
+                                            listdata[index]["image"],
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                               SizedBox(height: height * 0.02),

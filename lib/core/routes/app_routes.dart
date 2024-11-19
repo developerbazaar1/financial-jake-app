@@ -1,4 +1,5 @@
 import 'package:financial_wellbeing/core/routes/route_constant.dart';
+import 'package:financial_wellbeing/features/mortgage_form/views/mortgage_form_screen.dart';
 import 'package:financial_wellbeing/features/reset_password/view/reset_password_screen.dart';
 import 'package:financial_wellbeing/features/sign_up/controllers/signup_controller.dart';
 import 'package:financial_wellbeing/features/sign_up/views/screen/signup_screen.dart';
@@ -91,5 +92,11 @@ class AppRouter {
         );
       },
     ),
+    GoRoute(
+      name: RouteConstants.mortgageFormScreen,
+      path: AppRoutes.mortgageFormScreen,
+      builder: (context, state) => MortgageFormScreen(),
+    ),
+
   ]);
 }

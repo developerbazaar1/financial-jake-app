@@ -14,6 +14,7 @@ class RouteConstants{
   static const String authenticateScreen = 'authenticate_screen';
   static const String bottomNavigation = 'navigation_menu_screen';
   static const String homescreen = 'home_screen';
+  static const String mortgageFormScreen = 'mortgage_form_screen';
 
 
 
@@ -36,6 +37,7 @@ class AppRoutes {
   static const String authenticateScreen = '/authenticate_screen.dart';
   static const String splashScreen = '/splash_screen.dart';
   static const String homescreen = '/home_screen.dart';
+  static const String mortgageFormScreen = '/mortgage_form_screen.dart';
 
 }
 

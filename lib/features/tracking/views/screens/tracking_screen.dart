@@ -7,9 +7,9 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/common/common_widget.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../theme/theme_helper.dart';
-import '../widgets/content_text.dart';
-import '../widgets/heading_text.dart';
-import '../widgets/subheading_text.dart';
+import '../../../../core/components/text/content_text.dart';
+import '../../../../core/components/text/heading_text.dart';
+import '../../../../core/components/text/subheading_text.dart';
 
 class ActivityTrackingScreen extends StatelessWidget {
   const ActivityTrackingScreen({Key? key}) : super(key: key);

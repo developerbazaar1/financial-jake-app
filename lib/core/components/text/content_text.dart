@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constant/app_colors.dart';
-import '../../../../theme/theme_helper.dart';
+import '../../constant/app_colors.dart';
+import '../../../theme/theme_helper.dart';
 
 class ContentStyle extends StatelessWidget {
   const ContentStyle({

@@ -25,6 +25,7 @@ class AppSvg {
   static String settingActive = '$basePath/setting_active.svg';
   static String wallet = '$basePath/wallet.svg';
   static String walletActive = '$basePath/wallet_active.svg';
+  static String document = '$basePath/document.svg';
 
 
 

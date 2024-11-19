@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../../core/common/common_widget.dart';
+import '../../../../core/constant/app_colors.dart';
 import '../../../../theme/theme_helper.dart';
 class CustomeTextFeild extends StatelessWidget {
 
@@ -36,10 +37,10 @@ class CustomeTextFeild extends StatelessWidget {
           controller: controller,
 
           suffixIcon: suffixIcon,
-          style: TextStyle(color: Colors.white),
+          style: theme.textTheme.bodyMedium?.copyWith(fontSize:width* 0.036 ),
 
           hintText: hintText,
-          hintStyle: TextStyle(color: Colors.white38),
+          hintStyle: theme.textTheme.bodyMedium?.copyWith(fontSize:width* 0.036,color: AppColor.darkGrey ),
 
           fillColor: theme.colorScheme.secondary,
           validator: validator,
