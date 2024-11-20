@@ -4,9 +4,7 @@ import "package:flutter/material.dart";
 import "package:get/get.dart";
 import "package:go_router/go_router.dart";
 import "../../../core/common/common_widget.dart";
-
 import "../../../core/constant/app_colors.dart";
-
 import "../../../core/constant/app_images.dart";
 import "../../../core/routes/route_constant.dart";
 import "../../../core/utils/size_utils.dart";
@@ -94,7 +92,7 @@ class Homescreen extends StatelessWidget {
                                     text: 'Welcome back!\n',
                                     style:
                                         theme.textTheme.headlineLarge?.copyWith(
-                                      fontSize: width * 0.030,
+                                      fontSize: width * 0.040,
                                       color: Colors.white,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -105,7 +103,7 @@ class Homescreen extends StatelessWidget {
                                         theme.textTheme.headlineLarge?.copyWith(
                                       fontSize: width * 0.060,
                                       color: Colors.white,
-                                      fontWeight: FontWeight.w500,
+                                      fontWeight: FontWeight.w600,
                                     ),
                                   )
                                 ])),
@@ -123,7 +121,7 @@ class Homescreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             vertical: 12, horizontal: 8),
                         decoration: BoxDecoration(
-                            border: Border.all(color: AppColor.darkGrey),
+                            border: Border.all(color: AppColor.borderColor),
                             borderRadius: BorderRadius.circular(12),
                             color: AppColor.secondary),
                         child: Row(
@@ -132,10 +130,10 @@ class Homescreen extends StatelessWidget {
                             Image.asset(AppImage.uploadLogo),
                             Text(
                               AppText.uploaddoc,
-                              style: TextStyle(
+                              style: theme.textTheme.headlineLarge?.copyWith(
                                 fontSize: width * 0.040,
                                 color: Colors.white,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w600,
                               ),
                             )
                           ],
@@ -148,19 +146,19 @@ class Homescreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             vertical: 12, horizontal: 8),
                         decoration: BoxDecoration(
-                            border: Border.all(color: AppColor.darkGrey),
+                            border: Border.all(color: AppColor.borderColor),
                             borderRadius: BorderRadius.circular(12),
                             color: AppColor.secondary),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Image.asset(AppImage.uploadLogo),
+                            Image.asset(AppImage.financial2Logo),
                             Text(
-                              AppText.uploaddoc,
-                              style: TextStyle(
+                              AppText.financialeducation,
+                              style: theme.textTheme.headlineLarge?.copyWith(
                                 fontSize: width * 0.040,
                                 color: Colors.white,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w600,
                               ),
                             )
                           ],
@@ -173,19 +171,26 @@ class Homescreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             vertical: 12, horizontal: 8),
                         decoration: BoxDecoration(
-                            border: Border.all(color: AppColor.darkGrey),
+                            border: Border.all(color: AppColor.borderColor),
                             borderRadius: BorderRadius.circular(12),
                             color: AppColor.secondary),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Image.asset(AppImage.uploadLogo),
+                            const SizedBox(
+                              width: 23,
+                            ),
+                            Container(
+                                width: 27,
+                                child: Image.asset(AppImage.chatLogo)),
+                            const SizedBox(
+                              width: 18,
+                            ),
                             Text(
-                              AppText.uploaddoc,
-                              style: TextStyle(
+                              AppText.chat,
+                              style: theme.textTheme.headlineLarge?.copyWith(
                                 fontSize: width * 0.040,
                                 color: Colors.white,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w600,
                               ),
                             )
                           ],
@@ -223,16 +228,17 @@ class Homescreen extends StatelessWidget {
               children: [
                 Text(
                   'Dashboard',
-                  style: TextStyle(
-                    color: AppColor.white,
-                    fontSize: mediaQueryData.size.width * 0.081, //20
-                    fontWeight: FontWeight.w500,
+                  style: theme.textTheme.headlineLarge?.copyWith(
+                    fontSize: width * 0.081,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 GestureDetector(
                     onTap: () {
+                      // context.push(RouteConstants.notificationscreen);
+                      context.pushNamed(RouteConstants.notificationscreen);
                       //  context.pushReplacementNamed(RouteConstants.createAccount);
-                    //  context.push(AppRoutes.notificationscreen);
                     },
                     child: Image.asset(AppImage.notificationlogo))
               ],
@@ -245,26 +251,26 @@ class Homescreen extends StatelessWidget {
                     SizedBox(height: height * 0.01),
                     Text(
                       'Profile created!',
-                      style: TextStyle(
-                        color: AppColor.white,
-                        fontSize: mediaQueryData.size.width * 0.050, //20
+                      style: theme.textTheme.headlineLarge?.copyWith(
+                        fontSize: width * 0.050,
+                        color: Colors.white,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     SizedBox(height: height * 0.01),
                     Text(
                       "Now, let's get to the good part—",
-                      style: TextStyle(
-                        color: AppColor.white,
-                        fontSize: mediaQueryData.size.width * 0.035, //20
+                      style: theme.textTheme.headlineLarge?.copyWith(
+                        fontSize: width * 0.035,
+                        color: Colors.white,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
                     Text(
                       "Select a product below, and our AI will start looking for savings opportunities.",
-                      style: TextStyle(
-                        color: AppColor.white,
-                        fontSize: mediaQueryData.size.width * 0.035, //20
+                      style: theme.textTheme.headlineLarge?.copyWith(
+                        fontSize: width * 0.035,
+                        color: Colors.white,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -283,9 +289,9 @@ class Homescreen extends StatelessWidget {
                             children: [
                               Text(
                                 "Paid Integration Pending!",
-                                style: TextStyle(
-                                  color: AppColor.lightGrey,
-                                  fontSize: mediaQueryData.size.width * 0.040,
+                                style: theme.textTheme.headlineLarge?.copyWith(
+                                  fontSize: width * 0.040,
+                                  color: AppColor.redColor,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -297,10 +303,10 @@ class Homescreen extends StatelessWidget {
                                 MediaQuery.of(context).size.width * 100 / 100,
                             alignment: Alignment.center,
                             child: Text(
-                              "connect your bank to unlock a complete financial experience and get personalized insights.",
-                              style: TextStyle(
+                              "Connect your bank to unlock a complete financial experience and get personalized insights.",
+                              style: theme.textTheme.headlineLarge?.copyWith(
+                                fontSize: width * 0.036,
                                 color: AppColor.white,
-                                fontSize: mediaQueryData.size.width * 0.036,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -310,13 +316,13 @@ class Homescreen extends StatelessWidget {
                             children: [
                               Text(
                                 "Connect Now",
-                                style: TextStyle(
+                                style: theme.textTheme.headlineLarge?.copyWith(
+                                  fontSize: width * 0.036,
                                   color: AppColor.white,
-                                  fontSize: mediaQueryData.size.width * 0.036,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              Container(
+                              SizedBox(
                                   width: 19,
                                   child: Image.asset(AppImage.rightarrow))
                             ],
@@ -328,9 +334,9 @@ class Homescreen extends StatelessWidget {
                     SizedBox(height: height * 0.03),
                     Text(
                       "AI powered Assessments",
-                      style: TextStyle(
+                      style: theme.textTheme.headlineLarge?.copyWith(
+                        fontSize: width * 0.040,
                         color: AppColor.white,
-                        fontSize: mediaQueryData.size.width * 0.040,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -342,16 +348,16 @@ class Homescreen extends StatelessWidget {
                           (index) => Column(
                             children: [
                               InkWell(
-                                onTap: (){
-                                  context.pushNamed(RouteConstants.mortgageFormScreen);
-
+                                onTap: () {
+                                  context.pushNamed(
+                                      RouteConstants.mortgageFormScreen);
                                 },
                                 child: Container(
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 22, horizontal: 18),
                                   decoration: BoxDecoration(
-                                      border:
-                                          Border.all(color: AppColor.darkGrey),
+                                      border: Border.all(
+                                          color: AppColor.borderColor),
                                       borderRadius: BorderRadius.circular(12),
                                       color: AppColor.secondary),
                                   child: Column(
@@ -372,17 +378,18 @@ class Homescreen extends StatelessWidget {
                                             alignment: Alignment.center,
                                             decoration: BoxDecoration(
                                               color: const Color.fromARGB(
-                                                  255, 172, 195, 172),
+                                                      255, 172, 195, 172)
+                                                  .withOpacity(0.2),
                                               borderRadius:
                                                   BorderRadius.circular(20),
                                             ),
                                             child: Text(
                                               listdata[index]["heading"],
-                                              style: TextStyle(
+                                              style: theme
+                                                  .textTheme.headlineLarge
+                                                  ?.copyWith(
+                                                fontSize: width * 0.030,
                                                 color: AppColor.successColor,
-                                                fontSize:
-                                                    mediaQueryData.size.width *
-                                                        0.030,
                                                 fontWeight: FontWeight.w500,
                                               ),
                                             ),
@@ -400,23 +407,23 @@ class Homescreen extends StatelessWidget {
                                             children: [
                                               Text(
                                                 listdata[index]["name"],
-                                                style: TextStyle(
+                                                style: theme
+                                                    .textTheme.headlineLarge
+                                                    ?.copyWith(
+                                                  fontSize: width * 0.040,
                                                   color: AppColor.white,
-                                                  fontSize:
-                                                      mediaQueryData.size.width *
-                                                          0.040,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                               ),
-                                              Container(
+                                              SizedBox(
                                                 width: 200,
                                                 child: Text(
                                                   listdata[index]["details"],
-                                                  style: TextStyle(
+                                                  style: theme
+                                                      .textTheme.headlineLarge
+                                                      ?.copyWith(
+                                                    fontSize: width * 0.025,
                                                     color: AppColor.white,
-                                                    fontSize: mediaQueryData
-                                                            .size.width *
-                                                        0.025,
                                                     fontWeight: FontWeight.w400,
                                                   ),
                                                 ),
@@ -441,9 +448,9 @@ class Homescreen extends StatelessWidget {
                     SizedBox(height: height * 0.01),
                     Text(
                       "New Assessments",
-                      style: TextStyle(
+                      style: theme.textTheme.headlineLarge?.copyWith(
+                        fontSize: width * 0.040,
                         color: AppColor.white,
-                        fontSize: mediaQueryData.size.width * 0.040,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -461,10 +468,10 @@ class Homescreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "Select a Assesment",
-                                style: TextStyle(
+                                "Select a Assessment",
+                                style: theme.textTheme.headlineLarge?.copyWith(
+                                  fontSize: width * 0.040,
                                   color: AppColor.white,
-                                  fontSize: mediaQueryData.size.width * 0.040,
                                   fontWeight: FontWeight.w300,
                                 ),
                               ),
@@ -500,7 +507,6 @@ class Homescreen extends StatelessWidget {
           ],
         ),
       ),
-
     );
   }
 }

@@ -1,4 +1,4 @@
-class RouteConstants{
+class RouteConstants {
   static const String initialRoute = 'splash_screen';
   static const String onboardingScreen = 'onboarding_screen';
   static const String createAccount = 'create_account';
@@ -10,16 +10,14 @@ class RouteConstants{
 
   static const String resetPassword = 'reset_password_screen';
   static const String trackingScreen = 'tracking_screen';
-  static const String notificationPermissionScreen = 'notification_permission_screen';
+  static const String notificationPermissionScreen =
+      'notification_permission_screen';
   static const String authenticateScreen = 'authenticate_screen';
   static const String bottomNavigation = 'navigation_menu_screen';
   static const String homescreen = 'home_screen';
   static const String mortgageFormScreen = 'mortgage_form_screen';
-
-
-
+  static const String notificationscreen = '/notification_screen.dart';
 }
-
 
 class AppRoutes {
   static const String initialRoute = '/';
@@ -33,13 +31,11 @@ class AppRoutes {
   static const String resetPassword = '/reset_password_screen';
 
   static const String trackingScreen = '/tracking_screen.dart';
-  static const String notificationPermissionScreen = '/notification_permission_screen.dart';
+  static const String notificationPermissionScreen =
+      '/notification_permission_screen.dart';
   static const String authenticateScreen = '/authenticate_screen.dart';
   static const String splashScreen = '/splash_screen.dart';
   static const String homescreen = '/home_screen.dart';
   static const String mortgageFormScreen = '/mortgage_form_screen.dart';
-
+  static const String notificationscreen = '/notification_screen.dart';
 }
-
-
-
