@@ -20,6 +20,5 @@ class AppImage {
   static String arrowdown = '$basePath/arrowdown.png';
   static String backbutton = '$basePath/backbutton.png';
   static String notificationImage = '$basePath/notification_image.png';
-
-
+  static String bellIcon = '$basePath/bell.png';
 }

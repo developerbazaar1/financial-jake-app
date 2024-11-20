@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+// import 'package:get/get_core/src/get_main.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../core/components/appbar/inner_app_bar.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../theme/theme_helper.dart';
@@ -29,7 +28,7 @@ class NotificationSettingScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding:  EdgeInsets.symmetric(
+        padding: EdgeInsets.symmetric(
           horizontal: width * 0.025,
           vertical: height * 0.02,
         ),
@@ -38,15 +37,13 @@ class NotificationSettingScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Obx(() => SwitchListTile(
-
-
-              trackOutlineColor: MaterialStateProperty.all(Colors.transparent),
+                  trackOutlineColor:
+                      MaterialStateProperty.all(Colors.transparent),
                   thumbColor: MaterialStateProperty.all(AppColor.white),
-              inactiveThumbColor: AppColor.white,
+                  inactiveThumbColor: AppColor.white,
                   inactiveTrackColor: AppColor.grey.withOpacity(0.35),
                   activeColor: AppColor.white,
                   activeTrackColor: theme.primaryColor.withOpacity(0.9),
-
                   title: Text(
                     'Push Notifications',
                     style: theme.textTheme.bodyLarge?.copyWith(
@@ -66,46 +63,54 @@ class NotificationSettingScreen extends StatelessWidget {
                   onChanged: controller.togglePushNotifications,
                 )),
             Obx(() => SwitchListTile(
-              trackOutlineColor: MaterialStateProperty.all(Colors.transparent),
-              thumbColor: MaterialStateProperty.all(AppColor.white),
-              inactiveThumbColor: AppColor.white,
-              inactiveTrackColor: AppColor.grey.withOpacity(0.35),
-              activeColor: AppColor.white,
-              activeTrackColor: theme.primaryColor.withOpacity(0.9),
-                  title: Text('Active Jobs',
+                  trackOutlineColor:
+                      MaterialStateProperty.all(Colors.transparent),
+                  thumbColor: MaterialStateProperty.all(AppColor.white),
+                  inactiveThumbColor: AppColor.white,
+                  inactiveTrackColor: AppColor.grey.withOpacity(0.35),
+                  activeColor: AppColor.white,
+                  activeTrackColor: theme.primaryColor.withOpacity(0.9),
+                  title: Text(
+                    'Active Jobs',
                     style: theme.textTheme.bodyLarge?.copyWith(
                       fontSize: width * 0.036,
                       fontFamily: 'Roboto',
-                    ),),
+                    ),
+                  ),
                   subtitle: Text(
-                      'Get real-time alerts of active jobs that are still awaiting service partner acceptance.',
+                    'Get real-time alerts of active jobs that are still awaiting service partner acceptance.',
                     style: theme.textTheme.bodyMedium?.copyWith(
                       fontSize: width * 0.036,
                       fontFamily: 'Roboto',
                       color: AppColor.grey,
-                    ),),
+                    ),
+                  ),
                   value: controller.isActiveJobsEnabled.value,
                   onChanged: controller.toggleActiveJobs,
                 )),
             Obx(() => SwitchListTile(
-              trackOutlineColor: MaterialStateProperty.all(Colors.transparent),
-              thumbColor: MaterialStateProperty.all(AppColor.white),
-              inactiveThumbColor: AppColor.white,
-              inactiveTrackColor: AppColor.grey.withOpacity(0.35),
-              activeColor: AppColor.white,
-              activeTrackColor: theme.primaryColor.withOpacity(0.9),
-                  title: Text('Booking Confirmations',
+                  trackOutlineColor:
+                      MaterialStateProperty.all(Colors.transparent),
+                  thumbColor: MaterialStateProperty.all(AppColor.white),
+                  inactiveThumbColor: AppColor.white,
+                  inactiveTrackColor: AppColor.grey.withOpacity(0.35),
+                  activeColor: AppColor.white,
+                  activeTrackColor: theme.primaryColor.withOpacity(0.9),
+                  title: Text(
+                    'Booking Confirmations',
                     style: theme.textTheme.bodyLarge?.copyWith(
                       fontSize: width * 0.036,
                       fontFamily: 'Roboto',
-                    ),),
+                    ),
+                  ),
                   subtitle: Text(
-                      'Instantly know when your service requests are confirmed and ready to go.',
+                    'Instantly know when your service requests are confirmed and ready to go.',
                     style: theme.textTheme.bodyMedium?.copyWith(
                       fontSize: width * 0.036,
                       fontFamily: 'Roboto',
                       color: AppColor.grey,
-                    ),),
+                    ),
+                  ),
                   value: controller.isBookingConfirmationEnabled.value,
                   onChanged: controller.toggleBookingConfirmations,
                 )),

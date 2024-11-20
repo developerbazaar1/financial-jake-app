@@ -122,6 +122,6 @@ class AppText {
   //--setting
   static const String setting = "Setting";
   static const String uploaddoc = "Upload Documnets";
-  static const String fineducation = "Financila Education";
+  static const String financialeducation = "Financial Education";
   static const String chat = "Chat with us";
 }

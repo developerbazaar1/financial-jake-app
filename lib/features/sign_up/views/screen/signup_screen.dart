@@ -4,7 +4,6 @@ import 'package:financial_wellbeing/features/sign_up/views/widgets/social_media.
 import 'package:financial_wellbeing/features/sign_up/views/widgets/textfeild.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
@@ -15,7 +14,6 @@ import '../../../../core/routes/route_constant.dart';
 import '../../../../core/validator/validator.dart';
 import '../../../../theme/theme_helper.dart';
 import '../../controllers/signup_controller.dart';
-import '../widgets/socia_media_button.dart';
 
 class SignUpScreen extends StatelessWidget {
   final SignUpController controller = Get.put(SignUpController());
@@ -59,10 +57,7 @@ class SignUpScreen extends StatelessWidget {
 class SignUpButton extends StatelessWidget {
   const SignUpButton({
     super.key,
-
   });
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -74,9 +69,7 @@ class SignUpButton extends StatelessWidget {
       children: [
         CW.commonElevatedButton(
             onPressed: () {
-
               controller.clickOnSignUp(context);
-
             },
             height: height * 0.06,
             width: width,
@@ -99,8 +92,7 @@ class SignUpButton extends StatelessWidget {
               child: Text('Already have an account? ',
                   textAlign: TextAlign.center,
                   style: theme.textTheme.bodyLarge!.copyWith(
-                      fontSize: width * 0.041,
-                      color: AppColor.lightGrey)),
+                      fontSize: width * 0.041, color: AppColor.lightGrey)),
             ),
             SizedBox(
               width: width * 0.01,
@@ -112,8 +104,7 @@ class SignUpButton extends StatelessWidget {
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               ),
               onPressed: () {
-                context.pushReplacementNamed(
-                    RouteConstants.signinScreen);
+                context.pushReplacementNamed(RouteConstants.signinScreen);
               },
               child: Text(
                 'Login',
@@ -140,10 +131,7 @@ class SignUpButton extends StatelessWidget {
 class SignUpForm extends StatelessWidget {
   const SignUpForm({
     super.key,
-
   });
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -155,9 +143,8 @@ class SignUpForm extends StatelessWidget {
       child: Column(
         children: [
           CustomeTextFeild(
-
             label: 'First Name',
-            controller:controller.firstNameController,
+            controller: controller.firstNameController,
             hintText: 'Enter your first name',
             validator: (value) => Validator.isNameValid(value: value),
           ),
@@ -189,35 +176,33 @@ class SignUpForm extends StatelessWidget {
             validator: (value) => Validator.isEmailValid(value: value),
           ),
           SizedBox(height: height * 0.025),
-
-          Obx(()=>  CustomeTextFeild(
-            controller: controller.passwordController,
-            label: 'Password', hintText: 'Create a strong password',
-            suffixIcon: IconButton(
-              onPressed: () {
-                controller.isPasswordIconVisible.value =
-                !controller.isPasswordIconVisible.value;
-              },
-              icon: Icon(
-                controller.isPasswordIconVisible.value
-                    ? Icons.visibility_outlined
-                    : Icons.visibility_off_outlined,
-                color: Colors.white,
+          Obx(
+            () => CustomeTextFeild(
+              controller: controller.passwordController,
+              label: 'Password', hintText: 'Create a strong password',
+              suffixIcon: IconButton(
+                onPressed: () {
+                  controller.isPasswordIconVisible.value =
+                      !controller.isPasswordIconVisible.value;
+                },
+                icon: Icon(
+                  controller.isPasswordIconVisible.value
+                      ? Icons.visibility_outlined
+                      : Icons.visibility_off_outlined,
+                  color: Colors.white,
+                ),
               ),
+              obscureText: !controller
+                  .isPasswordIconVisible.value, // Toggle password visibility
+              onChanged: (value) {},
+
+              validator: (value) => Validator.isPasswordValid(value: value),
             ),
-            obscureText: !controller.isPasswordIconVisible
-                .value, // Toggle password visibility
-            onChanged: (value) {},
-
-            validator: (value) =>
-                Validator.isPasswordValid(value: value),
           ),
-          ),
-
-
           SizedBox(height: height * 0.025),
           CustomeTextFeild(
-              label: 'Date of Birth', hintText: 'MM/DD/YYYY',
+            label: 'Date of Birth',
+            hintText: 'MM/DD/YYYY',
             controller: controller.dobController,
             validator: (value) => Validator.isNameValid(value: value),
             readOnly: true,
@@ -246,10 +231,13 @@ class SignUpForm extends StatelessWidget {
                 );
 
                 if (pickedDate != null) {
-                  String formattedDate = DateFormat('MM/dd/yyyy').format(pickedDate);
+                  String formattedDate =
+                      DateFormat('MM/dd/yyyy').format(pickedDate);
                   controller.dobController.text = formattedDate;
                 }
-              },),),
+              },
+            ),
+          ),
           SizedBox(height: height * 0.05),
         ],
       ),

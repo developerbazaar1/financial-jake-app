@@ -3,6 +3,8 @@ import 'package:financial_wellbeing/features/mortgage_assesstment/views/mortgage
 import 'package:financial_wellbeing/features/mortgage_details/controllers/mortgage_details_controller.dart';
 import 'package:financial_wellbeing/features/mortgage_details/views/screen/mortgage_details_screen.dart';
 import 'package:financial_wellbeing/features/mortgage_form/views/mortgage_form_screen.dart';
+import 'package:financial_wellbeing/features/notification_screen/controllers/notification_controller.dart';
+import 'package:financial_wellbeing/features/notification_screen/views/notification_screen.dart';
 import 'package:financial_wellbeing/features/reset_password/view/reset_password_screen.dart';
 import 'package:financial_wellbeing/features/sign_up/controllers/signup_controller.dart';
 import 'package:financial_wellbeing/features/sign_up/views/screen/signup_screen.dart';
@@ -10,8 +12,6 @@ import 'package:financial_wellbeing/features/signin/views/screen/signin_screen.d
 import 'package:financial_wellbeing/features/tracking/views/screens/tracking_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-
 import '../../features/home_screen/views/home_screen.dart';
 import '../../features/navigation menu/view/screen/navigation_menu_screen.dart';
 import '../../features/notification_setting/views/notification_setting_screen.dart';
@@ -79,7 +79,6 @@ class AppRouter {
       path: AppRoutes.homescreen,
       builder: (context, state) => Homescreen(),
     ),
-
     GoRoute(
       path: '/',
       redirect: (context, state) => '/home_screen',
@@ -89,7 +88,8 @@ class AppRouter {
       name: RouteConstants.bottomNavigation,
       pageBuilder: (context, state) {
         // Extract the tab index from query parameters (default to 0 if not present)
-        final tabIndex = int.parse(state.uri.queryParameters['index'] ?? '0'); // Corrected spelling
+        final tabIndex = int.parse(
+            state.uri.queryParameters['index'] ?? '0'); // Corrected spelling
         return MaterialPage(
           child: NavigationMenuScreen(initialTabIndex: tabIndex),
         );
@@ -101,6 +101,12 @@ class AppRouter {
       builder: (context, state) => MortgageFormScreen(),
     ),
     GoRoute(
+
+      path: AppRoutes.notificationscreen,
+      name: RouteConstants.notificationscreen,
+      builder: (context, state) => NotificationScreen(),
+    )
+
       name: RouteConstants.mortgageDetailsScreen,
       path: AppRoutes.mortgageDetailsScreen,
       builder: (context, state) => MortgageDetailsScreen(),
@@ -110,6 +116,7 @@ class AppRouter {
       path: AppRoutes.mortgageAssessmentScreen,
       builder: (context, state) => MortgageAssessmentScreen(),
     ),
+
 
   ]);
 }
