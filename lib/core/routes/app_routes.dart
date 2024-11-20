@@ -1,4 +1,7 @@
 import 'package:financial_wellbeing/core/routes/route_constant.dart';
+import 'package:financial_wellbeing/features/mortgage_assesstment/views/mortgage_assessment_screen.dart';
+import 'package:financial_wellbeing/features/mortgage_details/controllers/mortgage_details_controller.dart';
+import 'package:financial_wellbeing/features/mortgage_details/views/screen/mortgage_details_screen.dart';
 import 'package:financial_wellbeing/features/mortgage_form/views/mortgage_form_screen.dart';
 import 'package:financial_wellbeing/features/notification_screen/controllers/notification_controller.dart';
 import 'package:financial_wellbeing/features/notification_screen/views/notification_screen.dart';
@@ -98,9 +101,22 @@ class AppRouter {
       builder: (context, state) => MortgageFormScreen(),
     ),
     GoRoute(
+
       path: AppRoutes.notificationscreen,
       name: RouteConstants.notificationscreen,
       builder: (context, state) => NotificationScreen(),
     )
+
+      name: RouteConstants.mortgageDetailsScreen,
+      path: AppRoutes.mortgageDetailsScreen,
+      builder: (context, state) => MortgageDetailsScreen(),
+    ),
+    GoRoute(
+      name: RouteConstants.mortgageAssessmentScreen,
+      path: AppRoutes.mortgageAssessmentScreen,
+      builder: (context, state) => MortgageAssessmentScreen(),
+    ),
+
+
   ]);
 }
