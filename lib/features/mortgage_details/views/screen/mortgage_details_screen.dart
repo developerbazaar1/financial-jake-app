@@ -1,7 +1,6 @@
 import 'package:financial_wellbeing/core/components/divider/common_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/common/common_widget.dart';
@@ -74,7 +73,7 @@ class MortgageDetailsScreen extends StatelessWidget {
                       label: "Date Filled:",
                       value: controller.dateFilled.value,
                     ),
-                    SizedBox(width: width * 0.75, child: const CommonDivider()),
+                    SizedBox(width: width * 0.75, child: CommonDivider()),
                     SizedBox(height: height * 0.001),
                     DetailsRow(
                       label: "Loan Institution:",

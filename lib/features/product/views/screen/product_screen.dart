@@ -11,6 +11,8 @@ import '../../controllers/product_controller.dart';
 class ProductsScreen extends StatelessWidget {
   final ProductController controller = Get.put(ProductController());
 
+  ProductsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -24,11 +26,8 @@ class ProductsScreen extends StatelessWidget {
         ),
       ),
       body: Container(
-
-        padding:  EdgeInsets.all(16.0),
-        decoration: BoxDecoration(
-          color: AppColor.primary
-        ),
+        padding: const EdgeInsets.all(16.0),
+        decoration: BoxDecoration(color: AppColor.primary),
         child: Obx(
           () => ListView.builder(
             itemCount: controller.products.length,
@@ -39,7 +38,6 @@ class ProductsScreen extends StatelessWidget {
           ),
         ),
       ),
-
     );
   }
 }
@@ -48,7 +46,7 @@ class ProductsScreen extends StatelessWidget {
 class ProductCard extends StatelessWidget {
   final Product product;
 
-  const ProductCard({Key? key, required this.product}) : super(key: key);
+  const ProductCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -72,28 +70,27 @@ class ProductCard extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Container(
       margin: const EdgeInsets.only(bottom: 16.0),
-      padding:  EdgeInsets.symmetric(horizontal: width* 0.05,
-      vertical: height * 0.02),
+      padding: EdgeInsets.symmetric(
+          horizontal: width * 0.05, vertical: height * 0.02),
       decoration: BoxDecoration(
-        color: AppColor.secondary,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppColor.borderColor)
-      ),
+          color: AppColor.secondary,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: AppColor.borderColor)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             product.name,
             style: theme.textTheme.bodyLarge?.copyWith(
-
-              fontSize: width* 0.041,
+              fontSize: width * 0.041,
               fontWeight: FontWeight.w600,
             ),
           ),
-
-           SizedBox(height: height* 0.005),
-          CommonDivider(color: AppColor.borderColor,),
-          SizedBox(height: height* 0.005),
+          SizedBox(height: height * 0.005),
+          CommonDivider(
+            color: AppColor.borderColor,
+          ),
+          SizedBox(height: height * 0.005),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -104,17 +101,16 @@ class ProductCard extends StatelessWidget {
                   fontSize: width * 0.036,
                 ),
               ),
-              SizedBox(width: width* 0.1),
+              SizedBox(width: width * 0.1),
               Text(
-                "${product.renewalDate}",
+                product.renewalDate,
                 style: theme.textTheme.bodyMedium?.copyWith(
-
                   fontSize: width * 0.036,
                 ),
               ),
             ],
           ),
-           SizedBox(height: height* 0.016),
+          SizedBox(height: height * 0.016),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -125,20 +121,19 @@ class ProductCard extends StatelessWidget {
                   fontSize: 14,
                 ),
               ),
-              SizedBox(width: width* 0.1),
+              SizedBox(width: width * 0.1),
               Container(
-                padding:  EdgeInsets.symmetric(horizontal: width* 0.025, vertical: 2),
+                padding: EdgeInsets.symmetric(
+                    horizontal: width * 0.025, vertical: 2),
                 decoration: BoxDecoration(
-                  color: AppColor.successColor.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(30),
-                  border: Border.all(color: statusColor)
-                ),
+                    color: AppColor.successColor.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(30),
+                    border: Border.all(color: statusColor)),
                 child: Text(
                   product.renewalStatus,
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: statusColor,
                     fontSize: width * 0.028,
-
                   ),
                 ),
               ),

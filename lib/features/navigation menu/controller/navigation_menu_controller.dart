@@ -51,8 +51,8 @@ class NavigationMenuController extends GetxController {
   // Screens
   List<Widget> pages = [
     Homescreen(),
-    ProductScreen(),
-    EquityScreen(),
-    SettingsScreen(),
+    ProductsScreen(),
+    const EquityScreen(),
+    const SettingsScreen(),
   ];
 }

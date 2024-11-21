@@ -17,7 +17,7 @@ import '../../controllers/signup_controller.dart';
 class SignUpScreen extends StatelessWidget {
   final SignUpController controller = Get.put(SignUpController());
 
-  const SignUpScreen({super.key});
+  SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

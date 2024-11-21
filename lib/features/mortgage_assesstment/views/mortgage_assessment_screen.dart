@@ -18,8 +18,6 @@ class MortgageAssessmentScreen extends StatelessWidget {
   final MortgageAssessmentController controller =
       Get.put(MortgageAssessmentController());
 
-  const MortgageAssessmentScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -36,9 +34,7 @@ class MortgageAssessmentScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header Section
-            _headerSection(context),
-            SizedBox(height: height * 0.008),
+            HeadingAssessment(),
 
             Text(
               'Name: My Home Mortgage',

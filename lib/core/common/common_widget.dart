@@ -266,14 +266,14 @@ class CW {
           border: Border.all(
             color: changeValue
                 ? Colors.white
-                : AppColor.lightGrey, // Dynamic border color
+                : AppColor.borderColor, // Dynamic border color
             width: 2,
           ),
         ),
         padding: const EdgeInsets.all(2),
         child: cupertino.SizedBox(
           width: 30,
-          height: 15,
+          height: 17,
           child: FittedBox(
             fit: BoxFit.contain,
             child: cupertino.CupertinoSwitch(
@@ -287,17 +287,3 @@ class CW {
         ),
       );
 }
-
-
-
-
-// cupertino.CupertinoSwitch(
-  //   applyTheme: true,
-  //   value: changeValue,
-  //   onChanged: onChanged,
-  //   activeColor: theme.primaryColor,
-
-  //   thumbColor: changeValue ? Colors.white : Colors.black,
-  //   trackColor: Colors.grey,
-
-  // );

@@ -4,7 +4,6 @@ import 'package:financial_wellbeing/features/sign_up/views/widgets/textfeild.dar
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:go_router/go_router.dart';
 import '../../../core/common/common_widget.dart';
 import '../../../core/components/appbar/inner_app_bar.dart';
 import '../../../core/constant/app_colors.dart';
@@ -87,7 +86,6 @@ class MortgageFormScreen extends StatelessWidget {
             CW.commonElevatedButton(
                 height: height * 0.05,
                 width: width,
-
                 onPressed: () {},
                 child: Text(
                   "Next",
@@ -95,12 +93,12 @@ class MortgageFormScreen extends StatelessWidget {
                       fontSize: width * 0.041, fontWeight: FontWeight.w600),
                 )),
 
-                onPressed: (){
-                context.pushNamed(RouteConstants.mortgageDetailsScreen);
-                }, child: Text(
-              "Next",
-              style: theme.textTheme.bodyLarge?.copyWith(fontSize: width* 0.041,fontWeight: FontWeight.w600),
-            )),
+            //     onPressed: (){
+            //     context.pushNamed(RouteConstants.mortgageDetailsScreen);
+            //     }, child: Text(
+            //   "Next",
+            //   style: theme.textTheme.bodyLarge?.copyWith(fontSize: width* 0.041,fontWeight: FontWeight.w600),
+            // )),
 
             SizedBox(height: height * 0.05),
           ],

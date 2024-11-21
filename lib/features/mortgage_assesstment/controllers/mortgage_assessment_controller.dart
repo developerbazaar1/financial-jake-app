@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 class MortgageAssessmentController extends GetxController {
   var assessmentScore = 400.obs;
+  static MortgageAssessmentController get instance => Get.find();
 
   var products = [
     {

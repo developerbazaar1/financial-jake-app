@@ -36,7 +36,7 @@ class InnerAppBar extends StatelessWidget {
       child: AppBar(
         titleSpacing: 0,
         leadingWidth: isBack == false ? width * 0.05 : width * 0.12,
-        backgroundColor: theme.colorScheme.background,
+        backgroundColor: theme.colorScheme.surface,
         elevation: 0,
         leading: isBack == false
             ? const SizedBox()

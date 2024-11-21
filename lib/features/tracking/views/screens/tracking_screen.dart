@@ -12,7 +12,7 @@ import '../../../../core/components/text/heading_text.dart';
 import '../../../../core/components/text/subheading_text.dart';
 
 class ActivityTrackingScreen extends StatelessWidget {
-  const ActivityTrackingScreen({Key? key}) : super(key: key);
+  const ActivityTrackingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,36 +40,36 @@ class ActivityTrackingScreen extends StatelessWidget {
               text: "Why We Need This?",
             ),
             SizedBox(height: height * 0.01),
-            const ContentStyle(text:               "Tracking your activity allows us to understand how you use the app, enabling us to improve features and provide relevant recommendations.",
+            const ContentStyle(
+              text:
+                  "Tracking your activity allows us to understand how you use the app, enabling us to improve features and provide relevant recommendations.",
             ),
 
             SizedBox(height: height * 0.03),
             // What We Track Section
-            const SubHeadingStyle(text:
-              "What We Track?",
-
+            const SubHeadingStyle(
+              text: "What We Track?",
             ),
             SizedBox(height: height * 0.01),
-            const ContentStyle(text:
-              "Usage patterns, interactions within the app, and other related data.",
-
+            const ContentStyle(
+              text:
+                  "Usage patterns, interactions within the app, and other related data.",
             ),
             SizedBox(height: height * 0.03),
             // Privacy Assurance Section
-            const SubHeadingStyle(text:
-              "Privacy Assurance",
-
+            const SubHeadingStyle(
+              text: "Privacy Assurance",
             ),
             SizedBox(height: height * 0.01),
-            const ContentStyle(text:
-              "Your data is secure and will be used in accordance with our Privacy Policy.",
-
+            const ContentStyle(
+              text:
+                  "Your data is secure and will be used in accordance with our Privacy Policy.",
             ),
             SizedBox(height: height * 0.03),
             // Buttons Section
             CW.commonElevatedButton(
               onPressed: () {
-               context.pushReplacementNamed(RouteConstants.authenticateScreen);
+                context.pushReplacementNamed(RouteConstants.authenticateScreen);
               },
               height: height * 0.065,
               width: width,
@@ -86,8 +86,7 @@ class ActivityTrackingScreen extends StatelessWidget {
             CW.commonElevatedButton(
               buttonColor: AppColor.secondary,
               onPressed: () {
-                context.pushReplacementNamed(
-                    RouteConstants.authenticateScreen);
+                context.pushReplacementNamed(RouteConstants.authenticateScreen);
               },
               height: height * 0.065,
               width: width,
@@ -106,8 +105,3 @@ class ActivityTrackingScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-

@@ -14,7 +14,7 @@ import '../widgets/signin_form.dart';
 class SignInScreen extends StatelessWidget {
   final SignInController controller = Get.put(SignInController());
 
-  const SignInScreen({super.key});
+  SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

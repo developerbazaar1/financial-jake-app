@@ -157,7 +157,7 @@ class EditProfileScreen extends StatelessWidget {
                             fontSize: width * 0.041,
                           ),
                         )),
-                    SizedBox(height: height * 0.025),
+                    SizedBox(height: height * 0.1),
                   ],
                 )
               ],

@@ -29,4 +29,5 @@ class AppImage {
   static String profileImage1 = '$basePath/ProfileImage1.png';
   static String addprofile = '$basePath/addprofile.png';
   static String eyeIcon = '$basePath/eye.png';
+  static String mailIcon = '$basePath/mail.png';
 }
