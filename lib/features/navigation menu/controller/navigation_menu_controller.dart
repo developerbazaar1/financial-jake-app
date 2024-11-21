@@ -1,5 +1,5 @@
 import 'package:financial_wellbeing/features/equity/views/equity.dart';
-import 'package:financial_wellbeing/features/product/views/product_screen.dart';
+import 'package:financial_wellbeing/features/product/views/screen/product_screen.dart';
 import 'package:financial_wellbeing/features/settings/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -51,8 +51,8 @@ class NavigationMenuController extends GetxController {
   // Screens
   List<Widget> pages = [
     Homescreen(),
-    const ProductScreen(),
-    const EquityScreen(),
-    const SettingsScreen(),
+    ProductScreen(),
+    EquityScreen(),
+    SettingsScreen(),
   ];
 }

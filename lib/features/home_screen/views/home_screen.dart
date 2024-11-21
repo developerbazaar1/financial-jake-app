@@ -6,6 +6,7 @@ import "package:go_router/go_router.dart";
 import "../../../core/common/common_widget.dart";
 import "../../../core/constant/app_colors.dart";
 import "../../../core/constant/app_images.dart";
+import "../../../core/constant/app_list.dart";
 import "../../../core/routes/route_constant.dart";
 import "../../../core/utils/size_utils.dart";
 import "../../../theme/theme_helper.dart";
@@ -18,43 +19,7 @@ class Homescreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 //CONTROLLER USING GETX
   final controller = Get.put(HomeScreenController());
-  List<dynamic> listdata = <dynamic>[
-    {
-      "heading": "Potential Saving Opportunity",
-      "name": "Mortgage Assessment",
-      "details":
-          "For personalized AI analysis and better insights, share a few details.  In the meantime, check out these product options.",
-      "image": "assets/images/score.png"
-    },
-    {
-      "heading": "Potential Saving Opportunity",
-      "name": "Mortgage Assessment",
-      "details":
-          "For personalized AI analysis and better insights, share a few details.  In the meantime, check out these product options.",
-      "image": "assets/images/score.png"
-    },
-    {
-      "heading": "Potential Saving Opportunity",
-      "name": "Mortgage Assessment",
-      "details":
-          "For personalized AI analysis and better insights, share a few details.  In the meantime, check out these product options.",
-      "image": "assets/images/score.png"
-    },
-    {
-      "heading": "Potential Saving Opportunity",
-      "name": "Mortgage Assessment",
-      "details":
-          "For personalized AI analysis and better insights, share a few details.  In the meantime, check out these product options.",
-      "image": "assets/images/score.png"
-    },
-    {
-      "heading": "Potential Saving Opportunity",
-      "name": "Mortgage Assessment",
-      "details":
-          "For personalized AI analysis and better insights, share a few details.  In the meantime, check out these product options.",
-      "image": "assets/images/score.png"
-    },
-  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -344,7 +309,7 @@ class Homescreen extends StatelessWidget {
                     Wrap(
                       children: [
                         ...List.generate(
-                          listdata.length,
+                          AppList.listdata.length,
                           (index) => Column(
                             children: [
                               InkWell(
@@ -384,7 +349,7 @@ class Homescreen extends StatelessWidget {
                                                   BorderRadius.circular(20),
                                             ),
                                             child: Text(
-                                              listdata[index]["heading"],
+                                              AppList.listdata[index]["heading"],
                                               style: theme
                                                   .textTheme.headlineLarge
                                                   ?.copyWith(
@@ -406,7 +371,7 @@ class Homescreen extends StatelessWidget {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                listdata[index]["name"],
+                                                AppList.listdata[index]["name"],
                                                 style: theme
                                                     .textTheme.headlineLarge
                                                     ?.copyWith(
@@ -418,7 +383,7 @@ class Homescreen extends StatelessWidget {
                                               SizedBox(
                                                 width: 200,
                                                 child: Text(
-                                                  listdata[index]["details"],
+                                                  AppList.listdata[index]["details"],
                                                   style: theme
                                                       .textTheme.headlineLarge
                                                       ?.copyWith(
@@ -430,8 +395,9 @@ class Homescreen extends StatelessWidget {
                                               ),
                                             ],
                                           ),
+
                                           Image.asset(
-                                            listdata[index]["image"],
+                                            AppList.listdata[index]["image"],
                                           )
                                         ],
                                       ),

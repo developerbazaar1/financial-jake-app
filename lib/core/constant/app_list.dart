@@ -1,4 +1,5 @@
 import '../../features/navigation menu/model/navigation_menu_model.dart';
+import 'app_images.dart';
 import 'app_svg.dart';
 
 class AppList {

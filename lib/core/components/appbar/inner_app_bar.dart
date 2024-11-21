@@ -36,7 +36,7 @@ class InnerAppBar extends StatelessWidget {
       child: AppBar(
         titleSpacing: 0,
         leadingWidth: isBack == false ? width * 0.05 : width * 0.12,
-        backgroundColor: theme.colorScheme.surface,
+        backgroundColor: theme.colorScheme.background,
         elevation: 0,
         leading: isBack == false
             ? const SizedBox()
@@ -54,9 +54,8 @@ class InnerAppBar extends StatelessWidget {
         title: Text(
           title ?? '',
           style: theme.textTheme.headlineMedium!.copyWith(
-            color: Colors.black,
             fontWeight: FontWeight.w600,
-            fontSize: width * 0.061,
+            fontSize: width * 0.071,
           ),
         ),
         actions: actions,

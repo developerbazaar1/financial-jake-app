@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../features/product_details/views/screen/product_details_screen.dart';
 import '../../../theme/theme_helper.dart';
 import '../../constant/app_colors.dart';
+import '../../constant/app_list.dart';
+import '../../constant/app_svg.dart';
+import '../divider/common_divider.dart';
 
 class BottomSheets {
   static void showJobAcceptRejectedBottomSheet(
@@ -10,7 +15,7 @@ class BottomSheets {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(25.0)),
       ),
       builder: (BuildContext context) {
@@ -29,7 +34,7 @@ class BottomSheets {
                     Navigator.of(context).pop(); // Close the dialog
                   },
                   child: Container(
-                    padding: const EdgeInsets.all(4),
+                    padding: EdgeInsets.all(4),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(color: theme.primaryColor, width: 1.5),

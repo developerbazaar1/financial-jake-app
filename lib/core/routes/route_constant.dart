@@ -18,6 +18,16 @@ class RouteConstants {
   static const String mortgageFormScreen = 'mortgage_form_screen';
 
   static const String notificationscreen = '/notification_screen.dart';
+
+
+  static const String mortgageDetailsScreen = 'mortgage_details_screen';
+  static const String mortgageAssessmentScreen = 'mortgage_assessment_screen';
+  static const String productDetailsScreen = 'product_details_screen';
+
+
+
+
+
 }
 
 class AppRoutes {
@@ -40,4 +50,10 @@ class AppRoutes {
   static const String mortgageFormScreen = '/mortgage_form_screen.dart';
 
   static const String notificationscreen = '/notification_screen.dart';
+
+
+  static const String mortgageDetailsScreen = '/mortgage_details_screen.dart';
+  static const String mortgageAssessmentScreen = '/mortgage_assessment_controller.dart';
+  static const String productDetailsScreen = '/product_details_screen.dart';
+
 }
