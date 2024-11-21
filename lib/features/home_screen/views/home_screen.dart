@@ -179,7 +179,7 @@ class Homescreen extends StatelessWidget {
                             const SizedBox(
                               width: 23,
                             ),
-                            Container(
+                            SizedBox(
                                 width: 27,
                                 child: Image.asset(AppImage.chatLogo)),
                             const SizedBox(

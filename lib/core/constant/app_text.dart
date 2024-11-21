@@ -77,7 +77,7 @@ class AppText {
       "Please check your email and follow the link to confirm your account.";
   static const String awaitingConfirmation = "Awaiting email confirmation.";
   static const String misspelled =
-      "If you have misspelled your email address, correct it and click \'Resend\'.";
+      "If you have misspelled your email address, correct it and click 'Resend'.";
   static const String changeYourPasswordSubTitle =
       "Your Account Security is Our Priority! We've Sent You a Secure Link to Safely Change Your Password and Keep Your Account Protected.";
   static const String confirm = "Confirm";

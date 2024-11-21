@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/routes/route_constant.dart';
@@ -121,7 +118,7 @@ class SignUpController extends GetxController {
       isLoading.value = false;
 
       // Show Success Message
-      SnackBar(
+      const SnackBar(
         content: Text('Please verify your email address.'),
       );
 

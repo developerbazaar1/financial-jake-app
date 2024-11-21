@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-
 
 import '../../../theme/theme_helper.dart';
 import '../../constant/app_colors.dart';
-import '../../constant/app_svg.dart';
-import '../dialog/bottomsheets.dart';
 
 class InnerSortFilterAppBar extends StatelessWidget {
   InnerSortFilterAppBar(
@@ -39,10 +35,10 @@ class InnerSortFilterAppBar extends StatelessWidget {
       child: AppBar(
         titleSpacing: 0,
         leadingWidth: isBack == false ? width * 0.05 : width * 0.12,
-        backgroundColor: theme.colorScheme.background,
+        backgroundColor: theme.colorScheme.surface,
         elevation: 0,
         leading: isBack == false
-            ? SizedBox()
+            ? const SizedBox()
             : IconButton(
                 icon: Icon(
                   Icons.arrow_back_ios,
@@ -55,8 +51,6 @@ class InnerSortFilterAppBar extends StatelessWidget {
                     }),
         centerTitle: false,
         actions: [
-
-
           SizedBox(
             width: width * 0.05,
           )

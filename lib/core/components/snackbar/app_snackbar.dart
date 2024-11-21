@@ -12,7 +12,7 @@ class AppSnackBar {
       SnackBar(
         elevation: 0,
         content: Container(
-          padding:  EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10.0),
           decoration: BoxDecoration(
             color: Colors.black.withOpacity(0.8),
             borderRadius: BorderRadius.circular(8),
@@ -29,7 +29,7 @@ class AppSnackBar {
           ),
         ),
         duration: const Duration(seconds: 3),
-       // backgroundColor: AppColor.transparent,
+        // backgroundColor: AppColor.transparent,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
@@ -81,7 +81,7 @@ class AppSnackBar {
       isDismissible: true,
       shouldIconPulse: true,
       colorText: Colors.white,
-      backgroundColor:Colors.green,
+      backgroundColor: Colors.green,
       snackPosition: SnackPosition.BOTTOM,
       duration: const Duration(seconds: 3),
       margin: const EdgeInsets.all(20),

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+
 class BulletPoint extends StatelessWidget {
   final String title;
   final String description;
 
-  BulletPoint({required this.title, required this.description});
+  const BulletPoint(
+      {super.key, required this.title, required this.description});
 
   @override
   Widget build(BuildContext context) {
@@ -13,15 +15,15 @@ class BulletPoint extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("• ", style: TextStyle(fontSize: 16)),
+            const Text("• ", style: TextStyle(fontSize: 16)),
             Expanded(
               child: RichText(
                 text: TextSpan(
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                  style: const TextStyle(color: Colors.black, fontSize: 16),
                   children: [
                     TextSpan(
                       text: '$title ',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     TextSpan(text: description),
                   ],
@@ -30,7 +32,7 @@ class BulletPoint extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
       ],
     );
   }

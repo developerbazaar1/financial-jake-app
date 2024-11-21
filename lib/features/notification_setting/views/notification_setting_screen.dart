@@ -38,8 +38,8 @@ class NotificationSettingScreen extends StatelessWidget {
           children: [
             Obx(() => SwitchListTile(
                   trackOutlineColor:
-                      MaterialStateProperty.all(Colors.transparent),
-                  thumbColor: MaterialStateProperty.all(AppColor.white),
+                      WidgetStateProperty.all(Colors.transparent),
+                  thumbColor: WidgetStateProperty.all(AppColor.white),
                   inactiveThumbColor: AppColor.white,
                   inactiveTrackColor: AppColor.grey.withOpacity(0.35),
                   activeColor: AppColor.white,
@@ -64,8 +64,8 @@ class NotificationSettingScreen extends StatelessWidget {
                 )),
             Obx(() => SwitchListTile(
                   trackOutlineColor:
-                      MaterialStateProperty.all(Colors.transparent),
-                  thumbColor: MaterialStateProperty.all(AppColor.white),
+                      WidgetStateProperty.all(Colors.transparent),
+                  thumbColor: WidgetStateProperty.all(AppColor.white),
                   inactiveThumbColor: AppColor.white,
                   inactiveTrackColor: AppColor.grey.withOpacity(0.35),
                   activeColor: AppColor.white,
@@ -90,8 +90,8 @@ class NotificationSettingScreen extends StatelessWidget {
                 )),
             Obx(() => SwitchListTile(
                   trackOutlineColor:
-                      MaterialStateProperty.all(Colors.transparent),
-                  thumbColor: MaterialStateProperty.all(AppColor.white),
+                      WidgetStateProperty.all(Colors.transparent),
+                  thumbColor: WidgetStateProperty.all(AppColor.white),
                   inactiveThumbColor: AppColor.white,
                   inactiveTrackColor: AppColor.grey.withOpacity(0.35),
                   activeColor: AppColor.white,
@@ -118,6 +118,5 @@ class NotificationSettingScreen extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

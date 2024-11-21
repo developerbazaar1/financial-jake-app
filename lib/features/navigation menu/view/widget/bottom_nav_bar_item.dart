@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_list.dart';
-import '../../../../core/constant/app_sizer.dart';
 import '../../../../theme/theme_helper.dart';
 import '../../../navigation%20menu/controller/navigation_menu_controller.dart';
 
@@ -51,24 +50,20 @@ class BottomNavBarItem extends StatelessWidget {
                         style: theme.textTheme.labelMedium?.copyWith(
                           fontSize: width * 0.031,
                           fontWeight: FontWeight.w400,
-                          color:
-                              isSelected ? AppColor.white : AppColor.grey,
+                          color: isSelected ? AppColor.white : AppColor.grey,
                         ),
                       ),
                       textDirection: TextDirection.ltr,
                     )..layout();
 
                     final textWidth = textPainter.size.width;
-                    Text(
-                        AppList.bottomBarItems[index].title,
+                    Text(AppList.bottomBarItems[index].title,
                         style: theme.textTheme.labelMedium?.copyWith(
                           fontSize: width * 0.031,
                           // fontSize: AppSizer.fontSize12,
                           fontWeight: FontWeight.w400,
-                          color:
-                              isSelected ? AppColor.white : AppColor.grey,
+                          color: isSelected ? AppColor.white : AppColor.grey,
                         ));
-
 
                     return Column(
                       children: [
@@ -82,10 +77,11 @@ class BottomNavBarItem extends StatelessWidget {
                         ),
                         SizedBox(height: height * 0.005),
                         Container(
-                          width: isSelected ? textWidth : textWidth * 0.8, // Adjust this factor if needed
+                          width: isSelected
+                              ? textWidth
+                              : textWidth * 0.8, // Adjust this factor if needed
                           height: 3,
                           color: isSelected ? AppColor.white : Colors.white,
-
                         ),
                       ],
                     );

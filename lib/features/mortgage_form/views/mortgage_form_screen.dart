@@ -1,5 +1,4 @@
 import 'package:financial_wellbeing/core/components/text/heading_text.dart';
-import 'package:financial_wellbeing/core/routes/route_constant.dart';
 import 'package:financial_wellbeing/features/mortgage_form/controllers/mortgage_form_controller.dart';
 import 'package:financial_wellbeing/features/sign_up/views/widgets/textfeild.dart';
 import 'package:flutter/material.dart';
@@ -87,21 +86,12 @@ class MortgageFormScreen extends StatelessWidget {
             CW.commonElevatedButton(
                 height: height * 0.05,
                 width: width,
-
                 onPressed: () {},
                 child: Text(
                   "Next",
                   style: theme.textTheme.bodyLarge?.copyWith(
                       fontSize: width * 0.041, fontWeight: FontWeight.w600),
                 )),
-
-                onPressed: (){
-                context.pushNamed(RouteConstants.mortgageDetailsScreen);
-                }, child: Text(
-              "Next",
-              style: theme.textTheme.bodyLarge?.copyWith(fontSize: width* 0.041,fontWeight: FontWeight.w600),
-            )),
-
             SizedBox(height: height * 0.05),
           ],
         ),
@@ -133,7 +123,7 @@ class MortgageFormScreen extends StatelessWidget {
                     DropdownMenuItem(value: option, child: Text(option)))
                 .toList(),
             dropdownColor: AppColor.secondary,
-            icon: Icon(Icons.keyboard_arrow_down),
+            icon: const Icon(Icons.keyboard_arrow_down),
             style:
                 theme.textTheme.bodyMedium?.copyWith(fontSize: width * 0.036),
             decoration: InputDecoration(

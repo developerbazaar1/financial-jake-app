@@ -1,4 +1,3 @@
-import 'package:financial_wellbeing/core/constant/app_svg.dart';
 import 'package:financial_wellbeing/features/sign_up/views/widgets/heading_text.dart';
 import 'package:financial_wellbeing/features/sign_up/views/widgets/social_media.dart';
 import 'package:financial_wellbeing/features/sign_up/views/widgets/textfeild.dart';
@@ -18,6 +17,8 @@ import '../../controllers/signup_controller.dart';
 class SignUpScreen extends StatelessWidget {
   final SignUpController controller = Get.put(SignUpController());
 
+  const SignUpScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -32,16 +33,16 @@ class SignUpScreen extends StatelessWidget {
           top: height * 0.15,
           bottom: height * 0.08,
         ),
-        child: SingleChildScrollView(
+        child: const SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const HeadingSubheadingText(
+              HeadingSubheadingText(
                 heading: 'Sign Up',
                 subheading: 'Create a new account',
               ),
               SocialMedia(),
-              const OrText(
+              OrText(
                 text: 'Create account manually',
               ),
               SignUpForm(),
@@ -207,7 +208,7 @@ class SignUpForm extends StatelessWidget {
             validator: (value) => Validator.isNameValid(value: value),
             readOnly: true,
             suffixIcon: IconButton(
-              icon: Icon(Icons.calendar_today, color: Colors.white),
+              icon: const Icon(Icons.calendar_today, color: Colors.white),
               onPressed: () async {
                 DateTime? pickedDate = await showDatePicker(
                   builder: (BuildContext context, Widget? child) {

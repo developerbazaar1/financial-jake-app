@@ -24,9 +24,9 @@ class Validator {
   }
 
   static String? isNumberValid({required String? value}) {
-  //  String pattern = r'^\+[1-9]\d{1,14}$';
+    //  String pattern = r'^\+[1-9]\d{1,14}$';
     String pattern = r'^[6-9]\d{9}$';
-    RegExp regExp = new RegExp(pattern);
+    RegExp regExp = RegExp(pattern);
     if (value == null || value.isEmpty) {
       return 'Please enter phone number';
     } else if (!regExp.hasMatch(value)) {

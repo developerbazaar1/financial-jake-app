@@ -17,9 +17,9 @@ class IconValue extends StatelessWidget {
     return Container(
         height: height * 0.06,
         width: width * 0.14,
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         decoration:
-        BoxDecoration(shape: BoxShape.circle, color: AppColor.borderColor),
+            BoxDecoration(shape: BoxShape.circle, color: AppColor.borderColor),
         child: SvgPicture.asset(iconPath,
             height: height * 0.05, color: AppColor.lightGrey));
   }

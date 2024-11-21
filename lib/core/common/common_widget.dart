@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart' as cupertino;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 
 import '../../theme/theme_helper.dart';
 import '../constant/app_colors.dart';
@@ -153,7 +152,7 @@ class CW {
             borderRadius: BorderRadius.circular(borderRadius ?? 5)),
         errorBorder: OutlineInputBorder(
             borderSide: wantBorder
-                ? BorderSide(color: Colors.red, width: 2)
+                ? const BorderSide(color: Colors.red, width: 2)
                 : BorderSide.none,
             borderRadius: BorderRadius.circular(borderRadius ?? 5)),
       ),
@@ -251,7 +250,7 @@ class CW {
             borderRadius: BorderRadius.circular(borderRadius ?? 5)),
         errorBorder: OutlineInputBorder(
             borderSide: wantBorder
-                ? BorderSide(color: Colors.red, width: 2)
+                ? const BorderSide(color: Colors.red, width: 2)
                 : BorderSide.none,
             borderRadius: BorderRadius.circular(borderRadius ?? 5)),
       ),

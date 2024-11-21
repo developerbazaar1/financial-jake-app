@@ -1,15 +1,13 @@
-import 'dart:ui' as ui;
-import 'dart:ui';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 // This functions are responsible to make UI responsive across all the mobile devices.
 
-
-final double physicalHeight = WidgetsBinding.instance.platformDispatcher.views.first.physicalSize.height;
-final double physicalWidth = WidgetsBinding.instance.platformDispatcher.views.first.physicalSize.width;
-final MediaQueryData mediaQueryData = MediaQueryData.fromView(WidgetsBinding.instance.platformDispatcher.views.first);
+final double physicalHeight =
+    WidgetsBinding.instance.platformDispatcher.views.first.physicalSize.height;
+final double physicalWidth =
+    WidgetsBinding.instance.platformDispatcher.views.first.physicalSize.width;
+final MediaQueryData mediaQueryData = MediaQueryData.fromView(
+    WidgetsBinding.instance.platformDispatcher.views.first);
 
 // These are the Viewport values of your Figma Design.
 // These are used in the code as a reference to create your UI Responsively.
@@ -53,6 +51,6 @@ extension ResponsiveExtension on num {
 extension FormatExtension on double {
   /// Return a [double] value with formatted according to provided fractionDigits
   double toDoubleValue({int fractionDigits = 2}) {
-    return double.parse(this.toStringAsFixed(fractionDigits));
+    return double.parse(toStringAsFixed(fractionDigits));
   }
 }

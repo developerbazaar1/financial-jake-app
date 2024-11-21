@@ -13,6 +13,8 @@ class MortgageAssessmentScreen extends StatelessWidget {
   final MortgageAssessmentController controller =
       Get.put(MortgageAssessmentController());
 
+  const MortgageAssessmentScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -31,31 +33,26 @@ class MortgageAssessmentScreen extends StatelessWidget {
           children: [
             // Header Section
             _headerSection(context),
-            SizedBox(height: height* 0.008),
+            SizedBox(height: height * 0.008),
 
-            Text('Name: My Home Mortgage',style: theme.textTheme.bodyLarge?.copyWith(
-              fontSize: width* 0.041,
-              color: AppColor.lightGrey
-            ),),
-            SizedBox(height: height* 0.01),
-            // Description
-             Text(
-              "After analyzing your current mortgage and financial situation, we recommend exploring the following mortgage products. These products offer competitive interest rates, favorable terms, and significant savings opportunities.",
-              style:theme.textTheme.bodySmall?.copyWith(
-                color: AppColor.lightGrey,
-                fontSize: width* 0.031
-              )
-
+            Text(
+              'Name: My Home Mortgage',
+              style: theme.textTheme.bodyLarge?.copyWith(
+                  fontSize: width * 0.041, color: AppColor.lightGrey),
             ),
-            SizedBox(height: height* 0.025),
-             Text(
+            SizedBox(height: height * 0.01),
+            // Description
+            Text(
+                "After analyzing your current mortgage and financial situation, we recommend exploring the following mortgage products. These products offer competitive interest rates, favorable terms, and significant savings opportunities.",
+                style: theme.textTheme.bodySmall?.copyWith(
+                    color: AppColor.lightGrey, fontSize: width * 0.031)),
+            SizedBox(height: height * 0.025),
+            Text(
               "Available Products",
               style: theme.textTheme.headlineSmall?.copyWith(
-
-                  fontSize: width* 0.056,
-                  fontWeight: FontWeight.w600),
+                  fontSize: width * 0.056, fontWeight: FontWeight.w600),
             ),
-            SizedBox(height: height* 0.02),
+            SizedBox(height: height * 0.02),
             // Products List
             Obx(() => ListView.builder(
                   physics: const NeverScrollableScrollPhysics(),

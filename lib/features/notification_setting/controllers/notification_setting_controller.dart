@@ -1,8 +1,6 @@
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 class NotificationSettingController extends GetxController {
-
   var isPushNotificationsEnabled = false.obs;
   var isActiveJobsEnabled = false.obs;
   var isBookingConfirmationEnabled = false.obs;
@@ -19,12 +17,4 @@ class NotificationSettingController extends GetxController {
   void toggleBookingConfirmations(bool value) {
     isBookingConfirmationEnabled.value = value;
   }
-
-  @override
-  void onInit() {
-    super.onInit();
-
-  }
-
-
 }

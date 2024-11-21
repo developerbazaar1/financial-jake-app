@@ -1,11 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/routes/route_constant.dart';
-import '../../../data/data sources/local/storage_utility.dart';
-import '../../../data/repositories/auth_repository.dart';
 
 class SplashController extends GetxController {
   final deviceStorage = GetStorage();
@@ -29,7 +26,7 @@ class SplashController extends GetxController {
 
   // Pass GoRouter to this function instead of using context directly
   Future<void> manageSession(GoRouter router) async {
-    await Future.delayed(Duration(seconds: 2)); // optional delay
+    await Future.delayed(const Duration(seconds: 2)); // optional delay
 
     //final user = FirebaseAuth.instance.currentUser;
 

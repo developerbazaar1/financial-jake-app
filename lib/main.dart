@@ -1,9 +1,5 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'core/routes/app_routes.dart';
-import 'core/utils/initial_bindings.dart';
-import 'data/repositories/auth_repository.dart';
-import 'firebase_options.dart';
 import 'theme/theme_helper.dart';
 
 void main() async {

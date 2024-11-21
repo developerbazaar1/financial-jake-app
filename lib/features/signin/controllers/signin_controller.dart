@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/routes/route_constant.dart';
 
 class SignInController extends GetxController {
-  static SignInController get instance=>Get.find();
+  static SignInController get instance => Get.find();
 
   RxBool isPasswordVisible = false.obs;
   RxBool isPasswordIconVisible = false.obs;
@@ -15,8 +14,6 @@ class SignInController extends GetxController {
   //final userRepository = Get.put(UserRepository());
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
-
 
   void clickOnSignIn(BuildContext context) async {
     try {
@@ -45,8 +42,7 @@ class SignInController extends GetxController {
       }
       emailController.text = '';
       passwordController.text = '';
-      context
-          .pushReplacementNamed(RouteConstants.notificationPermissionScreen);
+      context.pushReplacementNamed(RouteConstants.notificationPermissionScreen);
       FocusScope.of(context).unfocus();
 
       // // Privacy Policy Check
@@ -123,8 +119,9 @@ class SignInController extends GetxController {
       isLoading.value = false;
 
       // Show Success Message
-      SnackBar(content: Text('Please verify your email address.'),);
-
+      const SnackBar(
+        content: Text('Please verify your email address.'),
+      );
 
       // Move to Verify Email Screen
       // Get.to(() => VerifyEmailScreen(email: emailController.text.trim()));
@@ -135,18 +132,19 @@ class SignInController extends GetxController {
       //CM.showSnackBar(message: e.toString());
       print(e.toString());
       print("Stacktrace: $stacktrace");
-      SnackBar(content: Text(e.toString()),);
+      SnackBar(
+        content: Text(e.toString()),
+      );
       //  showSnackBar(context, e.toString(), isError: true);
-
-
 
       throw Exception(e.toString());
     }
   }
+
   @override
   void dispose() {
-emailController.clear();
-passwordController.clear();
+    emailController.clear();
+    passwordController.clear();
     super.dispose();
   }
 }

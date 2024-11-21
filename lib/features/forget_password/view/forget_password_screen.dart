@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../core/common/common_widget.dart';
 import '../../../core/components/appbar/inner_app_bar.dart';
-import '../../../core/components/auth/heading_text.dart';
-import '../../../core/components/image/custom_image_view.dart';
 import '../../../core/constant/app_colors.dart';
-import '../../../core/constant/app_sizer.dart';
-import '../../../core/constant/app_svg.dart';
 import '../../../core/constant/app_text.dart';
-import '../../../core/routes/route_constant.dart';
 import '../../../core/validator/validator.dart';
 import '../../../theme/theme_helper.dart';
 import '../controller/forget_password_controller.dart';
@@ -19,15 +12,16 @@ import '../controller/forget_password_controller.dart';
 class ForgetPasswordScreen extends GetView<ForgetPasswordController> {
   ForgetPasswordScreen({super.key});
 
+  @override
   final controller = Get.put(ForgetPasswordController());
 
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    return Obx((){
+    return Obx(() {
       return Scaffold(
-          backgroundColor: theme.colorScheme.background,
+          backgroundColor: theme.colorScheme.surface,
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(height * 0.08),
             child: InnerAppBar(
@@ -68,9 +62,9 @@ class ForgetPasswordScreen extends GetView<ForgetPasswordController> {
                         onTap: () {
                           //controller.togglePasswordFieldVisibility();
                         },
-                        prefixIcon: Padding(
-                          padding: const EdgeInsets.all(
-                              12.0), // Adjust padding if needed
+                        prefixIcon: const Padding(
+                          padding:
+                              EdgeInsets.all(12.0), // Adjust padding if needed
                           // child: SvgPicture.asset(
                           //   AppSvg.email,
                           //   color: AppColor.black,
@@ -100,9 +94,8 @@ class ForgetPasswordScreen extends GetView<ForgetPasswordController> {
 
                         // filled: true,
                         fillColor: Colors.white,
-                        style: theme.textTheme.bodyMedium?.copyWith(
-                            fontSize: width * 0.036
-                        ),
+                        style: theme.textTheme.bodyMedium
+                            ?.copyWith(fontSize: width * 0.036),
                         borderRadius: 10,
                         validator: (value) =>
                             Validator.isEmailValid(value: value),
@@ -115,32 +108,30 @@ class ForgetPasswordScreen extends GetView<ForgetPasswordController> {
                       SizedBox(
                         height: height * 0.03,
                       ),
-                      controller.isLoading.value?
-                          Center(child: CircularProgressIndicator(),)
-                          :CW.commonElevatedButton(
-
-                          width: width,
-                          height: height * 0.05,
-                          onPressed: () {
-                            controller.clickOnSubmit(context);
-
-                          },
-                          child: Text(
-                            AppText.resetPassword,
-                            style: theme.textTheme.titleMedium?.copyWith(
-                              color: Colors.white,
-                              fontSize: width * 0.046,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          )),
+                      controller.isLoading.value
+                          ? const Center(
+                              child: CircularProgressIndicator(),
+                            )
+                          : CW.commonElevatedButton(
+                              width: width,
+                              height: height * 0.05,
+                              onPressed: () {
+                                controller.clickOnSubmit(context);
+                              },
+                              child: Text(
+                                AppText.resetPassword,
+                                style: theme.textTheme.titleMedium?.copyWith(
+                                  color: Colors.white,
+                                  fontSize: width * 0.046,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              )),
                     ],
                   ),
                 )
-
               ],
             ),
           ));
     });
-
   }
 }

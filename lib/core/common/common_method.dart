@@ -4,17 +4,13 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 
-
-import '../../theme/theme_helper.dart';
 import '../constant/app_colors.dart';
 
 class CM {
-
-  static TextTheme textTheme  = TextTheme();
+  static TextTheme textTheme = const TextTheme();
   //? -- Usefull Do not Remove
   ///  flutter pub add internet_connection_checker -- For Check Internet
   // static Future<bool> internetConnectionCheckerMethod() async {
@@ -39,14 +35,17 @@ class CM {
   }
 
   ///FOR SHOW SNACKBAR required flutter pub add responsive_sizer
-  static void showSnackBar({required BuildContext context,required String message, Duration? duration}) {
+  static void showSnackBar(
+      {required BuildContext context,
+      required String message,
+      Duration? duration}) {
     var snackBar = SnackBar(
       elevation: .4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       content: Text(
         message,
-
-        style: textTheme.bodyMedium!.copyWith(color: AppColor.white,fontWeight: FontWeight.bold),
+        style: textTheme.bodyMedium!
+            .copyWith(color: AppColor.white, fontWeight: FontWeight.bold),
       ),
       backgroundColor: AppColor.darkGrey,
       margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
@@ -88,6 +87,7 @@ class CM {
       return 'just now';
     }
   }
+
   /// convert string into list
   static List<String> ConvertList(String inputString) {
     // Remove the square brackets
@@ -95,7 +95,7 @@ class CM {
 
     // Split the string by comma
     List<String> stringList =
-    trimmedString.split(',').map((e) => e.trim()).toList();
+        trimmedString.split(',').map((e) => e.trim()).toList();
 
     // Print the resulting list
     return stringList;
@@ -306,8 +306,7 @@ class ListScrollBehaviour extends ScrollBehavior {
 }
 
 class MySeparator extends StatelessWidget {
-  const MySeparator({Key? key, this.height = 1, this.color = Colors.black})
-      : super(key: key);
+  const MySeparator({super.key, this.height = 1, this.color = Colors.black});
   final double height;
   final Color color;
 

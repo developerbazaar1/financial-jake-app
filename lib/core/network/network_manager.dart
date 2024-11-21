@@ -16,14 +16,14 @@ class NetworkManager extends GetxController {
   void onInit() {
     super.onInit();
     isConnected();
-    _connectivitySubscription = _connectivity.onConnectivityChanged.listen((event) {
+    _connectivitySubscription =
+        _connectivity.onConnectivityChanged.listen((event) {
       if (event is ConnectivityResult) {
         _updateConnectionStatus(event as ConnectivityResult);
-      } else if (event is List<ConnectivityResult>) {
+      } else
         for (var result in event) {
           _updateConnectionStatus(result);
         }
-      }
     });
   }
 

@@ -6,7 +6,7 @@ import '../../../core/constant/app_colors.dart';
 import '../../../theme/theme_helper.dart';
 
 class CustomerSupport extends StatelessWidget {
-  CustomerSupport({super.key});
+  const CustomerSupport({super.key});
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

@@ -17,6 +17,8 @@ class MortgageDetailsScreen extends StatelessWidget {
   final MortgageDetailsController controller =
       Get.put(MortgageDetailsController());
 
+  MortgageDetailsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -33,7 +35,7 @@ class MortgageDetailsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            HeadingText(text: 'My Mortgage \nDetails'),
+            const HeadingText(text: 'My Mortgage \nDetails'),
             SizedBox(height: height * 0.025),
             Obx(
               () => Container(
@@ -72,7 +74,7 @@ class MortgageDetailsScreen extends StatelessWidget {
                       label: "Date Filled:",
                       value: controller.dateFilled.value,
                     ),
-                    SizedBox(width: width * 0.75, child: CommonDivider()),
+                    SizedBox(width: width * 0.75, child: const CommonDivider()),
                     SizedBox(height: height * 0.001),
                     DetailsRow(
                       label: "Loan Institution:",
@@ -138,8 +140,7 @@ class MortgageDetailsScreen extends StatelessWidget {
             CW.commonElevatedButton(
               buttonColor: AppColor.secondary,
               onPressed: () {
-                context.pushReplacementNamed(
-                    RouteConstants.mortgageFormScreen);
+                context.pushReplacementNamed(RouteConstants.mortgageFormScreen);
               },
               height: height * 0.065,
               width: width,
@@ -151,7 +152,6 @@ class MortgageDetailsScreen extends StatelessWidget {
                 ),
               ),
             ),
-
             SizedBox(height: height * 0.028),
             CW.commonElevatedButton(
               onPressed: () {
@@ -168,14 +168,11 @@ class MortgageDetailsScreen extends StatelessWidget {
                   fontSize: width * 0.046,
                 ),
               ),
-
             ),
             SizedBox(height: height * 0.05),
-
           ],
         ),
       ),
     );
   }
 }
-

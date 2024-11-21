@@ -1,15 +1,11 @@
 import 'package:financial_wellbeing/core/constant/app_images.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/common/common_widget.dart';
 import '../../../core/constant/app_colors.dart';
 
-import '../../../core/constant/app_sizer.dart';
-import '../../../core/constant/app_text.dart';
 import '../../../core/routes/route_constant.dart';
 import '../../../core/utils/size_utils.dart';
 import '../../../theme/theme_helper.dart';

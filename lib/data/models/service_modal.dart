@@ -9,16 +9,16 @@ class ServiceModal {
     if (json['services'] != null) {
       services = <Services>[];
       json['services'].forEach((v) {
-        services!.add(new Services.fromJson(v));
+        services!.add(Services.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['category_name'] = this.categoryName;
-    if (this.services != null) {
-      data['services'] = this.services!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['category_name'] = categoryName;
+    if (services != null) {
+      data['services'] = services!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -34,11 +34,11 @@ class Services {
 
   Services(
       {this.image,
-        this.serviceName,
-        this.rating,
-        this.totalReview,
-        this.address,
-        this.distance});
+      this.serviceName,
+      this.rating,
+      this.totalReview,
+      this.address,
+      this.distance});
 
   Services.fromJson(Map<String, dynamic> json) {
     image = json['image'];
@@ -50,13 +50,13 @@ class Services {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['image'] = this.image;
-    data['service_name'] = this.serviceName;
-    data['rating'] = this.rating;
-    data['total_review'] = this.totalReview;
-    data['address'] = this.address;
-    data['distance'] = this.distance;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['image'] = image;
+    data['service_name'] = serviceName;
+    data['rating'] = rating;
+    data['total_review'] = totalReview;
+    data['address'] = address;
+    data['distance'] = distance;
     return data;
   }
 }

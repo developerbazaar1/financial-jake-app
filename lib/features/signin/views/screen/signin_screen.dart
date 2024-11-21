@@ -1,4 +1,3 @@
-import 'package:financial_wellbeing/core/components/appbar/filter_appbar.dart';
 import 'package:financial_wellbeing/core/routes/route_constant.dart';
 import 'package:financial_wellbeing/features/sign_up/views/widgets/social_media.dart';
 import 'package:flutter/material.dart';
@@ -7,15 +6,15 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/common/common_widget.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../theme/theme_helper.dart';
-import '../../../sign_up/controllers/signup_controller.dart';
 import '../../../sign_up/views/screen/signup_screen.dart';
 import '../../../sign_up/views/widgets/heading_text.dart';
-import '../../../sign_up/views/widgets/textfeild.dart';
 import '../../controllers/signin_controller.dart';
 import '../widgets/signin_form.dart';
 
 class SignInScreen extends StatelessWidget {
   final SignInController controller = Get.put(SignInController());
+
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +35,14 @@ class SignInScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const HeadingSubheadingText(
-                  heading: 'Welcome Back', subheading: 'Sign in to your Account'),
+                  heading: 'Welcome Back',
+                  subheading: 'Sign in to your Account'),
               const SocialMedia(),
               const OrText(
                 text: 'Enter credentials manually',
               ),
               const SignForm(),
-               ForgetPassword(),
+              ForgetPassword(),
               SingInButton(),
             ],
           ),
@@ -118,7 +118,7 @@ class SingInButton extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: width * 0.02),
+      padding: EdgeInsets.symmetric(horizontal: width * 0.02),
       child: Column(
         children: [
           SizedBox(height: height * 0.015),
@@ -147,10 +147,11 @@ class SingInButton extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Center(
-                    child: Text(   'Don’t have an account? ',
+                    child: Text('Don’t have an account? ',
                         textAlign: TextAlign.center,
                         style: theme.textTheme.bodyLarge!.copyWith(
-                            fontSize: width * 0.041, color: AppColor.lightGrey)),
+                            fontSize: width * 0.041,
+                            color: AppColor.lightGrey)),
                   ),
                   SizedBox(
                     width: width * 0.01,
@@ -183,7 +184,6 @@ class SingInButton extends StatelessWidget {
               ),
             ],
           ),
-
         ],
       ),
     );
@@ -191,10 +191,10 @@ class SingInButton extends StatelessWidget {
 }
 
 class ForgetPassword extends StatelessWidget {
-   ForgetPassword({
+  ForgetPassword({
     super.key,
   });
-final controller = SignInController.instance;
+  final controller = SignInController.instance;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -204,7 +204,7 @@ final controller = SignInController.instance;
           controller.emailController.text = '';
           controller.passwordController.text = '';
           FocusScope.of(context).unfocus();
-         context.pushReplacementNamed(RouteConstants.otp);
+          context.pushReplacementNamed(RouteConstants.otp);
         },
         child: Text(
           'Forgot Password?',

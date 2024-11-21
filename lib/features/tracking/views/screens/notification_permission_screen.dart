@@ -7,6 +7,7 @@ import '../../../../core/constant/app_images.dart';
 import '../../../../core/routes/route_constant.dart';
 import '../../../../theme/theme_helper.dart';
 import '../../../sign_up/views/widgets/heading_text.dart';
+
 class NotificationPermissionScreen extends StatelessWidget {
   const NotificationPermissionScreen({super.key});
 
@@ -39,10 +40,10 @@ class NotificationPermissionScreen extends StatelessWidget {
               children: [
                 SizedBox(height: height * 0.1),
                 // Heading and subheading
-                HeadingSubheadingText(
+                const HeadingSubheadingText(
                   heading: 'Enable Notifications',
                   subheading:
-                  'The moment we find a savings opportunity, we’ll notify you—don’t miss out.',
+                      'The moment we find a savings opportunity, we’ll notify you—don’t miss out.',
                 ),
                 const Spacer(),
 
@@ -68,9 +69,7 @@ class NotificationPermissionScreen extends StatelessWidget {
                 CW.commonElevatedButton(
                   buttonColor: AppColor.secondary,
                   onPressed: () {
-                    context
-                        .pushReplacementNamed(RouteConstants.trackingScreen);
-
+                    context.pushReplacementNamed(RouteConstants.trackingScreen);
                   },
                   height: height * 0.065,
                   width: width,

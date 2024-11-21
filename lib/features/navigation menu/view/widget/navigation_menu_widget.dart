@@ -1,6 +1,4 @@
-import 'package:financial_wellbeing/theme/theme_helper.dart';
 import 'package:flutter/material.dart';
-
 
 import '../../../../core/constant/app_colors.dart';
 import '../../../navigation%20menu/view/widget/bottom_nav_bar_item.dart';
@@ -16,10 +14,10 @@ class NavigationMenu extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: AppColor.secondary,
-
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05), // Adjust shadow color and opacity as needed
+            color: Colors.black
+                .withOpacity(0.05), // Adjust shadow color and opacity as needed
             spreadRadius: 1,
             blurRadius: 1,
             offset: const Offset(0, -1.5), // Position the shadow above the bar
@@ -37,13 +35,16 @@ class NavigationMenu extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(100)),
           ),
         ),
-        padding: EdgeInsets.only(top: height * 0.02,),
+        padding: EdgeInsets.only(
+          top: height * 0.02,
+        ),
         height: height * 0.1,
         notchMargin: 8,
-        color: Colors.transparent, // Make the BottomAppBar color transparent to avoid hiding the shadow
-        child: Row(
+        color: Colors
+            .transparent, // Make the BottomAppBar color transparent to avoid hiding the shadow
+        child: const Row(
           children: [
-            const Expanded(
+            Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -51,7 +52,6 @@ class NavigationMenu extends StatelessWidget {
                   BottomNavBarItem(index: 1),
                   BottomNavBarItem(index: 2),
                   BottomNavBarItem(index: 3),
-
                 ],
               ),
             ),

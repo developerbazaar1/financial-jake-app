@@ -24,7 +24,7 @@ class AppRouter {
     GoRoute(
       name: RouteConstants.initialRoute,
       path: AppRoutes.initialRoute,
-      builder: (context, state) => SplashScreen(),
+      builder: (context, state) => const SplashScreen(),
     ),
     GoRoute(
       name: RouteConstants.onboardingScreen,
@@ -34,22 +34,22 @@ class AppRouter {
     GoRoute(
       name: RouteConstants.createAccount,
       path: AppRoutes.createAccount,
-      builder: (context, state) => CreateAccountScreen(),
+      builder: (context, state) => const CreateAccountScreen(),
     ),
     GoRoute(
       name: RouteConstants.signupScreen,
       path: AppRoutes.signupScreen,
-      builder: (context, state) => SignUpScreen(),
+      builder: (context, state) => const SignUpScreen(),
     ),
     GoRoute(
       name: RouteConstants.signinScreen,
       path: AppRoutes.signinScreen,
-      builder: (context, state) => SignInScreen(),
+      builder: (context, state) => const SignInScreen(),
     ),
     GoRoute(
       name: RouteConstants.otp,
       path: AppRoutes.otp,
-      builder: (context, state) => OtpScreen(),
+      builder: (context, state) => const OtpScreen(),
     ),
     GoRoute(
       name: RouteConstants.resetPassword,
@@ -115,7 +115,7 @@ class AppRouter {
     GoRoute(
       path: AppRoutes.customersupport,
       name: RouteConstants.customersupport,
-      builder: (context, state) => CustomerSupport(),
+      builder: (context, state) => const CustomerSupport(),
     ),
   ]);
 }

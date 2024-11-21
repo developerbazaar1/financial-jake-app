@@ -3,11 +3,8 @@ import 'package:financial_wellbeing/features/product/views/product_screen.dart';
 import 'package:financial_wellbeing/features/settings/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 import '../../home_screen/views/home_screen.dart';
-
 
 class NavigationMenuController extends GetxController {
   static NavigationMenuController get instance => Get.find();
@@ -24,7 +21,7 @@ class NavigationMenuController extends GetxController {
     Future.microtask(() {
       pageController.jumpToPage(index);
     });
-  //  pageController.jumpToPage(index); // Ensure the page view also updates
+    //  pageController.jumpToPage(index); // Ensure the page view also updates
   }
 
   @override
@@ -32,7 +29,6 @@ class NavigationMenuController extends GetxController {
     super.onInit();
     selectedIndex.value = preferredIndex ?? 0;
     pageController = PageController(initialPage: selectedIndex.value);
-
   }
 
   @override
@@ -55,9 +51,8 @@ class NavigationMenuController extends GetxController {
   // Screens
   List<Widget> pages = [
     Homescreen(),
-    ProductScreen(),
-    EquityScreen(),
-    SettingsScreen(),
-
+    const ProductScreen(),
+    const EquityScreen(),
+    const SettingsScreen(),
   ];
 }

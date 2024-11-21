@@ -7,6 +7,8 @@ import '../../../core/routes/route_constant.dart';
 import '../../../theme/theme_helper.dart';
 
 class CreateAccountScreen extends StatelessWidget {
+  const CreateAccountScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.sizeOf(context).height;
@@ -84,34 +86,32 @@ class CreateAccountScreen extends StatelessWidget {
             ),
             SizedBox(height: height * 0.1),
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal:width*0.04),
+              padding: EdgeInsets.symmetric(horizontal: width * 0.04),
               child: Text(
                 'You’re a few questions away from financial peace of mind.',
                 textAlign: TextAlign.center,
-
                 style: theme.textTheme.headlineSmall?.copyWith(
-                  fontSize: width * 0.051,
-                 fontWeight: FontWeight.w500
-                ),
+                    fontSize: width * 0.051, fontWeight: FontWeight.w500),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 CW.commonElevatedButton(
-                    onPressed: (){
+                    onPressed: () {
                       context.pushReplacementNamed(RouteConstants.signupScreen);
                     },
-                    height: height* 0.06,
+                    height: height * 0.06,
                     width: width,
-                    child: Text('Create Account',style: theme.textTheme.bodyLarge?.copyWith(
-                      color: theme.primaryColor,
-                      fontWeight: FontWeight.w600,
-                      fontSize: width * 0.041,
-
-
-                    ),)),
+                    child: Text(
+                      'Create Account',
+                      style: theme.textTheme.bodyLarge?.copyWith(
+                        color: theme.primaryColor,
+                        fontWeight: FontWeight.w600,
+                        fontSize: width * 0.041,
+                      ),
+                    )),
                 SizedBox(
                   height: height * 0.012,
                 ),
@@ -123,9 +123,8 @@ class CreateAccountScreen extends StatelessWidget {
                       child: Text('Already have an account? ',
                           textAlign: TextAlign.center,
                           style: theme.textTheme.bodyLarge!.copyWith(
-                            fontSize: width * 0.041,
-                            color: AppColor.lightGrey
-                          )),
+                              fontSize: width * 0.041,
+                              color: AppColor.lightGrey)),
                     ),
                     SizedBox(
                       width: width * 0.01,
@@ -133,24 +132,23 @@ class CreateAccountScreen extends StatelessWidget {
                     TextButton(
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,
-                        minimumSize: Size(40, 30),
+                        minimumSize: const Size(40, 30),
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
                       onPressed: () {
-                        context.pushReplacementNamed(RouteConstants.signinScreen);
+                        context
+                            .pushReplacementNamed(RouteConstants.signinScreen);
                       },
                       child: Text(
                         'Login',
                         textAlign: TextAlign.center,
-
                         style: theme.textTheme.bodyLarge!.copyWith(
-                          fontSize: width * 0.041,
-                          color: AppColor.gold,
-                          fontWeight: FontWeight.w600,
-                          decorationStyle: TextDecorationStyle.solid,
-                          decoration: TextDecoration.underline,decorationColor: AppColor.gold
-                        ),
-
+                            fontSize: width * 0.041,
+                            color: AppColor.gold,
+                            fontWeight: FontWeight.w600,
+                            decorationStyle: TextDecorationStyle.solid,
+                            decoration: TextDecoration.underline,
+                            decorationColor: AppColor.gold),
                       ),
                     )
                   ],
@@ -160,14 +158,9 @@ class CreateAccountScreen extends StatelessWidget {
                 ),
               ],
             )
-
-
-
           ],
         ),
       ),
-
-
     );
   }
 
@@ -179,7 +172,7 @@ class CreateAccountScreen extends StatelessWidget {
       child: Row(
         children: [
           Container(
-              padding: EdgeInsets.all(2.5),
+              padding: const EdgeInsets.all(2.5),
               decoration: BoxDecoration(
                   shape: BoxShape.circle, color: AppColor.checkBgColor),
               child: Icon(

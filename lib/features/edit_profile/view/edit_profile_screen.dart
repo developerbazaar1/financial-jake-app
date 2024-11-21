@@ -94,7 +94,7 @@ class EditProfileScreen extends StatelessWidget {
                       hintText: 'Enter your Username',
                       keyboardType: TextInputType.phone,
                       // validator: (value) => Validator.isNumberValid(value: value),
-                      inputFormatters: [
+                      inputFormatters: const [
                         // FilteringTextInputFormatter.digitsOnly,
                         // LengthLimitingTextInputFormatter(10),
                       ],
@@ -107,7 +107,8 @@ class EditProfileScreen extends StatelessWidget {
                       // validator: (value) => Validator.isNameValid(value: value),
                       readOnly: true,
                       suffixIcon: IconButton(
-                        icon: Icon(Icons.calendar_today, color: Colors.white),
+                        icon: const Icon(Icons.calendar_today,
+                            color: Colors.white),
                         onPressed: () async {
                           DateTime? pickedDate = await showDatePicker(
                             builder: (BuildContext context, Widget? child) {

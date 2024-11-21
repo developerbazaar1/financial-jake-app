@@ -31,7 +31,6 @@ class ThemeHelper {
 
   /// Returns the lightCode colors for the current theme.
 
-
   /// Returns the current theme data.
   ThemeData _getThemeData() {
     var colorScheme = ColorSchemes.primaryColorScheme;
@@ -40,16 +39,15 @@ class ThemeHelper {
       useMaterial3: true,
       scaffoldBackgroundColor: AppColor.white,
       fontFamily: 'PlusJakartaSans',
-      appBarTheme: AppBarTheme(
-        backgroundColor:Color(0XFF0E1026),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: Color(0XFF0E1026),
       ),
       visualDensity: VisualDensity.standard,
       colorScheme: colorScheme,
       brightness: Brightness.dark,
-      primaryColor:  const Color(0XFF0E1026),
+      primaryColor: const Color(0XFF0E1026),
       primarySwatch: Colors.brown,
       textTheme: TextThemes.textTheme(colorScheme),
-
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: colorScheme.primary,
@@ -83,8 +81,8 @@ class ThemeHelper {
         ),
       ),
       radioTheme: RadioThemeData(
-        fillColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        fillColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return colorScheme.primary;
           }
           return AppColor.black.withOpacity(0.4);
@@ -95,8 +93,8 @@ class ThemeHelper {
         ),
       ),
       checkboxTheme: CheckboxThemeData(
-        fillColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        fillColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return colorScheme.primary;
           }
           return Colors.transparent;
@@ -110,10 +108,6 @@ class ThemeHelper {
           horizontal: -4,
         ),
       ),
-
-
-
-
     );
   }
 
@@ -128,13 +122,13 @@ class TextThemes {
   static TextTheme textTheme(ColorScheme colorScheme) => TextTheme(
         bodyLarge: TextStyle(
           color: AppColor.white,
-          fontSize: mediaQueryData.size.width * 0.041,//16
+          fontSize: mediaQueryData.size.width * 0.041, //16
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w400,
         ),
         bodyMedium: TextStyle(
           color: AppColor.white,
-          fontSize: mediaQueryData.size.width * 0.036,//14
+          fontSize: mediaQueryData.size.width * 0.036, //14
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w400,
         ),
@@ -158,7 +152,7 @@ class TextThemes {
         ),
         headlineSmall: TextStyle(
           color: AppColor.white,
-          fontSize: mediaQueryData.size.width * 0.051,//20
+          fontSize: mediaQueryData.size.width * 0.051, //20
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w700,
         ),
@@ -176,7 +170,7 @@ class TextThemes {
         ),
         titleLarge: TextStyle(
           color: AppColor.white,
-          fontSize: mediaQueryData.size.width * 0.046,//18
+          fontSize: mediaQueryData.size.width * 0.046, //18
           fontFamily: 'PlusJakartaSans',
           fontWeight: FontWeight.w500,
         ),
@@ -203,11 +197,9 @@ class ColorSchemes {
 
     inversePrimary: Color(0XFFBC976E),
     secondary: Color(0XFF1B1D35),
-    
-
 
     primaryContainer: Color(0XFFE8E8E8),
-    secondaryContainer:Color(0XFFAB7259),
+    secondaryContainer: Color(0XFFAB7259),
 
     // Error colors
     errorContainer: Color(0X2600AA5B),
@@ -216,8 +208,6 @@ class ColorSchemes {
     // On colors(text colors)
     onPrimary: Color(0XFF31334B),
 
-    background: Color(0XFF0E1026),
+    surface: Color(0XFF0E1026),
   );
 }
-
-
