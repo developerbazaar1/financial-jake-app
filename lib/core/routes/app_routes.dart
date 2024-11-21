@@ -1,6 +1,7 @@
 import 'package:financial_wellbeing/core/routes/route_constant.dart';
 import 'package:financial_wellbeing/features/mortgage_form/views/mortgage_form_screen.dart';
 import 'package:financial_wellbeing/features/notification_screen/views/notification_screen.dart';
+import 'package:financial_wellbeing/features/product_details/views/screen/product_details_screen.dart';
 import 'package:financial_wellbeing/features/reset_password/view/reset_password_screen.dart';
 import 'package:financial_wellbeing/features/sign_up/views/screen/signup_screen.dart';
 import 'package:financial_wellbeing/features/signin/views/screen/signin_screen.dart';
@@ -101,6 +102,14 @@ class AppRouter {
       path: AppRoutes.notificationscreen,
       name: RouteConstants.notificationscreen,
       builder: (context, state) => NotificationScreen(),
+
+    ),
+    GoRoute(
+
+      name: RouteConstants.mortgageDetailsScreen,
+      path: AppRoutes.mortgageDetailsScreen,
+      builder: (context, state) => MortgageDetailsScreen(),
+
     ),
     GoRoute(
       path: AppRoutes.editprofilescreen,
@@ -117,5 +126,17 @@ class AppRouter {
       name: RouteConstants.customersupport,
       builder: (context, state) => CustomerSupport(),
     ),
+
+    GoRoute(
+      name: RouteConstants.productDetailsScreen,
+      path: AppRoutes.productDetailsScreen,
+      builder: (context, state){
+  // Extract arguments from `state`
+
+  final int? index = state.extra as int?; // Optional extra argument
+  return ProductDetailsScreen(index: index, );}
+  ),
+
+
   ]);
 }
