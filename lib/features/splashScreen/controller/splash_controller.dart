@@ -1,18 +1,15 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:go_router/go_router.dart';
 
-
 import '../../../core/routes/route_constant.dart';
 import '../../../data/data sources/local/storage_utility.dart';
 import '../../../data/repositories/auth_repository.dart';
 
-
 class SplashController extends GetxController {
   final deviceStorage = GetStorage();
- // RegistrationController userController = Get.put(RegistrationController());
+  // RegistrationController userController = Get.put(RegistrationController());
 
   @override
   void onInit() {
@@ -56,18 +53,18 @@ class SplashController extends GetxController {
     //   } else {
     //     AuthRepository.instance.sendEmailVerification();
     //     await FirebaseAuth.instance.signOut();
-      //  router.pushReplacementNamed(RouteConstants.login);
+    //  router.pushReplacementNamed(RouteConstants.login);
     //   }
     // } else {
     //   bool isFirstTime = deviceStorage.read("isFirstTime") ?? true;
     //
     //   if (isFirstTime) {
-         router.pushReplacementNamed(RouteConstants.bottomNavigation);
+    router.pushReplacementNamed(RouteConstants.onboardingScreen);
     //   } else {
     //     router.pushReplacementNamed(RouteConstants.login);
     //   }
 
-      deviceStorage.writeIfNull("isFirstTime", true);
+    deviceStorage.writeIfNull("isFirstTime", true);
     //}
   }
 }

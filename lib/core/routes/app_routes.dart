@@ -9,6 +9,9 @@ import 'package:financial_wellbeing/features/signin/views/screen/signin_screen.d
 import 'package:financial_wellbeing/features/tracking/views/screens/tracking_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../features/customer_support/views/customer_support.dart';
+import '../../features/edit_profile/view/edit_profile_screen.dart';
+import '../../features/history/views/history_screen.dart';
 import '../../features/home_screen/views/home_screen.dart';
 import '../../features/navigation menu/view/screen/navigation_menu_screen.dart';
 import '../../features/notification_setting/views/notification_setting_screen.dart';
@@ -101,6 +104,21 @@ class AppRouter {
       path: AppRoutes.notificationscreen,
       name: RouteConstants.notificationscreen,
       builder: (context, state) => NotificationScreen(),
-    )
+    ),
+    GoRoute(
+      path: AppRoutes.editprofilescreen,
+      name: RouteConstants.editprofilescreen,
+      builder: (context, state) => EditProfileScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.historyscreen,
+      name: RouteConstants.historyscreen,
+      builder: (context, state) => HistoryScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.customersupport,
+      name: RouteConstants.customersupport,
+      builder: (context, state) => CustomerSupport(),
+    ),
   ]);
 }
