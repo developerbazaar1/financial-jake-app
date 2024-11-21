@@ -13,6 +13,8 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/common/common_widget.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../theme/theme_helper.dart';
+import '../widgets/dotted_lines.dart';
+import '../widgets/icon_value.dart';
 
 class AuthenticateScreen extends StatelessWidget {
   const AuthenticateScreen({Key? key}) : super(key: key);
@@ -68,19 +70,19 @@ class AuthenticateScreen extends StatelessWidget {
               text:
                   "Connect securely with your bank through Plaid for instant access to your mortgages, loans, and credit card details. It’s fast, easy, and safe—your credentials stay private, and you control what we access.",
             ),
-           SizedBox(height: height * 0.07),
-
-
+            SizedBox(height: height * 0.07),
 
             LayoutBuilder(
               builder: (BuildContext context, BoxConstraints constraints) {
-                final boxWidth = constraints.constrainWidth(); // Width of the container
+                final boxWidth =
+                    constraints.constrainWidth(); // Width of the container
                 const dashWidth = 6.0; // Width of each dash
-                final dashCount = (boxWidth / (2 * dashWidth)).floor(); // Total dashes
+                final dashCount =
+                    (boxWidth / (2 * dashWidth)).floor(); // Total dashes
                 final centerIndex = dashCount ~/ 2; // Index to center icons
 
                 return Padding(
-                  padding: EdgeInsets.symmetric(horizontal: width* 0.05),
+                  padding: EdgeInsets.symmetric(horizontal: width * 0.05),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -93,25 +95,33 @@ class AuthenticateScreen extends StatelessWidget {
                               BoxConstraints constraints) {
                             const dashWidth = 8.0;
                             const dashHeight = 6.0;
-                            final dashCount = (constraints.constrainWidth() / (1.5 * dashWidth)).floor();
+                            final dashCount = (constraints.constrainWidth() /
+                                    (1.5 * dashWidth))
+                                .floor();
 
                             return Column(
                               children: [
-                                DottedLines(dashCount: dashCount, dashWidth: dashWidth, dashHeight: dashHeight),
-                                SizedBox(height: height *0.005,),
-                                DottedLines(dashCount: dashCount,
-                                    dashWidth: dashWidth, dashHeight: dashHeight),
+                                DottedLines(
+                                    dashCount: dashCount,
+                                    dashWidth: dashWidth,
+                                    dashHeight: dashHeight),
+                                SizedBox(
+                                  height: height * 0.005,
+                                ),
+                                DottedLines(
+                                    dashCount: dashCount,
+                                    dashWidth: dashWidth,
+                                    dashHeight: dashHeight),
                               ],
                             );
                           },
                         ),
                       ),
                       // Middle Icon (Plaid Icon)
-                       SvgPicture.asset(
-                          AppSvg.plaid,
-                          height: height * 0.08,
-
-                        ),
+                      SvgPicture.asset(
+                        AppSvg.plaid,
+                        height: height * 0.08,
+                      ),
 
                       // Second Dashed Line
 
@@ -121,14 +131,23 @@ class AuthenticateScreen extends StatelessWidget {
                               BoxConstraints constraints) {
                             const dashWidth = 8.0;
                             const dashHeight = 6.0;
-                            final dashCount = (constraints.constrainWidth() / (1.5 * dashWidth)).floor();
+                            final dashCount = (constraints.constrainWidth() /
+                                    (1.5 * dashWidth))
+                                .floor();
 
                             return Column(
                               children: [
-                                DottedLines(dashCount: dashCount, dashWidth: dashWidth, dashHeight: dashHeight),
-                                SizedBox(height: height *0.005,),
-                                DottedLines(dashCount: dashCount,
-                                    dashWidth: dashWidth, dashHeight: dashHeight),
+                                DottedLines(
+                                     dashCount: dashCount,
+                                    dashWidth: dashWidth,
+                                    dashHeight: dashHeight),
+                                SizedBox(
+                                  height: height * 0.005,
+                                ),
+                                DottedLines(
+                                    dashCount: dashCount,
+                                    dashWidth: dashWidth,
+                                    dashHeight: dashHeight),
                               ],
                             );
                           },
@@ -139,7 +158,6 @@ class AuthenticateScreen extends StatelessWidget {
                     ],
                   ),
                 );
-
               },
             ),
             Spacer(),
@@ -166,58 +184,5 @@ class AuthenticateScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class DottedLines extends StatelessWidget {
-  const DottedLines({
-    super.key,
-    required this.dashCount,
-    required this.dashWidth,
-    required this.dashHeight,
-  });
-
-  final int dashCount;
-  final double dashWidth;
-  final double dashHeight;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: List.generate(dashCount, (_) {
-        return Container(
-          width: dashWidth,
-          height: dashHeight,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: AppColor.borderColor,
-          ),
-
-        );
-      }),
-    );
-  }
-}
-
-class IconValue extends StatelessWidget {
-  const IconValue({
-    super.key,
-    required this.iconPath,
-  });
-  final String iconPath;
-
-  @override
-  Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
-    return Container(
-        height: height * 0.06,
-        width: width * 0.14,
-        padding: EdgeInsets.all(12),
-        decoration:
-            BoxDecoration(shape: BoxShape.circle, color: AppColor.borderColor),
-        child: SvgPicture.asset(iconPath,
-            height: height * 0.05, color: AppColor.lightGrey));
   }
 }

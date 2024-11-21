@@ -9,7 +9,7 @@ class CommonDivider extends StatelessWidget {
     return  Divider(
 
       color: AppColor.lightGrey,
-      thickness: 0.5,
+      thickness: 0.7,
     );
   }
 }

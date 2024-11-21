@@ -1,9 +1,7 @@
 import 'package:financial_wellbeing/core/routes/route_constant.dart';
 import 'package:financial_wellbeing/features/mortgage_form/views/mortgage_form_screen.dart';
-import 'package:financial_wellbeing/features/notification_screen/controllers/notification_controller.dart';
 import 'package:financial_wellbeing/features/notification_screen/views/notification_screen.dart';
 import 'package:financial_wellbeing/features/reset_password/view/reset_password_screen.dart';
-import 'package:financial_wellbeing/features/sign_up/controllers/signup_controller.dart';
 import 'package:financial_wellbeing/features/sign_up/views/screen/signup_screen.dart';
 import 'package:financial_wellbeing/features/signin/views/screen/signin_screen.dart';
 import 'package:financial_wellbeing/features/tracking/views/screens/tracking_screen.dart';
@@ -14,7 +12,6 @@ import '../../features/edit_profile/view/edit_profile_screen.dart';
 import '../../features/history/views/history_screen.dart';
 import '../../features/home_screen/views/home_screen.dart';
 import '../../features/navigation menu/view/screen/navigation_menu_screen.dart';
-import '../../features/notification_setting/views/notification_setting_screen.dart';
 import '../../features/onboarding/views/create_account.dart';
 import '../../features/onboarding/views/onboarding_screen.dart';
 import '../../features/otp/view/otp_screen.dart';
