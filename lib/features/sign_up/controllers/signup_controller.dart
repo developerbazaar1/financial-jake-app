@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -22,7 +21,6 @@ class SignUpController extends GetxController {
   final TextEditingController phoneNumberController = TextEditingController();
   final TextEditingController dobController = TextEditingController();
 
-
   void clickOnSignUp(BuildContext context) async {
     try {
       // Start Loading
@@ -42,14 +40,12 @@ class SignUpController extends GetxController {
 
       if (!form_Key.currentState!.validate()) {
         // Remove Loader
-        context
-            .pushReplacementNamed(RouteConstants.signupScreen);
+        context.pushReplacementNamed(RouteConstants.signupScreen);
         // SnackBar(content: Text(AppText.noInternetMessage),);
-       //   showSnackBar(context, "Accept Privacy Policy & Terms of Use", isError: true);
+        //   showSnackBar(context, "Accept Privacy Policy & Terms of Use", isError: true);
         isLoading.value = false;
         return;
       }
-
 
       // // Privacy Policy Check
       // if (!isChecked.value) {
@@ -125,25 +121,25 @@ class SignUpController extends GetxController {
       isLoading.value = false;
 
       // Show Success Message
-      SnackBar(content: Text('Please verify your email address.'),);
-
+      SnackBar(
+        content: Text('Please verify your email address.'),
+      );
 
       // Move to Verify Email Screen
       // Get.to(() => VerifyEmailScreen(email: emailController.text.trim()));
     } catch (e, stacktrace) {
-      // Remove Loader
+      // Remove Loaders
       isLoading.value = false;
       // Show some Generic Error to the user'
       //CM.showSnackBar(message: e.toString());
       print(e.toString());
       print("Stacktrace: $stacktrace");
-      SnackBar(content: Text(e.toString()),);
-    //  showSnackBar(context, e.toString(), isError: true);
-
-
+      SnackBar(
+        content: Text(e.toString()),
+      );
+      //  showSnackBar(context, e.toString(), isError: true);
 
       throw Exception(e.toString());
     }
   }
-
 }

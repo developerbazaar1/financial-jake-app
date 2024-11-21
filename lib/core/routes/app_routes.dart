@@ -1,21 +1,18 @@
 import 'package:financial_wellbeing/core/routes/route_constant.dart';
-import 'package:financial_wellbeing/features/mortgage_assesstment/views/mortgage_assessment_screen.dart';
-import 'package:financial_wellbeing/features/mortgage_details/controllers/mortgage_details_controller.dart';
-import 'package:financial_wellbeing/features/mortgage_details/views/screen/mortgage_details_screen.dart';
 import 'package:financial_wellbeing/features/mortgage_form/views/mortgage_form_screen.dart';
-import 'package:financial_wellbeing/features/notification_screen/controllers/notification_controller.dart';
 import 'package:financial_wellbeing/features/notification_screen/views/notification_screen.dart';
 import 'package:financial_wellbeing/features/product_details/views/screen/product_details_screen.dart';
 import 'package:financial_wellbeing/features/reset_password/view/reset_password_screen.dart';
-import 'package:financial_wellbeing/features/sign_up/controllers/signup_controller.dart';
 import 'package:financial_wellbeing/features/sign_up/views/screen/signup_screen.dart';
 import 'package:financial_wellbeing/features/signin/views/screen/signin_screen.dart';
 import 'package:financial_wellbeing/features/tracking/views/screens/tracking_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../features/customer_support/views/customer_support.dart';
+import '../../features/edit_profile/view/edit_profile_screen.dart';
+import '../../features/history/views/history_screen.dart';
 import '../../features/home_screen/views/home_screen.dart';
 import '../../features/navigation menu/view/screen/navigation_menu_screen.dart';
-import '../../features/notification_setting/views/notification_setting_screen.dart';
 import '../../features/onboarding/views/create_account.dart';
 import '../../features/onboarding/views/onboarding_screen.dart';
 import '../../features/otp/view/otp_screen.dart';
@@ -102,22 +99,34 @@ class AppRouter {
       builder: (context, state) => MortgageFormScreen(),
     ),
     GoRoute(
-
       path: AppRoutes.notificationscreen,
       name: RouteConstants.notificationscreen,
       builder: (context, state) => NotificationScreen(),
+
     ),
     GoRoute(
 
       name: RouteConstants.mortgageDetailsScreen,
       path: AppRoutes.mortgageDetailsScreen,
       builder: (context, state) => MortgageDetailsScreen(),
+
     ),
     GoRoute(
-      name: RouteConstants.mortgageAssessmentScreen,
-      path: AppRoutes.mortgageAssessmentScreen,
-      builder: (context, state) => MortgageAssessmentScreen(),
+      path: AppRoutes.editprofilescreen,
+      name: RouteConstants.editprofilescreen,
+      builder: (context, state) => EditProfileScreen(),
     ),
+    GoRoute(
+      path: AppRoutes.historyscreen,
+      name: RouteConstants.historyscreen,
+      builder: (context, state) => HistoryScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.customersupport,
+      name: RouteConstants.customersupport,
+      builder: (context, state) => CustomerSupport(),
+    ),
+
     GoRoute(
       name: RouteConstants.productDetailsScreen,
       path: AppRoutes.productDetailsScreen,

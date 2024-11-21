@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/routes/route_constant.dart';
-import '../../forget_password/controller/forget_password_controller.dart';
 
 class ResetPasswordController extends GetxController {
   RxBool isPasswordIconVisible = false.obs;
@@ -31,11 +30,12 @@ class ResetPasswordController extends GetxController {
     GoRouter.of(context).pushReplacementNamed(RouteConstants.signinScreen);
     FocusScope.of(context).unfocus();
   }
+
   @override
   void dispose() {
- form_key.currentContext?.pop();
- passwordController.clear();
- confirmPasswordController.clear();
+    form_key.currentContext?.pop();
+    passwordController.clear();
+    confirmPasswordController.clear();
     super.dispose();
   }
 }

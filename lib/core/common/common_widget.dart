@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-
 import '../../theme/theme_helper.dart';
 import '../constant/app_colors.dart';
 import '../utils/size_utils.dart';
@@ -31,7 +30,6 @@ class CW {
         borderRadius: BorderRadius.circular(borderRadius ?? 10),
       ),
       child: ElevatedButton(
-
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           elevation: elevation ?? 0,
@@ -80,10 +78,9 @@ class CW {
     bool autofocus = false,
     bool readOnly = false,
     FocusNode? focusNode,
-    BuildContext?  context ,
+    BuildContext? context,
   }) {
     return TextFormField(
-
       onTap: onTap,
       focusNode: focusNode,
       controller: controller,
@@ -104,8 +101,9 @@ class CW {
       autofocus: autofocus,
       inputFormatters: inputFormatters,
       textCapitalization: textCapitalization,
-      style: style ?? theme.textTheme.bodyMedium!.copyWith(color: Colors.black,
-          fontSize: mediaQueryData.size.width * 0.036),
+      style: style ??
+          theme.textTheme.bodyMedium!.copyWith(
+              color: Colors.black, fontSize: mediaQueryData.size.width * 0.036),
       decoration: InputDecoration(
         hintText: hintText,
         fillColor: fillColor ?? AppColor.lightGrey,
@@ -114,38 +112,42 @@ class CW {
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         labelText: lableText,
-
         labelStyle: lableStyle ??
-            theme.textTheme.bodyMedium!.copyWith(color: theme.primaryColor,
-            fontSize: mediaQueryData.size.width * 0.036),
+            theme.textTheme.bodyMedium!.copyWith(
+                color: theme.primaryColor,
+                fontSize: mediaQueryData.size.width * 0.036),
         contentPadding:
             contentPadding ?? const EdgeInsets.symmetric(horizontal: 20),
         hintStyle: hintStyle ??
-            theme.
-                textTheme
-                .bodyMedium
-                ?.copyWith(color: Colors.black,
-                fontSize: mediaQueryData.size.width * 0.036
-            ),
+            theme.textTheme.bodyMedium?.copyWith(
+                color: Colors.black,
+                fontSize: mediaQueryData.size.width * 0.036),
         focusedBorder: OutlineInputBorder(
             borderSide: wantBorder
-                ? BorderSide(color: borderColor??AppColor.lightGrey.withOpacity(0.09), width: 1.5)
+                ? BorderSide(
+                    color: borderColor ?? AppColor.lightGrey.withOpacity(0.09),
+                    width: 1.5)
                 : BorderSide.none,
             borderRadius: BorderRadius.circular(borderRadius ?? 5)),
         disabledBorder: OutlineInputBorder(
             borderSide: wantBorder
-                ? BorderSide(color: borderColor??AppColor.lightGrey.withOpacity(0.09), width: 1)
+                ? BorderSide(
+                    color: borderColor ?? AppColor.lightGrey.withOpacity(0.09),
+                    width: 1)
                 : BorderSide.none,
             borderRadius: BorderRadius.circular(borderRadius ?? 5)),
         border: OutlineInputBorder(
             borderSide: wantBorder
-                ? BorderSide(color: borderColor??AppColor.lightGrey.withOpacity(0.9), width: 1)
+                ? BorderSide(
+                    color: borderColor ?? AppColor.lightGrey.withOpacity(0.9),
+                    width: 1)
                 : BorderSide.none,
             borderRadius: BorderRadius.circular(borderRadius ?? 5)),
         enabledBorder: OutlineInputBorder(
             borderSide: wantBorder
                 ? BorderSide(
-                    color: initialBorderColor ?? AppColor.lightGrey.withOpacity(0.09),
+                    color: initialBorderColor ??
+                        AppColor.lightGrey.withOpacity(0.09),
                     width: initialBorderWidth ?? 1)
                 : BorderSide.none,
             borderRadius: BorderRadius.circular(borderRadius ?? 5)),
@@ -224,10 +226,7 @@ class CW {
         contentPadding:
             contentPadding ?? const EdgeInsets.symmetric(horizontal: 20),
         hintStyle: hintStyle ??
-           theme
-                .textTheme
-                .bodyMedium
-                ?.copyWith(color: Colors.black),
+            theme.textTheme.bodyMedium?.copyWith(color: Colors.black),
         focusedBorder: OutlineInputBorder(
             borderSide: wantBorder
                 ? BorderSide(color: theme.primaryColor, width: 2)
@@ -262,13 +261,44 @@ class CW {
   static Widget commonSwitchView(
           {required bool changeValue,
           required ValueChanged<bool>? onChanged}) =>
-      cupertino.CupertinoSwitch(
-        applyTheme: true,
-
-        value: changeValue,
-        onChanged: onChanged,
-        activeColor: theme.primaryColor,
-        thumbColor: changeValue ? Colors.black : Colors.white,
-        trackColor: Colors.grey,
+      Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(100), // Rounded corners
+          border: Border.all(
+            color: changeValue
+                ? Colors.white
+                : AppColor.lightGrey, // Dynamic border color
+            width: 2,
+          ),
+        ),
+        padding: const EdgeInsets.all(2),
+        child: cupertino.SizedBox(
+          width: 30,
+          height: 15,
+          child: FittedBox(
+            fit: BoxFit.contain,
+            child: cupertino.CupertinoSwitch(
+              value: changeValue,
+              onChanged: onChanged,
+              activeColor: AppColor.secondary,
+              thumbColor: changeValue ? AppColor.white : AppColor.lightGrey,
+              trackColor: AppColor.secondary,
+            ),
+          ),
+        ),
       );
 }
+
+
+
+
+// cupertino.CupertinoSwitch(
+  //   applyTheme: true,
+  //   value: changeValue,
+  //   onChanged: onChanged,
+  //   activeColor: theme.primaryColor,
+
+  //   thumbColor: changeValue ? Colors.white : Colors.black,
+  //   trackColor: Colors.grey,
+
+  // );
