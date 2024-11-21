@@ -21,4 +21,12 @@ class AppImage {
   static String backbutton = '$basePath/backbutton.png';
   static String notificationImage = '$basePath/notification_image.png';
   static String bellIcon = '$basePath/bell.png';
+  static String profileIcon = '$basePath/EDitprofile.png';
+  static String changepasswordIcon = '$basePath/Changepassword.png';
+  static String logoutIcon = '$basePath/logout.png';
+  static String notification = '$basePath/Notification.png';
+  static String privacyIcon = '$basePath/Privacy.png';
+  static String profileImage1 = '$basePath/ProfileImage1.png';
+  static String addprofile = '$basePath/addprofile.png';
+  static String eyeIcon = '$basePath/eye.png';
 }

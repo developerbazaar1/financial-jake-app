@@ -3,7 +3,6 @@ import 'package:financial_wellbeing/features/mortgage_assesstment/views/mortgage
 import 'package:financial_wellbeing/features/mortgage_details/controllers/mortgage_details_controller.dart';
 import 'package:financial_wellbeing/features/mortgage_details/views/screen/mortgage_details_screen.dart';
 import 'package:financial_wellbeing/features/mortgage_form/views/mortgage_form_screen.dart';
-import 'package:financial_wellbeing/features/my_product_details/views/my_product_details_screen.dart';
 import 'package:financial_wellbeing/features/notification_screen/controllers/notification_controller.dart';
 import 'package:financial_wellbeing/features/notification_screen/views/notification_screen.dart';
 import 'package:financial_wellbeing/features/product_details/views/screen/product_details_screen.dart';
@@ -128,11 +127,6 @@ class AppRouter {
   final int? index = state.extra as int?; // Optional extra argument
   return ProductDetailsScreen(index: index, );}
   ),
-    GoRoute(
-      name: RouteConstants.myProductDetailsScreen,
-      path: AppRoutes.myProductDetailsScreen,
-      builder: (context, state) => MyProductDetailsScreen(),
-    ),
 
 
   ]);
