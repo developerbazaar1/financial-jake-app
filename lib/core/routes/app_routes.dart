@@ -13,6 +13,9 @@ import 'package:financial_wellbeing/features/signin/views/screen/signin_screen.d
 import 'package:financial_wellbeing/features/tracking/views/screens/tracking_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../features/customer_support/views/customer_support.dart';
+import '../../features/edit_profile/view/edit_profile_screen.dart';
+import '../../features/history/views/history_screen.dart';
 import '../../features/home_screen/views/home_screen.dart';
 import '../../features/navigation menu/view/screen/navigation_menu_screen.dart';
 import '../../features/notification_setting/views/notification_setting_screen.dart';
@@ -127,7 +130,21 @@ class AppRouter {
   final int? index = state.extra as int?; // Optional extra argument
   return ProductDetailsScreen(index: index, );}
   ),
-
+    GoRoute(
+      path: AppRoutes.editProfileScreen,
+      name: RouteConstants.editProfileScreen,
+      builder: (context, state) => EditProfileScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.historyScreen,
+      name: RouteConstants.historyScreen,
+      builder: (context, state) => HistoryScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.customerSupport,
+      name: RouteConstants.customerSupport,
+      builder: (context, state) => CustomerSupport(),
+    ),
 
   ]);
 }

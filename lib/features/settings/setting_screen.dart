@@ -37,7 +37,7 @@ class SettingsScreen extends StatelessWidget {
                 SizedBox(height: height * 0.05),
                 GestureDetector(
                   onTap: () {
-                    context.push(RouteConstants.editprofilescreen);
+                    context.pushNamed(RouteConstants.editProfileScreen);
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -184,7 +184,7 @@ class SettingsScreen extends StatelessWidget {
                 const Commondivider(),
                 GestureDetector(
                   onTap: () {
-                    context.push(RouteConstants.historyscreen);
+                    context.pushNamed(RouteConstants.historyScreen);
                   },
                   child: Container(
                     decoration: BoxDecoration(color: AppColor.secondary),
@@ -278,7 +278,7 @@ class SettingsScreen extends StatelessWidget {
                 const Commondivider(),
                 GestureDetector(
                   onTap: () {
-                    context.push(RouteConstants.customersupport);
+                    context.pushNamed(RouteConstants.customerSupport);
                   },
                   child: Container(
                     decoration: BoxDecoration(color: AppColor.secondary),

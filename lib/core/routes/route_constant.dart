@@ -26,6 +26,10 @@ class RouteConstants {
   static const String myProductDetailsScreen = 'my_product_details_screen';
 
 
+///
+  static const String editProfileScreen = 'edit_profile_screen';
+  static const String historyScreen = 'history_screen';
+  static const String customerSupport = 'customer_support';
 
 
 
@@ -57,5 +61,10 @@ class AppRoutes {
   static const String mortgageAssessmentScreen = '/mortgage_assessment_controller.dart';
   static const String productDetailsScreen = '/product_details_screen.dart';
   static const String myProductDetailsScreen = '/my_product_details_screen.dart';
+
+  //
+  static const String editProfileScreen = '/edit_profile_screen.dart';
+  static const String historyScreen = '/history_screen.dart';
+  static const String customerSupport = '/customer_support.dart';
 
 }
