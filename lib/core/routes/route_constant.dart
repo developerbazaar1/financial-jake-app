@@ -47,7 +47,7 @@ class AppRoutes {
       '/mortgage_assessment_controller.dart';
   static const String productDetailsScreen = '/product_details_screen.dart';
   //
-  static const String editProfileScreen = '/edit_profile_screen.dart';
+  static const String editProfileScreen = '/edit_profile_screen';
   static const String historyScreen = '/history_screen.dart';
   static const String customerSupport = '/customer_support.dart';
   static const String privacyPolicy = '/privacypolicy_screen.dart';
