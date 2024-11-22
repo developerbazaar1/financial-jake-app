@@ -116,12 +116,7 @@ class AppRouter {
       name: RouteConstants.notificationscreen,
       builder: (context, state) => NotificationScreen(),
     ),
-    GoRoute(
 
-      path: AppRoutes.editProfileScreen,
-      name: RouteConstants.editProfileScreen,
-      builder: (context, state) => EditProfileScreen(),
-    ),
     GoRoute(
 
 
@@ -184,18 +179,6 @@ class AppRouter {
       name: RouteConstants.termsCondtition,
       builder: (context, state) => TermsConditionScreen(),
     ),
-    GoRoute(
-        name: RouteConstants.productDetailsScreen,
-        path: AppRoutes.productDetailsScreen,
-        builder: (context, state) {
-          // Extract arguments from `state`
 
-
-
-          final int? index = state.extra as int?; // Optional extra argument
-          return ProductDetailsScreen(
-            index: index,
-          );
-        }),
   ]);
 }

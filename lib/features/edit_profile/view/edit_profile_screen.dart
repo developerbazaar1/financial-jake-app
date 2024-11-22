@@ -4,6 +4,7 @@ import 'package:financial_wellbeing/features/edit_profile/contoller/edit_profile
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/common/common_widget.dart';
@@ -24,7 +25,12 @@ class EditProfileScreen extends StatelessWidget {
       backgroundColor: theme.primaryColor,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(height * 0.08),
-        child: InnerAppBar(),
+        child: InnerAppBar(
+          onTap:   (){
+            context.go('/home_screen?index=3');
+          }
+        ),
+
       ),
       body: SingleChildScrollView(
         child: Padding(
