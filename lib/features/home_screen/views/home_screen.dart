@@ -452,7 +452,7 @@ class Homescreen extends StatelessWidget {
                       child: CW.commonElevatedButton(
                           onPressed: () {
                             context.pushReplacementNamed(
-                                RouteConstants.createAccount);
+                                RouteConstants.mortgageFormScreen);
                           },
                           height: height * 0.06,
                           width: width * 0.90,

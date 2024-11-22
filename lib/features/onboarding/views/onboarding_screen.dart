@@ -76,7 +76,7 @@ class OnboardingScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(
-          bottom: height * 0.05,
+          bottom: height * 0.1,
           left: width * 0.07,
           right: width * 0.07,
         ),

@@ -1,9 +1,17 @@
 import 'package:financial_wellbeing/core/routes/route_constant.dart';
-import 'package:financial_wellbeing/features/mortgage_form/views/mortgage_form_screen.dart';
+import 'package:financial_wellbeing/features/equity/views/equity_screen.dart';
+import 'package:financial_wellbeing/features/equity_details/views/equity_details_screen.dart';
+import 'package:financial_wellbeing/features/mortgage_assesstment/views/mortgage_assessment_screen.dart';
+import 'package:financial_wellbeing/features/mortgage_details/controllers/mortgage_details_controller.dart';
+import 'package:financial_wellbeing/features/mortgage_details/views/screen/mortgage_details_screen.dart';
+import 'package:financial_wellbeing/features/mortgage_form/views/screen/mortgage_form_screen.dart';
+import 'package:financial_wellbeing/features/my_product_details/views/my_product_details_screen.dart';
+import 'package:financial_wellbeing/features/notification_screen/controllers/notification_controller.dart';
 import 'package:financial_wellbeing/features/notification_screen/views/notification_screen.dart';
 import 'package:financial_wellbeing/features/privacypolicy/views/privacypolicy_screen.dart';
 import 'package:financial_wellbeing/features/product_details/views/screen/product_details_screen.dart';
 import 'package:financial_wellbeing/features/reset_password/view/reset_password_screen.dart';
+import 'package:financial_wellbeing/features/sign_up/controllers/signup_controller.dart';
 import 'package:financial_wellbeing/features/sign_up/views/screen/signup_screen.dart';
 import 'package:financial_wellbeing/features/signin/views/screen/signin_screen.dart';
 import 'package:financial_wellbeing/features/terrms&condition/views/terms_condition_screen.dart';
@@ -16,6 +24,7 @@ import '../../features/edit_profile/view/edit_profile_screen.dart';
 import '../../features/history/views/history_screen.dart';
 import '../../features/home_screen/views/home_screen.dart';
 import '../../features/navigation menu/view/screen/navigation_menu_screen.dart';
+import '../../features/notification_setting/views/notification_setting_screen.dart';
 import '../../features/onboarding/views/create_account.dart';
 import '../../features/onboarding/views/onboarding_screen.dart';
 import '../../features/otp/view/otp_screen.dart';
@@ -102,16 +111,59 @@ class AppRouter {
       builder: (context, state) => MortgageFormScreen(),
     ),
     GoRoute(
+
       path: AppRoutes.notificationscreen,
       name: RouteConstants.notificationscreen,
       builder: (context, state) => NotificationScreen(),
     ),
+    GoRoute(
+
+      path: AppRoutes.editProfileScreen,
+      name: RouteConstants.editProfileScreen,
+      builder: (context, state) => EditProfileScreen(),
+    ),
+    GoRoute(
+
+
+      name: RouteConstants.mortgageDetailsScreen,
+      path: AppRoutes.mortgageDetailsScreen,
+      builder: (context, state) => MortgageDetailsScreen(),
+    ),
+    GoRoute(
+      name: RouteConstants.mortgageAssessmentScreen,
+      path: AppRoutes.mortgageAssessmentScreen,
+      builder: (context, state) => MortgageAssessmentScreen(),
+    ),
+    GoRoute(
+      name: RouteConstants.productDetailsScreen,
+      path: AppRoutes.productDetailsScreen,
+      builder: (context, state){
+  // Extract arguments from `state`
+
+  final int? index = state.extra as int?; // Optional extra argument
+  return ProductDetailsScreen(index: index, );}
+  ),
+
+    GoRoute(
+      name: RouteConstants.myProductDetailsScreen,
+      path: AppRoutes.myProductDetailsScreen,
+      builder: (context, state) => MyProductDetailsScreen(),
+    ),
+
+  GoRoute(
+      name: RouteConstants.equityDetailsScreen,
+      path: AppRoutes.equityDetailsScreen,
+      builder: (context, state) => EquityScreen(),
+    ),
+
+  //-------------
     GoRoute(
       path: AppRoutes.editProfileScreen,
       name: RouteConstants.editProfileScreen,
       builder: (context, state) => EditProfileScreen(),
     ),
     GoRoute(
+
       path: AppRoutes.historyScreen,
       name: RouteConstants.historyScreen,
       builder: (context, state) => HistoryScreen(),
@@ -121,6 +173,7 @@ class AppRouter {
       name: RouteConstants.customerSupport,
       builder: (context, state) => CustomerSupport(),
     ),
+
     GoRoute(
       path: AppRoutes.privacyPolicy,
       name: RouteConstants.privacyPolicy,
@@ -136,6 +189,8 @@ class AppRouter {
         path: AppRoutes.productDetailsScreen,
         builder: (context, state) {
           // Extract arguments from `state`
+
+
 
           final int? index = state.extra as int?; // Optional extra argument
           return ProductDetailsScreen(

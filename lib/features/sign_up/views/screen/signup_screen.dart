@@ -3,11 +3,13 @@ import 'package:financial_wellbeing/features/sign_up/views/widgets/social_media.
 import 'package:financial_wellbeing/features/sign_up/views/widgets/textfeild.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import '../../../../core/common/common_widget.dart';
 import '../../../../core/constant/app_colors.dart';
+import '../../../../core/constant/app_svg.dart';
 import '../../../../core/constant/app_text.dart';
 import '../../../../core/routes/route_constant.dart';
 import '../../../../core/validator/validator.dart';
@@ -179,9 +181,11 @@ class SignUpForm extends StatelessWidget {
           SizedBox(height: height * 0.025),
           Obx(
             () => CustomeTextFeild(
+              maxLines: 1,
               controller: controller.passwordController,
               label: 'Password', hintText: 'Create a strong password',
               suffixIcon: IconButton(
+                padding: EdgeInsets.only(right: width* 0.05),
                 onPressed: () {
                   controller.isPasswordIconVisible.value =
                       !controller.isPasswordIconVisible.value;
@@ -208,7 +212,12 @@ class SignUpForm extends StatelessWidget {
             validator: (value) => Validator.isNameValid(value: value),
             readOnly: true,
             suffixIcon: IconButton(
-              icon: const Icon(Icons.calendar_today, color: Colors.white),
+
+
+
+              padding: EdgeInsets.only(right: width* 0.05),
+              icon: SvgPicture.asset(AppSvg.calendar, ),
+
               onPressed: () async {
                 DateTime? pickedDate = await showDatePicker(
                   builder: (BuildContext context, Widget? child) {

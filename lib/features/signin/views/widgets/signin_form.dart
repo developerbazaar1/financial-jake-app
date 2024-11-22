@@ -27,29 +27,43 @@ class SignForm extends StatelessWidget {
             validator: (value) => Validator.isEmailValid(value: value),
           ),
           SizedBox(height: height * 0.025),
-          Obx(
-            () => CustomeTextFeild(
-              controller: controller.passwordController,
-              label: 'Password', hintText: 'Enter Password',
-              suffixIcon: IconButton(
-                onPressed: () {
-                  controller.isPasswordIconVisible.value =
-                      !controller.isPasswordIconVisible.value;
-                },
-                icon: Icon(
-                  controller.isPasswordIconVisible.value
-                      ? Icons.visibility_outlined
-                      : Icons.visibility_off_outlined,
-                  color: Colors.white,
-                ),
-              ),
-              obscureText: !controller
-                  .isPasswordIconVisible.value, // Toggle password visibility
-              onChanged: (value) {},
 
-              validator: (value) => Validator.isPasswordValid(value: value),
-            ),
-          ),
+
+
+
+
+          Obx(()=>  CustomeTextFeild(
+            maxLines: 1,
+
+            controller: controller.passwordController,
+
+            label: 'Password', hintText: 'Enter Password',
+
+            suffixIcon: IconButton(
+              padding: EdgeInsets.only(right: width* 0.05),
+              onPressed: () {
+
+                controller.isPasswordIconVisible.value =
+                !controller.isPasswordIconVisible.value;
+              },
+              icon: Icon(
+                controller.isPasswordIconVisible.value
+                    ? Icons.visibility_outlined
+                    : Icons.visibility_off_outlined,
+                color: Colors.white,
+
+
+
+
+
+          )),
+            obscureText: !controller
+                .isPasswordIconVisible.value, // Toggle password visibility
+            onChanged: (value) {},
+
+            validator: (value) => Validator.isPasswordValid(value: value),
+
+          )),
           SizedBox(height: height * 0.015),
         ],
       ),

@@ -22,13 +22,13 @@ class NotificationPermissionScreen extends StatelessWidget {
         children: [
           // Notification background image
           Positioned(
-            top: height * 0.42,
+            top: height * 0.35,
             left: 0,
             right: 0,
             child: Image.asset(
               AppImage.notificationImage,
-              fit: BoxFit.contain,
-              height: height * 0.4,
+              fit: BoxFit.values[05],
+              height: height * 0.45,
             ),
           ),
 
@@ -50,7 +50,8 @@ class NotificationPermissionScreen extends StatelessWidget {
                 // Enable Notifications Button
                 CW.commonElevatedButton(
                   onPressed: () {
-                    // Handle enable notifications
+                    context
+                        .pushReplacementNamed(RouteConstants.trackingScreen);
                   },
                   height: height * 0.065,
                   width: width,
@@ -94,7 +95,7 @@ class NotificationPermissionScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: height * 0.04),
+                SizedBox(height: height * 0.08),
               ],
             ),
           ),

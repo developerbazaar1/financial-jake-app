@@ -122,4 +122,18 @@ class AppList {
     "No Prepayment Penalties: Make extra payments without incurring penalties, allowing you to pay down your mortgage faster.",
     "Flexible Payment Options: Adjust your payment schedule to fit your financial situation, with the ability to increase payments or make lump-sum contributions.",
   ];
+
+
+ static List<String> openClosedList = [
+   "Open", "Closed"
+ ];
+ static List<String> fixedVariable = [
+   "Fixed", "Variable"
+ ];
+ static List<String> yesNo = [
+   "Yes", "No"
+ ];
+
+
+
 }

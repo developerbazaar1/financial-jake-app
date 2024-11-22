@@ -18,11 +18,23 @@ class RouteConstants {
   static const String mortgageDetailsScreen = 'mortgage_details_screen';
   static const String mortgageAssessmentScreen = 'mortgage_assessment_screen';
   static const String productDetailsScreen = 'product_details_screen';
+
   static const String editProfileScreen = '/edit_profile_screen';
   static const String historyScreen = 'history_screen';
   static const String customerSupport = 'customer_support';
   static const String privacyPolicy = 'privacypolicy_screen';
   static const String termsCondtition = 'terms_condition_screen';
+
+  static const String myProductDetailsScreen = 'my_product_details_screen';
+  static const String equityDetailsScreen = 'equity_details_screen';
+
+
+///
+
+
+
+
+
 }
 
 class AppRoutes {
@@ -46,10 +58,18 @@ class AppRoutes {
   static const String mortgageAssessmentScreen =
       '/mortgage_assessment_controller.dart';
   static const String productDetailsScreen = '/product_details_screen.dart';
+
   //
   static const String editProfileScreen = '/edit_profile_screen';
   static const String historyScreen = '/history_screen.dart';
   static const String customerSupport = '/customer_support.dart';
   static const String privacyPolicy = '/privacypolicy_screen.dart';
   static const String termsCondtition = '/terms_condition_screen.dart';
+
+  static const String myProductDetailsScreen = '/my_product_details_screen.dart';
+  static const String equityDetailsScreen = '/equity_details_screen.dart';
+
+  //
+
+
 }

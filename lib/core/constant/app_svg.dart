@@ -32,6 +32,7 @@ class AppSvg {
   static String call = '$basePath/call.svg';
   static String email = '$basePath/email.svg';
   static String message = '$basePath/message.svg';
+  static String calendar = '$basePath/calendar.svg';
 
 
 

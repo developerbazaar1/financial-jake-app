@@ -415,8 +415,9 @@ import '../../theme/theme_helper.dart';
 //   }
 // }
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({Key? key}) : super(key: key);
+   SettingsScreen({Key? key}) : super(key: key);
 
+  final switchController = Get.put(SwitchController());
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.sizeOf(context).height;
@@ -437,8 +438,8 @@ class SettingsScreen extends StatelessWidget {
                   fontSize: width * 0.081,
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
-                ),
-              ),
+                ),),
+
               SizedBox(height: height * 0.01),
               ListView.builder(
                 itemCount: settingsOptions.length,
@@ -463,6 +464,7 @@ class SettingsScreen extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 18, vertical: 18),
                           child: Row(
+
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
@@ -488,17 +490,336 @@ class SettingsScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      if (index != settingsOptions.length - 1)
+
                         const Commondivider(),
                     ],
                   );
                 },
               ),
-            ],
-          ),
-        ),
-      ),
-    );
+
+
+
+
+                const Commondivider(),
+                GestureDetector(
+                  onTap: () {
+                    context.push(RouteConstants.resetPassword);
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(color: AppColor.secondary),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 18, vertical: 18),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Image.asset(AppImage.changepasswordIcon),
+                                  const SizedBox(
+                                    width: 15,
+                                  ),
+                                  Text(
+                                    "Change Password",
+                                    style:
+                                        theme.textTheme.headlineLarge?.copyWith(
+                                      fontSize: width * 0.035,
+                                      color: AppColor.white,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Image.asset(AppImage.rightarrow)
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                const Commondivider(),
+                Container(
+                  decoration: BoxDecoration(color: AppColor.secondary),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 18, vertical: 18),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Image.asset(AppImage.notification),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Text(
+                                  "Notifications",
+                                  style:
+                                      theme.textTheme.headlineLarge?.copyWith(
+                                    fontSize: width * 0.035,
+                                    color: AppColor.white,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Obx(
+                              () => CW.commonSwitchView(
+                                changeValue: switchController.isSwitched.value,
+                                onChanged: (value) {
+                                  switchController.toggleSwitch(value);
+                                },
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                const Commondivider(),
+                GestureDetector(
+                  onTap: () {
+                    context.pushNamed(RouteConstants.historyScreen);
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(color: AppColor.secondary),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 18, vertical: 18),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Image.asset(AppImage.changepasswordIcon),
+                                  const SizedBox(
+                                    width: 15,
+                                  ),
+                                  Text(
+                                    "History",
+                                    style:
+                                        theme.textTheme.headlineLarge?.copyWith(
+                                      fontSize: width * 0.035,
+                                      color: AppColor.white,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Image.asset(AppImage.rightarrow)
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                const Commondivider(),
+                GestureDetector(
+                  onTap: () {
+                    // context.push(RouteConstants.customersupport);
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(color: AppColor.secondary),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 18, vertical: 18),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Image.asset(AppImage.privacyIcon),
+                                  const SizedBox(
+                                    width: 15,
+                                  ),
+                                  Text(
+                                    "Privacy policy",
+                                    style:
+                                        theme.textTheme.headlineLarge?.copyWith(
+                                      fontSize: width * 0.035,
+                                      color: AppColor.white,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Image.asset(AppImage.rightarrow)
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                const Commondivider(),
+                GestureDetector(
+                  onTap: () {
+                    context.pushNamed(RouteConstants.customerSupport);
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(color: AppColor.secondary),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 18, vertical: 18),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Image.asset(AppImage.privacyIcon),
+                                  const SizedBox(
+                                    width: 15,
+                                  ),
+                                  Text(
+                                    "Customer Support",
+                                    style:
+                                        theme.textTheme.headlineLarge?.copyWith(
+                                      fontSize: width * 0.035,
+                                      color: AppColor.white,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Image.asset(AppImage.rightarrow)
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                const Commondivider(),
+                Container(
+                  decoration: BoxDecoration(color: AppColor.secondary),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 18, vertical: 18),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Image.asset(AppImage.privacyIcon),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Text(
+                                  "Terms & Contditions",
+                                  style:
+                                      theme.textTheme.headlineLarge?.copyWith(
+                                    fontSize: width * 0.035,
+                                    color: AppColor.white,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Image.asset(AppImage.rightarrow)
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                const Commondivider(),
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10)),
+                      color: AppColor.secondary),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 18, vertical: 18),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Image.asset(AppImage.logoutIcon),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Text(
+                              "Log Out",
+                              style: theme.textTheme.headlineLarge?.copyWith(
+                                fontSize: width * 0.035,
+                                color: AppColor.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+            ]),
+
+
+      )));
+
   }
 
   BorderRadius _getBorderRadius(int index) {
