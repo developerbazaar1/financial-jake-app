@@ -33,10 +33,16 @@ class SignForm extends StatelessWidget {
           ),
           SizedBox(height: height * 0.025),
           Obx(()=>  CustomeTextFeild(
+            maxLines: 1,
+
             controller: controller.passwordController,
+
             label: 'Password', hintText: 'Enter Password',
+
             suffixIcon: IconButton(
+              padding: EdgeInsets.only(right: width* 0.05),
               onPressed: () {
+
                 controller.isPasswordIconVisible.value =
                 !controller.isPasswordIconVisible.value;
               },

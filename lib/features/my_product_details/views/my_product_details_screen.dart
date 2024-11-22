@@ -1,4 +1,7 @@
+import 'package:financial_wellbeing/core/components/appbar/filter_appbar.dart';
+import 'package:financial_wellbeing/core/routes/route_constant.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/common/common_widget.dart';
 import '../../../core/components/appbar/inner_app_bar.dart';
@@ -51,37 +54,104 @@ class MyProductDetailsScreen extends StatelessWidget {
                     style: theme.textTheme.bodyLarge?.copyWith(
                         fontWeight: FontWeight.w600, fontSize: width * 0.041),
                   ),
-                  SizedBox(height: height * 0.02),
+                  SizedBox(height: height * 0.01),
+                  DetailsRow(
+                    color: AppColor.white,
+                      label: 'Date Filled:',
+                      value: 'June 15, 2024',
+                  fontWeight: FontWeight.w300,),
+                  SizedBox(height: height * 0.01),
                   CommonDivider(
                     color: AppColor.borderColor,
                   ),
                   SizedBox(height: height * 0.005),
                   DetailsRow(
-                      label: 'Mortgage Institution:',
-                      value: product[0].institution),
-                  DetailsRow(
-                      label: 'Current Interest Rate:',
-                      value: product[0].interestRate),
-                  DetailsRow(label: 'Term:', value: product[0].term),
-                  DetailsRow(
-                      label: 'Savings Opportunity:',
-                      value: product[0].savingsOpportunity),
-                  CommonDivider(color: AppColor.borderColor),
+                      label: 'Loan Institution:',
+                      value: product[0].institution,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                  ),
+
                   DetailsRow(
                       label: 'Remaining Loan Balance:',
-                      value: product[0].remainingLoanBalance),
+                      value: product[0].remainingLoanBalance,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+
+                  ),
                   DetailsRow(
                       label: 'Open or Closed:',
-                      value: product[0].openOrClosed),
+                      value: product[0].openOrClosed,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+
+                  ),
+                  DetailsRow(
+                      label: 'Remaining  Term:',
+                      value: '20 months',
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+
+                  ),
                   DetailsRow(
                       label: 'Fixed or Variable:',
-                      value: product[0].fixedOrVariable),
+                      value: product[0].fixedOrVariable,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                  ),
+                  DetailsRow(
+                    label: 'Current Interest Rate:',
+                    value: product[0].interestRate,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,),
                   DetailsRow(
                       label: 'Amortization Period:',
-                      value: product[0].amortizationPeriod),
+                      value: product[0].amortizationPeriod,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,),
                   DetailsRow(
                       label: 'Approximate Fees to Break Mortgage:',
-                      value: product[0].feesToBreakMortgage),
+                      value: product[0].feesToBreakMortgage,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                  ),
+
+                  DetailsRow(label: 'Ask the App To Estimate::', value: 'Yes',
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,),
+                  DetailsRow(
+                      label: 'Consent To Estimate the Value of My Home:',
+                      value: 'Yes',
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,),
+
+
+                  DetailsRow(
+                      label: 'Credit Score:',
+                      value: '620',
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                  ),
+
+                  DetailsRow(
+                      label: 'Reported Annual Household Income',
+                      value: '\$60000',
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                  ),
+                  DetailsRow(
+                      label: 'CMHC Insurance Required:',
+                      value: 'Yes',
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                  ),  DetailsRow(
+                      label: 'CMHC Insurance Premium:',
+                      value: '5%',
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                  ),
+
+
                 ],
               ),
             ),
@@ -92,10 +162,10 @@ class MyProductDetailsScreen extends StatelessWidget {
               height: height * 0.06,
               width: width * 0.9,
               onPressed: () {
-                BottomSheets.showContactBottomSheet(context);
+              context.pushNamed(RouteConstants.mortgageFormScreen);
               },
               child: Text(
-                'Sign up for this product',
+                'Edit Details',
                 style: theme.textTheme.bodyLarge?.copyWith(
                   fontSize: width * 0.041,
                   color: AppColor.primary,

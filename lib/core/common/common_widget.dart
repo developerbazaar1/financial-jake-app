@@ -287,6 +287,21 @@ class CW {
           ),
         ),
       );
+  static Widget commonCheckBox(
+          {required bool changeValue,
+          required   ValueChanged<bool?>? onChanged}) =>
+      Checkbox(
+        value: changeValue,
+        activeColor: AppColor.secondary,
+        side: const BorderSide(
+            color: Colors.white), // Border for inactive state
+        checkColor: AppColor.gold, // Color of the check icon
+        onChanged: onChanged??(value) {
+          changeValue = value ?? false; // Update the RxBool value
+        },
+      );
+
+
 }
 
 

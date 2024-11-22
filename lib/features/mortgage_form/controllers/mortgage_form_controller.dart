@@ -7,6 +7,9 @@ class MortgageFormController extends GetxController {
   var mortgageInstitution = ''.obs;
   var remainingBalance = ''.obs;
   var isOpenOrClosed = ''.obs;
+  var isFixedVariable = ''.obs;
+
+  var isInsuranceRequired = ''.obs;
   var isCurrentlyEmployed = ''.obs;
   var creditScore = ''.obs;
   var annualIncome = ''.obs;

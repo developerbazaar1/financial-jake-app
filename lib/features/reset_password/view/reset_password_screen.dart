@@ -53,11 +53,14 @@ class ResetPasswordScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     CustomeTextFeild(
+                      maxLines: 1,
                       controller: controller.passwordController,
                       label: 'New Password',
                       hintText: 'Create new password',
                       suffixIcon: IconButton(
+                        padding: EdgeInsets.only(right: width* 0.05),
                         onPressed: () {
+
                           controller.isPasswordIconVisible.value =
                               !controller.isPasswordIconVisible.value;
                         },
@@ -78,10 +81,12 @@ class ResetPasswordScreen extends StatelessWidget {
                     SizedBox(height: height * 0.025),
                     Obx(
                       () => CustomeTextFeild(
+                        maxLines: 1,
                         controller: controller.confirmPasswordController,
                         label: 'Confirm New Password',
                         hintText: 'Re-type your new password',
                         suffixIcon: IconButton(
+                          padding: EdgeInsets.only(right: width* 0.05),
                           onPressed: () {
                             controller.isConfirmPasswordIconVisible.value =
                                 !controller.isConfirmPasswordIconVisible.value;

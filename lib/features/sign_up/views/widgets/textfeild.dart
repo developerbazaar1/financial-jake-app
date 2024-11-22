@@ -7,7 +7,8 @@ import '../../../../theme/theme_helper.dart';
 class CustomeTextFeild extends StatelessWidget {
 
    CustomeTextFeild({super.key, required this.label, required this.hintText,this.suffixIcon,
-   this.inputFormatters,this.onChanged,this.keyboardType,this.obscureText,this.validator,this.controller,this.readOnly});
+   this.inputFormatters,this.onChanged,this.keyboardType,
+     this.maxLines,this.obscureText,this.validator,this.controller,this.readOnly});
   final String label,hintText;
   Widget? suffixIcon;
    FormFieldValidator<String>? validator;
@@ -17,6 +18,7 @@ class CustomeTextFeild extends StatelessWidget {
    List<TextInputFormatter>? inputFormatters;
    TextEditingController? controller;
    bool? readOnly;
+   int? maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,8 @@ class CustomeTextFeild extends StatelessWidget {
         ),
         SizedBox(height: height * 0.015 ),
         CW.commonTextField(
+          maxLines: maxLines,
+          obscureText: obscureText,
           readOnly: readOnly??false,
           controller: controller,
 

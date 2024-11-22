@@ -179,7 +179,7 @@ class AuthenticateScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: height * 0.15),
+            SizedBox(height: height * 0.2),
           ],
         ),
       ),

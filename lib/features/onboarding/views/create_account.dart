@@ -41,7 +41,7 @@ class CreateAccountScreen extends StatelessWidget {
                     top: height * 0.03,
                   ), // Space below "In Real-Time, you get:"
                   padding: EdgeInsets.only(
-                      top: height * 0.07,
+                      top: height * 0.06,
                       left: width * 0.15,
                       bottom: height * 0.02),
                   decoration: BoxDecoration(
@@ -82,9 +82,11 @@ class CreateAccountScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: height * 0.1),
+            SizedBox(height: height * 0.03),
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal:width*0.04),
+              padding:  EdgeInsets.symmetric(horizontal:width*0.04,
+                vertical: height* 0.03
+              ),
               child: Text(
                 'You’re a few questions away from financial peace of mind.',
                 textAlign: TextAlign.center,
@@ -95,7 +97,9 @@ class CreateAccountScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(),
+            SizedBox(
+              height: height * 0.012,
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -156,7 +160,7 @@ class CreateAccountScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: height * 0.02,
+                  height: height * 0.05,
                 ),
               ],
             )

@@ -1,8 +1,11 @@
 import 'package:financial_wellbeing/core/routes/route_constant.dart';
+import 'package:financial_wellbeing/features/equity/views/equity_screen.dart';
+import 'package:financial_wellbeing/features/equity_details/views/equity_details_screen.dart';
 import 'package:financial_wellbeing/features/mortgage_assesstment/views/mortgage_assessment_screen.dart';
 import 'package:financial_wellbeing/features/mortgage_details/controllers/mortgage_details_controller.dart';
 import 'package:financial_wellbeing/features/mortgage_details/views/screen/mortgage_details_screen.dart';
-import 'package:financial_wellbeing/features/mortgage_form/views/mortgage_form_screen.dart';
+import 'package:financial_wellbeing/features/mortgage_form/views/screen/mortgage_form_screen.dart';
+import 'package:financial_wellbeing/features/my_product_details/views/my_product_details_screen.dart';
 import 'package:financial_wellbeing/features/notification_screen/controllers/notification_controller.dart';
 import 'package:financial_wellbeing/features/notification_screen/views/notification_screen.dart';
 import 'package:financial_wellbeing/features/product_details/views/screen/product_details_screen.dart';
@@ -130,6 +133,20 @@ class AppRouter {
   final int? index = state.extra as int?; // Optional extra argument
   return ProductDetailsScreen(index: index, );}
   ),
+
+    GoRoute(
+      name: RouteConstants.myProductDetailsScreen,
+      path: AppRoutes.myProductDetailsScreen,
+      builder: (context, state) => MyProductDetailsScreen(),
+    ),
+
+  GoRoute(
+      name: RouteConstants.equityDetailsScreen,
+      path: AppRoutes.equityDetailsScreen,
+      builder: (context, state) => EquityScreen(),
+    ),
+
+  //-------------
     GoRoute(
       path: AppRoutes.editProfileScreen,
       name: RouteConstants.editProfileScreen,
