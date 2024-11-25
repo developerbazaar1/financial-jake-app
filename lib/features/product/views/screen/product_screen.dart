@@ -72,36 +72,33 @@ class ProductCard extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
-
-
     return InkWell(
-      onTap: (){
+      onTap: () {
         context.pushNamed(RouteConstants.myProductDetailsScreen);
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 16.0),
-        padding:  EdgeInsets.symmetric(horizontal: width* 0.05,
-        vertical: height * 0.02),
+        padding: EdgeInsets.symmetric(
+            horizontal: width * 0.05, vertical: height * 0.02),
         decoration: BoxDecoration(
-          color: AppColor.secondary,
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: AppColor.borderColor)
-        ),
+            color: AppColor.secondary,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: AppColor.borderColor)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               product.name,
               style: theme.textTheme.bodyLarge?.copyWith(
-
-                fontSize: width* 0.041,
+                fontSize: width * 0.041,
                 fontWeight: FontWeight.w600,
               ),
             ),
-
-             SizedBox(height: height* 0.005),
-            CommonDivider(color: AppColor.borderColor,),
-            SizedBox(height: height* 0.005),
+            SizedBox(height: height * 0.005),
+            CommonDivider(
+              color: AppColor.borderColor,
+            ),
+            SizedBox(height: height * 0.005),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -110,20 +107,18 @@ class ProductCard extends StatelessWidget {
                   style: theme.textTheme.bodyMedium?.copyWith(
                     color: AppColor.lightGrey,
                     fontSize: width * 0.036,
-
                   ),
                 ),
-                SizedBox(width: width* 0.1),
+                SizedBox(width: width * 0.1),
                 Text(
                   "${product.renewalDate}",
                   style: theme.textTheme.bodyMedium?.copyWith(
-
                     fontSize: width * 0.036,
                   ),
                 ),
               ],
             ),
-             SizedBox(height: height* 0.016),
+            SizedBox(height: height * 0.016),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -134,20 +129,19 @@ class ProductCard extends StatelessWidget {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(width: width* 0.1),
+                SizedBox(width: width * 0.1),
                 Container(
-                  padding:  EdgeInsets.symmetric(horizontal: width* 0.025, vertical: 2),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: width * 0.025, vertical: 2),
                   decoration: BoxDecoration(
-                    color: AppColor.successColor.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(30),
-                    border: Border.all(color: statusColor)
-                  ),
+                      color: AppColor.successColor.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(30),
+                      border: Border.all(color: statusColor)),
                   child: Text(
                     product.renewalStatus,
                     style: theme.textTheme.bodySmall?.copyWith(
                       color: statusColor,
                       fontSize: width * 0.028,
-
                     ),
                   ),
                 ),

@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/constant/app_colors.dart';
 import '../../core/routes/route_constant.dart';
 import '../../theme/theme_helper.dart';
+
 class SettingsScreen extends StatelessWidget {
   // ignore: use_super_parameters
   SettingsScreen({Key? key}) : super(key: key);
@@ -18,74 +19,75 @@ class SettingsScreen extends StatelessWidget {
         backgroundColor: theme.primaryColor,
         body: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: width * 0.07),
-              child:
+          padding: EdgeInsets.symmetric(horizontal: width * 0.07),
+          child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                SizedBox(height: height * 0.10),
-                Text(
-                  'Settings',
-                  style: theme.textTheme.headlineLarge?.copyWith(
-                    fontSize: width * 0.081,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                SizedBox(height: height * 0.01),
-                ListView.builder(
-                  itemCount: settingsOptions.length,
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    final option = settingsOptions[index];
-                    return Column(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            if (option.onTap != null) {
-                              option.onTap!(context); // Pass BuildContext to onTap
-                            }
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: AppColor.secondary,
-                              borderRadius: _getBorderRadius(index),
-                            ),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 18, vertical: 18),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            SizedBox(height: height * 0.10),
+            Text(
+              'Settings',
+              style: theme.textTheme.headlineLarge?.copyWith(
+                fontSize: width * 0.081,
+                color: Colors.white,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(height: height * 0.01),
+            ListView.builder(
+              itemCount: settingsOptions.length,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                final option = settingsOptions[index];
+                return Column(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        if (option.onTap != null) {
+                          option.onTap!(context); // Pass BuildContext to onTap
+                        }
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: AppColor.secondary,
+                          borderRadius: _getBorderRadius(index),
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 18, vertical: 18),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
                               children: [
-                                Row(
-                                  children: [
-                                    Image.asset(option.leadingIcon),
-                                    const SizedBox(width: 15),
-                                    Text(
-                                      option.title,
-                                      style:
+                                Image.asset(option.leadingIcon),
+                                const SizedBox(width: 15),
+                                Text(
+                                  option.title,
+                                  style:
                                       theme.textTheme.headlineLarge?.copyWith(
-                                        fontSize: width * 0.035,
-                                        color: AppColor.white,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ],
+                                    fontSize: width * 0.035,
+                                    color: AppColor.white,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
-                                if (option.trailingIcon != null)
-                                  Image.asset(option.trailingIcon!)
-                                else if (option.trailingWidget != null)
-                                  option.trailingWidget!,
                               ],
                             ),
-                          ),
+                            if (option.trailingIcon != null)
+                              Image.asset(option.trailingIcon!)
+                            else if (option.trailingWidget != null)
+                              option.trailingWidget!,
+                          ],
                         ),
-                        const Commondivider(),
-                      ],
-                    );
-                  },
-                ),
-              ]),
-            )));
+                      ),
+                    ),
+                    const Commondivider(),
+                  ],
+                );
+              },
+            ),
+          ]),
+        )));
   }
+
   BorderRadius _getBorderRadius(int index) {
     if (index == 0) {
       return const BorderRadius.only(
@@ -102,6 +104,7 @@ class SettingsScreen extends StatelessWidget {
     }
   }
 }
+
 class Commondivider extends StatelessWidget {
   const Commondivider({super.key});
   @override
@@ -112,6 +115,7 @@ class Commondivider extends StatelessWidget {
     );
   }
 }
+
 class SwitchController extends GetxController {
   // Observable state for the switch
   RxBool isSwitched = false.obs;
@@ -120,6 +124,7 @@ class SwitchController extends GetxController {
     isSwitched.value = value;
   }
 }
+
 //---------------model create-----------------
 class SettingsOption {
   final String title;
@@ -135,6 +140,7 @@ class SettingsOption {
     this.onTap,
   });
 }
+
 //list --------------------
 final List<SettingsOption> settingsOptions = [
   SettingsOption(
@@ -153,10 +159,10 @@ final List<SettingsOption> settingsOptions = [
     title: 'Notifications',
     leadingIcon: AppImage.notification,
     trailingWidget: Obx(() => Switch(
-      value: Get.find<SwitchController>().isSwitched.value,
-      onChanged: (value) =>
-          Get.find<SwitchController>().toggleSwitch(value),
-    )),
+          value: Get.find<SwitchController>().isSwitched.value,
+          onChanged: (value) =>
+              Get.find<SwitchController>().toggleSwitch(value),
+        )),
   ),
   SettingsOption(
     title: 'History',

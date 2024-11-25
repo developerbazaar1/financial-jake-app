@@ -8,6 +8,7 @@ import '../../../core/components/appbar/inner_app_bar.dart';
 import '../../../core/validator/validator.dart';
 import '../../../theme/theme_helper.dart';
 import '../../sign_up/views/widgets/textfeild.dart';
+
 // ignore: use_key_in_widget_constructors
 class ResetPasswordScreen extends StatelessWidget {
   final controller = Get.put(ResetPasswordController());
@@ -46,7 +47,7 @@ class ResetPasswordScreen extends StatelessWidget {
             ),
             SizedBox(height: height * 0.04),
             Obx(
-                  () => Form(
+              () => Form(
                 key: controller.form_key,
                 child: Column(
                   children: [
@@ -59,7 +60,7 @@ class ResetPasswordScreen extends StatelessWidget {
                         padding: EdgeInsets.only(right: width * 0.05),
                         onPressed: () {
                           controller.iscurretPasswordIconVisible.value =
-                          !controller.iscurretPasswordIconVisible.value;
+                              !controller.iscurretPasswordIconVisible.value;
                         },
                         icon: Icon(
                           controller.iscurretPasswordIconVisible.value
@@ -84,7 +85,7 @@ class ResetPasswordScreen extends StatelessWidget {
                         padding: EdgeInsets.only(right: width * 0.05),
                         onPressed: () {
                           controller.isPasswordIconVisible.value =
-                          !controller.isPasswordIconVisible.value;
+                              !controller.isPasswordIconVisible.value;
                         },
                         icon: Icon(
                           controller.isPasswordIconVisible.value
@@ -101,7 +102,7 @@ class ResetPasswordScreen extends StatelessWidget {
                     ),
                     SizedBox(height: height * 0.025),
                     Obx(
-                          () => CustomeTextFeild(
+                      () => CustomeTextFeild(
                         maxLines: 1,
                         controller: controller.confirmPasswordController,
                         label: 'Confirm New Password',
@@ -110,7 +111,7 @@ class ResetPasswordScreen extends StatelessWidget {
                           padding: EdgeInsets.only(right: width * 0.05),
                           onPressed: () {
                             controller.isConfirmPasswordIconVisible.value =
-                            !controller.isConfirmPasswordIconVisible.value;
+                                !controller.isConfirmPasswordIconVisible.value;
                           },
                           icon: Icon(
                             controller.isConfirmPasswordIconVisible.value
@@ -151,9 +152,3 @@ class ResetPasswordScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-

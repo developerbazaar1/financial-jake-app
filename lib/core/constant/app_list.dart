@@ -30,41 +30,37 @@ class AppList {
       unselectedIcon: AppSvg.settingActive,
     ),
   ];
+
   static List<dynamic> listdata = <dynamic>[
     {
       "heading": "Potential Saving Opportunity",
       "name": "Mortgage Assessment",
       "details":
           "For personalized AI analysis and better insights, share a few details.  In the meantime, check out these product options.",
-      "image": "assets/images/score.png"
+    },
+    {
+      "heading": "Good",
+      "name": "Credit Card Assessment",
+      "details":
+          "For personalized AI analysis and better insights, share a few details.  In the meantime, check out these product options.",
+    },
+    {
+      "heading": "Potential Saving Opportunity",
+      "name": "Loan Assisment",
+      "details":
+          "For personalized AI analysis and better insights, share a few details.  In the meantime, check out these product options.",
+    },
+    {
+      "heading": "Good",
+      "name": "Mortgage Assessment",
+      "details":
+          "For personalized AI analysis and better insights, share a few details.  In the meantime, check out these product options.",
     },
     {
       "heading": "Potential Saving Opportunity",
       "name": "Mortgage Assessment",
       "details":
           "For personalized AI analysis and better insights, share a few details.  In the meantime, check out these product options.",
-      "image": "assets/images/score.png"
-    },
-    {
-      "heading": "Potential Saving Opportunity",
-      "name": "Mortgage Assessment",
-      "details":
-          "For personalized AI analysis and better insights, share a few details.  In the meantime, check out these product options.",
-      "image": "assets/images/score.png"
-    },
-    {
-      "heading": "Potential Saving Opportunity",
-      "name": "Mortgage Assessment",
-      "details":
-          "For personalized AI analysis and better insights, share a few details.  In the meantime, check out these product options.",
-      "image": "assets/images/score.png"
-    },
-    {
-      "heading": "Potential Saving Opportunity",
-      "name": "Mortgage Assessment",
-      "details":
-          "For personalized AI analysis and better insights, share a few details.  In the meantime, check out these product options.",
-      "image": "assets/images/score.png"
     },
   ];
 
@@ -129,20 +125,45 @@ class AppList {
 
   static List FEImages = [
     'assets/images/financial_education_images/image1.png',
-    'assets/images/financial_education_images/Frame 237820.png'
-    // 'assets/images/financial_education_images/Frame 237820 (1).png',
-    //     'assets/images/financial_education_images/Frame 237820 (2).png',
-    // 'assets/images/financial_education_images/Frame 237820 (3).png',
-    // 'assets/images/financial_education_images/Frame 237820 (4).png',
-    // 'assets/images/financial_education_images/Frame 237820 (5).png',
+    // 'assets/images/financial_education_images/image1.png',
+    // 'assets/images/financial_education_images/image1.png',
+    // 'assets/images/financial_education_images/image1.png',
+    'assets/images/financial_education_images/Frame 237820 (1).png',
+    'assets/images/financial_education_images/Frame 237820 (2).png',
+    'assets/images/financial_education_images/Frame 237820 (3).png',
+    'assets/images/financial_education_images/Frame 237820 (4).png',
   ];
   static List FETitle = [
     'How to Get Started with Investing',
-    'How to Get Started with Investing'
-
-  ]; static List FESubTitle = [
+    'How to Get Started with Investing',
+    'How to Get Started with Investing',
+    'How to Get Started with Investing',
+    'How to Get Started with Investing',
+  ];
+  static List FESubTitle = [
     'Article , 5 min read',
-    'Video , 5 min'
+    'Article , 5 min',
+    'Article , 5 min read',
+    'Article , 5 min read',
+    'Article , 5 min',
+  ];
 
+  static List fEvideoImages = [
+    'assets/images/financial_education_images/Frame 237820.png',
+    'assets/images/financial_education_images/Frame 237820.png',
+    'assets/images/financial_education_images/Frame 237820 (4).png',
+    'assets/images/financial_education_images/Frame 237820 (4).png',
+  ];
+  static List fEvideoTitle = [
+    'How to Get Started with Investing',
+    'How to Get Started with Investing',
+    'How to Get Started with Investing',
+    'How to Get Started with Investing',
+  ];
+  static List fEvideoSubTitle = [
+    'video , 5 min read',
+    'Video , 5 min',
+    'video , 5 min read',
+    'video , 5 min read',
   ];
 }

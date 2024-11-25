@@ -18,8 +18,10 @@ import 'package:financial_wellbeing/features/signin/views/screen/signin_screen.d
 import 'package:financial_wellbeing/features/terrms&condition/views/terms_condition_screen.dart';
 import 'package:financial_wellbeing/features/tracking/views/screens/tracking_screen.dart';
 import 'package:financial_wellbeing/features/upload_document/views/upload_document_screen.dart';
+import 'package:financial_wellbeing/features/videos/views/videos_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../features/articles/views/articles_screen.dart';
 import '../../features/customer_support/views/customer_support.dart';
 
 import '../../features/edit_profile/view/edit_profile_screen.dart';
@@ -114,15 +116,12 @@ class AppRouter {
       builder: (context, state) => MortgageFormScreen(),
     ),
     GoRoute(
-
       path: AppRoutes.notificationscreen,
       name: RouteConstants.notificationscreen,
       builder: (context, state) => NotificationScreen(),
     ),
 
     GoRoute(
-
-
       name: RouteConstants.mortgageDetailsScreen,
       path: AppRoutes.mortgageDetailsScreen,
       builder: (context, state) => MortgageDetailsScreen(),
@@ -133,14 +132,16 @@ class AppRouter {
       builder: (context, state) => MortgageAssessmentScreen(),
     ),
     GoRoute(
-      name: RouteConstants.productDetailsScreen,
-      path: AppRoutes.productDetailsScreen,
-      builder: (context, state){
-  // Extract arguments from `state`
+        name: RouteConstants.productDetailsScreen,
+        path: AppRoutes.productDetailsScreen,
+        builder: (context, state) {
+          // Extract arguments from `state`
 
-  final int? index = state.extra as int?; // Optional extra argument
-  return ProductDetailsScreen(index: index, );}
-  ),
+          final int? index = state.extra as int?; // Optional extra argument
+          return ProductDetailsScreen(
+            index: index,
+          );
+        }),
 
     GoRoute(
       name: RouteConstants.myProductDetailsScreen,
@@ -148,20 +149,19 @@ class AppRouter {
       builder: (context, state) => MyProductDetailsScreen(),
     ),
 
-  GoRoute(
+    GoRoute(
       name: RouteConstants.equityDetailsScreen,
       path: AppRoutes.equityDetailsScreen,
       builder: (context, state) => EquityScreen(),
     ),
 
-  //-------------
+    //-------------
     GoRoute(
       path: AppRoutes.editProfileScreen,
       name: RouteConstants.editProfileScreen,
       builder: (context, state) => EditProfileScreen(),
     ),
     GoRoute(
-
       path: AppRoutes.historyScreen,
       name: RouteConstants.historyScreen,
       builder: (context, state) => HistoryScreen(),
@@ -192,6 +192,15 @@ class AppRouter {
       name: RouteConstants.financialEducationScreen,
       builder: (context, state) => FinancialEducationScreen(),
     ),
-
+    GoRoute(
+      path: AppRoutes.articlesScreen,
+      name: RouteConstants.articlesScreen,
+      builder: (context, state) => ArticleScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.videosScreen,
+      name: RouteConstants.videosScreen,
+      builder: (context, state) => VideosScreen(),
+    ),
   ]);
 }

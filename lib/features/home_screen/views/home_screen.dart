@@ -4,6 +4,7 @@ import "package:flutter/material.dart";
 import "package:get/get.dart";
 import "package:go_router/go_router.dart";
 import "../../../core/common/common_widget.dart";
+import "../../../core/components/progress_indicator/progess_indicator.dart";
 import "../../../core/constant/app_colors.dart";
 import "../../../core/constant/app_images.dart";
 import "../../../core/constant/app_list.dart";
@@ -20,9 +21,22 @@ class Homescreen extends StatelessWidget {
 //CONTROLLER USING GETX
   final controller = Get.put(HomeScreenController());
 
-
   @override
   Widget build(BuildContext context) {
+    // Color statusColor;
+    // Color getHeadingColor(String heading) {
+    //   switch (heading) {
+    //     case "Potential Saving Opportunity":
+    //       return Colors.green; // Green for "Potential Saving Opportunity"
+    //     case "Good":
+    //       return Colors.blue; // Blue for "Good"
+    //     case "Expired":
+    //       return Colors.red; // Red for "Expired"
+    //     default:
+    //       return Colors.grey; // Default color for other headings
+    //   }
+    // }
+
     final height = MediaQuery.sizeOf(context).height;
     final width = MediaQuery.sizeOf(context).width;
     return Scaffold(
@@ -45,9 +59,7 @@ class Homescreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Container(
-                        child: Image.asset(AppImage.profilepic),
-                      ),
+                      Image.asset(AppImage.profilepic),
                       Column(
                         children: [
                           Padding(
@@ -83,8 +95,9 @@ class Homescreen extends StatelessWidget {
                   Column(
                     children: [
                       InkWell(
-                        onTap: (){
-                          context.pushReplacementNamed(RouteConstants.uploadDocumentScreen);
+                        onTap: () {
+                          context.pushReplacementNamed(
+                              RouteConstants.uploadDocumentScreen);
                         },
                         child: Container(
                           padding: const EdgeInsets.symmetric(
@@ -113,9 +126,9 @@ class Homescreen extends StatelessWidget {
                         height: 10,
                       ),
                       InkWell(
-                        onTap: (){
-                          context.pushReplacementNamed(RouteConstants.financialEducationScreen);
-
+                        onTap: () {
+                          context.pushReplacementNamed(
+                              RouteConstants.financialEducationScreen);
                         },
                         child: Container(
                           padding: const EdgeInsets.symmetric(
@@ -189,7 +202,7 @@ class Homescreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: height * 0.05),
+            SizedBox(height: height * 0.08),
             GestureDetector(
               onTap: () {
                 scaffoldKey.currentState!.openDrawer();
@@ -212,9 +225,7 @@ class Homescreen extends StatelessWidget {
                 ),
                 GestureDetector(
                     onTap: () {
-                      // context.push(RouteConstants.notificationscreen);
                       context.pushNamed(RouteConstants.notificationscreen);
-                      //  context.pushReplacementNamed(RouteConstants.createAccount);
                     },
                     child: Image.asset(AppImage.notificationlogo))
               ],
@@ -317,10 +328,12 @@ class Homescreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: height * 0.01),
+
+                    //---- LIST ---
                     Wrap(
                       children: [
                         ...List.generate(
-                          AppList.listdata.length,
+                          controller.assessmentScore.length,
                           (index) => Column(
                             children: [
                               InkWell(
@@ -360,7 +373,8 @@ class Homescreen extends StatelessWidget {
                                                   BorderRadius.circular(20),
                                             ),
                                             child: Text(
-                                              AppList.listdata[index]["heading"],
+                                              AppList.listdata[index]
+                                                  ["heading"],
                                               style: theme
                                                   .textTheme.headlineLarge
                                                   ?.copyWith(
@@ -394,7 +408,8 @@ class Homescreen extends StatelessWidget {
                                               SizedBox(
                                                 width: 200,
                                                 child: Text(
-                                                  AppList.listdata[index]["details"],
+                                                  AppList.listdata[index]
+                                                      ["details"],
                                                   style: theme
                                                       .textTheme.headlineLarge
                                                       ?.copyWith(
@@ -406,10 +421,17 @@ class Homescreen extends StatelessWidget {
                                               ),
                                             ],
                                           ),
-
-                                          Image.asset(
-                                            AppList.listdata[index]["image"],
-                                          )
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                right: width * 0.04),
+                                            child: Obx(() {
+                                              return ProgessIndicator(
+                                                assessmentScore: RxInt(
+                                                    controller.assessmentScore[
+                                                        index]['data1']!),
+                                              );
+                                            }),
+                                          ),
                                         ],
                                       ),
                                     ],
@@ -447,8 +469,8 @@ class Homescreen extends StatelessWidget {
                     Container(
                       child: CW.commonElevatedButton(
                           onPressed: () {
-                            context.pushNamed(
-                                RouteConstants.mortgageFormScreen);
+                            context
+                                .pushNamed(RouteConstants.mortgageFormScreen);
                           },
                           height: height * 0.06,
                           width: width * 0.90,
@@ -471,6 +493,7 @@ class Homescreen extends StatelessWidget {
       ),
     );
   }
+
   Widget _dropdownField(String label, List<String> options, RxString selected,
       BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -487,24 +510,26 @@ class Homescreen extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Obx(
-              () => DropdownButtonFormField<String>(
-                hint: Text("Select a Assessment"),
+          () => DropdownButtonFormField<String>(
+            hint: Text("Select a Assessment"),
             value: selected.value.isEmpty ? null : selected.value,
             onChanged: (value) => selected.value = value ?? '',
             items: options
                 .map((option) =>
-                DropdownMenuItem(value: option, child: Text(option)))
+                    DropdownMenuItem(value: option, child: Text(option)))
                 .toList(),
             dropdownColor: AppColor.secondary,
             icon: const Icon(Icons.keyboard_arrow_down),
-            style: theme.textTheme.bodyMedium?.copyWith(fontSize: width * 0.036),
+            style:
+                theme.textTheme.bodyMedium?.copyWith(fontSize: width * 0.036),
             decoration: InputDecoration(
               filled: true,
               fillColor: AppColor.secondary,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: BorderSide(
-                  color: AppColor.primary, // Change to your desired border color
+                  color:
+                      AppColor.primary, // Change to your desired border color
                   width: 1.5, // Adjust the width of the border
                 ),
               ),

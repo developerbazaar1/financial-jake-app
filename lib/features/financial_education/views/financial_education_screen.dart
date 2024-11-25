@@ -4,16 +4,17 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../core/components/appbar/inner_app_bar.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_images.dart';
 import '../../../core/constant/app_svg.dart';
+import '../../../core/constant/app_text.dart';
+import '../../../core/routes/route_constant.dart';
 import '../../../theme/theme_helper.dart';
 import '../controllers/financial_education_screen.dart';
 
 class FinancialEducationScreen extends StatelessWidget {
-   FinancialEducationScreen({super.key});
+  FinancialEducationScreen({super.key});
 
   final controller = Get.put(FinancialEducationController());
   @override
@@ -36,13 +37,12 @@ class FinancialEducationScreen extends StatelessWidget {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
                   SizedBox(
                     height: height * 0.02,
                   ),
-
-                  SizedBox(
+                  Container(
                     height: height * 0.045,
+                    color: AppColor.secondary,
                     child: TextField(
                       onTap: () {},
                       autocorrect: true,
@@ -92,69 +92,178 @@ class FinancialEducationScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-
                   SizedBox(height: height * 0.03),
-                  ListView.separated(
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            //    onTapFrameEighteen.call(controller.testMonialData  alue[index]['ID']);
-                          },
-                          child: Container(
-                            padding: EdgeInsets.symmetric(vertical: 1),
-                            // decoration: AppDecoration.outlineBlack900.copyWith(
-                            //   borderRadius: BorderRadiusStyle.roundedBorder10,
-                            // ),
 
-                            child: Row(
-                              children: [
-                                Image.asset(
-                                  AppList.FEImages[index],
-
-                                  // radius: BorderRadius.only(
-                                  //   topLeft: Radius.circular(10),
-                                  //   bottomLeft: Radius.circular(10),
-                                  // ),
-                                  height: 100,
-                                  width: 146,
-                                  fit: BoxFit.cover,
+                  //-----------------toggle tab--------------------
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          controller.setTab("Articles");
+                        },
+                        child: Obx(() {
+                          return Container(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 8, horizontal: 8),
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: controller.selectedTab.value ==
+                                            "Articles"
+                                        ? AppColor.gold
+                                        : AppColor.secondary),
+                                borderRadius: BorderRadius.circular(10),
+                                color: AppColor.secondary),
+                            child: Center(
+                              child: Text(
+                                "Articles",
+                                style: theme.textTheme.headlineLarge?.copyWith(
+                                  fontSize: width * 0.030,
+                                  color: AppColor.white,
+                                  fontWeight: FontWeight.w500,
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                    left: 15,
-                                    top: 9,
-                                    bottom: 9,
+                              ),
+                            ),
+                          );
+                        }),
+                      ),
+                      SizedBox(width: width * 0.03),
+                      InkWell(
+                        onTap: () {
+                          controller.setTab("Videos");
+                        },
+                        child: Obx(() {
+                          return Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 8, horizontal: 8),
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color:
+                                        controller.selectedTab.value == "Videos"
+                                            ? AppColor.gold
+                                            : AppColor.secondary),
+                                borderRadius: BorderRadius.circular(10),
+                                color: AppColor.secondary),
+                            child: Center(
+                              child: Text(
+                                "Videos",
+                                style: theme.textTheme.headlineLarge?.copyWith(
+                                  fontSize: width * 0.030,
+                                  color: AppColor.white,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          );
+                        }),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: height * 0.02),
+
+                  //------------ Articles List--------------
+                  Obx(() {
+                    if (controller.selectedTab.value == "Articles") {
+                      return ListView.separated(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onTap: () {
+                              context.pushNamed(RouteConstants.articlesScreen);
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Image.asset(
+                                    AppList.FEImages[index],
+                                    height: 100,
+                                    width: 146,
+                                    fit: BoxFit.cover,
                                   ),
-                                  child: Column(
+                                  const SizedBox(width: 10),
+                                  Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       SizedBox(
                                         width: 179,
                                         child: Text(
-                                         AppList.FETitle[index],
+                                          AppList.FETitle[index],
                                           maxLines: 3,
                                           overflow: TextOverflow.ellipsis,
                                           style: theme.textTheme.labelLarge,
                                         ),
                                       ),
-
-                                      SizedBox(height: 9),
-                                      Text(AppList.FESubTitle[index])
-                                
+                                      const SizedBox(height: 9),
+                                      Text(AppList.FESubTitle[index]),
                                     ],
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        );
-                      },
-                      separatorBuilder: (context, index) => SizedBox(
-                            height: height * 0.02,
-                          ),
-                      itemCount: AppList.FEImages.length),
+                          );
+                        },
+                        separatorBuilder: (context, index) => SizedBox(
+                          height: height * 0.02,
+                        ),
+                        itemCount: AppList.FEImages.length,
+                      );
+                    }
+
+                    //----------------- Videos List-----------------------
+                    else if (controller.selectedTab.value == "Videos") {
+                      return ListView.separated(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onTap: () {
+                              context.pushNamed(RouteConstants.videosScreen);
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Image.asset(
+                                    AppList.fEvideoImages[index],
+                                    height: 100,
+                                    width: 146,
+                                    fit: BoxFit.cover,
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(
+                                        width: 179,
+                                        child: Text(
+                                          AppList.fEvideoTitle[index],
+                                          maxLines: 3,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: theme.textTheme.labelLarge,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 9),
+                                      Text(AppList.fEvideoSubTitle[index]),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                        separatorBuilder: (context, index) => SizedBox(
+                          height: height * 0.02,
+                        ),
+                        itemCount: AppList.fEvideoImages.length,
+                      );
+                    }
+                    return Container();
+                  }),
+                  SizedBox(height: height * 0.03),
                 ]))));
   }
 }

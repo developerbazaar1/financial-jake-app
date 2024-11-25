@@ -29,14 +29,10 @@ class RouteConstants {
   static const String equityDetailsScreen = 'equity_details_screen';
   static const String uploadDocumentScreen = 'upload_document_screen';
   static const String financialEducationScreen = 'financial_education_screen';
+  static const String articlesScreen = 'articles_screen';
+  static const String videosScreen = 'videos_screen';
 
-
-///
-
-
-
-
-
+  ///
 }
 
 class AppRoutes {
@@ -68,12 +64,14 @@ class AppRoutes {
   static const String privacyPolicy = '/privacypolicy_screen.dart';
   static const String termsCondtition = '/terms_condition_screen.dart';
 
-  static const String myProductDetailsScreen = '/my_product_details_screen.dart';
+  static const String myProductDetailsScreen =
+      '/my_product_details_screen.dart';
   static const String equityDetailsScreen = '/equity_details_screen.dart';
   static const String uploadDocumentScreen = '/upload_document_screen.dart';
-  static const String financialEducationScreen = '/financial_education_screen.dart';
+  static const String financialEducationScreen =
+      '/financial_education_screen.dart';
+  static const String articlesScreen = '/articles_screen.dart';
+  static const String videosScreen = '/videos_screen.dart';
 
   //
-
-
 }

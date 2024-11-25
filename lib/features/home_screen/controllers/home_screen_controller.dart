@@ -2,13 +2,22 @@ import 'package:get/get.dart';
 
 class HomeScreenController extends GetxController {
   var isOpenOrClosed = ''.obs;
+  // var assessmentScore = 785.obs;
+
+  var assessmentScore = <Map<String, int>>[
+    {"data1": 200},
+    {"data1": 300},
+    {"data1": 500},
+    {"data1": 600},
+    {"data1": 0},
+  ].obs;
+
   // @override
   // bool operator ==(Object other) {
   //   // TODO: implement ==
   //   return super == other;
   // }
 }
-
 
 // class OnboardingController extends GetxController {
 //   var currentPage = 0.obs;
@@ -20,8 +29,6 @@ class HomeScreenController extends GetxController {
 //     keepPage: true,
 //     initialPage: 0,
 //   ).obs;
-
-
 
 //   @override
 //   void onInit() {
@@ -48,5 +55,3 @@ class HomeScreenController extends GetxController {
 //     currentPage.value = pageIndex;
 //   }
 // }
-
-

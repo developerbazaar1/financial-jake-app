@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class MortgageAssessmentController extends GetxController {
-  var assessmentScore = 400.obs;
+  var assessmentScore = 200.obs;
   static MortgageAssessmentController get instance => Get.find();
 
   var products = [

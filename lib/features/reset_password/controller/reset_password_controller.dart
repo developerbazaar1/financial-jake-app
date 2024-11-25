@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/routes/route_constant.dart';
+
 class ResetPasswordController extends GetxController {
   RxBool iscurretPasswordIconVisible = false.obs;
   RxBool isPasswordIconVisible = false.obs;
@@ -9,9 +10,9 @@ class ResetPasswordController extends GetxController {
   final form_key = GlobalKey<FormState>();
   RxBool isLoading = false.obs;
   final TextEditingController currentPasswordController =
-  TextEditingController();
+      TextEditingController();
   final TextEditingController confirmPasswordController =
-  TextEditingController();
+      TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   void clickOnResetPassword(BuildContext context) {
     isLoading.value = true;
@@ -29,6 +30,7 @@ class ResetPasswordController extends GetxController {
     GoRouter.of(context).pushReplacementNamed(RouteConstants.signinScreen);
     FocusScope.of(context).unfocus();
   }
+
   @override
   void dispose() {
     form_key.currentContext?.pop();
