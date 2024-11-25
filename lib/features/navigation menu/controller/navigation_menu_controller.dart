@@ -54,7 +54,7 @@ class NavigationMenuController extends GetxController {
     Homescreen(),
     ProductsScreen(),
 
-     EquityScreen(),
+     EquityDetailsScreen(),
      SettingsScreen(),
 
 

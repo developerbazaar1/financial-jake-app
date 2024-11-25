@@ -160,7 +160,7 @@ class SignUpForm extends StatelessWidget {
           ),
           SizedBox(height: height * 0.025),
           CustomeTextFeild(
-            controller: controller.firstNameController,
+            controller: controller.phoneNumberController,
             label: 'Mobile Number',
             hintText: 'Enter your Mobile Number',
             keyboardType: TextInputType.phone,
@@ -220,6 +220,7 @@ class SignUpForm extends StatelessWidget {
 
               onPressed: () async {
                 DateTime? pickedDate = await showDatePicker(
+
                   builder: (BuildContext context, Widget? child) {
                     return Theme(
                       data: Theme.of(context).copyWith(
@@ -230,6 +231,22 @@ class SignUpForm extends StatelessWidget {
                           onSurface: Colors.white, // Text color
                         ),
                         dialogBackgroundColor: Colors.black,
+                        textTheme: TextTheme(
+                          headlineSmall: TextStyle(
+                            color: AppColor.gold,
+                            fontWeight: FontWeight.bold,
+                            fontSize: width* 0.051,
+                          ), // For the month/year at the top
+                          bodyLarge: TextStyle(
+                            color: Colors.white,
+                            fontSize: width* 0.041,
+                          ), // For the selected date
+                          labelSmall: TextStyle(
+                            color: Colors.white70,
+                            fontSize: width* 0.036,
+                          ), // For the days in the calendar grid
+                        ),
+
                       ),
                       child: child!,
                     );
@@ -240,10 +257,12 @@ class SignUpForm extends StatelessWidget {
                   lastDate: DateTime(2006),
                 );
 
+
                 if (pickedDate != null) {
                   String formattedDate =
                       DateFormat('MM/dd/yyyy').format(pickedDate);
                   controller.dobController.text = formattedDate;
+
                 }
               },
             ),

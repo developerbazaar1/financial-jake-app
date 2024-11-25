@@ -2,6 +2,7 @@ import 'package:financial_wellbeing/core/constant/app_colors.dart';
 import 'package:financial_wellbeing/core/constant/app_images.dart';
 import 'package:financial_wellbeing/features/edit_profile/contoller/edit_profile_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:go_router/go_router.dart';
@@ -9,6 +10,7 @@ import 'package:intl/intl.dart';
 
 import '../../../core/common/common_widget.dart';
 import '../../../core/components/appbar/inner_app_bar.dart';
+import '../../../core/constant/app_svg.dart';
 import '../../../theme/theme_helper.dart';
 import '../../sign_up/views/widgets/textfeild.dart';
 
@@ -113,23 +115,41 @@ class EditProfileScreen extends StatelessWidget {
                       // validator: (value) => Validator.isNameValid(value: value),
                       readOnly: true,
                       suffixIcon: IconButton(
-                        icon: const Icon(Icons.calendar_today,
-                            color: Colors.white),
+
+
+
+                        padding: EdgeInsets.only(right: width* 0.05),
+                        icon: SvgPicture.asset(AppSvg.calendar, ),
+
                         onPressed: () async {
                           DateTime? pickedDate = await showDatePicker(
+
                             builder: (BuildContext context, Widget? child) {
                               return Theme(
                                 data: Theme.of(context).copyWith(
                                   colorScheme: ColorScheme.dark(
-                                    primary: AppColor
-                                        .gold, // Header background color
-                                    onPrimary:
-                                        Colors.black, // Header text color
-                                    surface:
-                                        Colors.black, // Dialog background color
+                                    primary: AppColor.gold, // Header background color
+                                    onPrimary: Colors.black, // Header text color
+                                    surface: Colors.black, // Dialog background color
                                     onSurface: Colors.white, // Text color
                                   ),
                                   dialogBackgroundColor: Colors.black,
+                                  textTheme: TextTheme(
+                                    headlineSmall: TextStyle(
+                                      color: AppColor.gold,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: width* 0.051,
+                                    ), // For the month/year at the top
+                                    bodyLarge: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: width* 0.041,
+                                    ), // For the selected date
+                                    labelSmall: TextStyle(
+                                      color: Colors.white70,
+                                      fontSize: width* 0.036,
+                                    ), // For the days in the calendar grid
+                                  ),
+
                                 ),
                                 child: child!,
                               );
@@ -140,10 +160,12 @@ class EditProfileScreen extends StatelessWidget {
                             lastDate: DateTime(2006),
                           );
 
+
                           if (pickedDate != null) {
                             String formattedDate =
-                                DateFormat('MM/dd/yyyy').format(pickedDate);
+                            DateFormat('MM/dd/yyyy').format(pickedDate);
                             controller.dobController.text = formattedDate;
+
                           }
                         },
                       ),

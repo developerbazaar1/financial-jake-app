@@ -197,6 +197,8 @@ class ForgetPassword extends StatelessWidget {
   final controller = SignInController.instance;
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Align(
       alignment: Alignment.centerRight,
       child: TextButton(
@@ -208,7 +210,8 @@ class ForgetPassword extends StatelessWidget {
         },
         child: Text(
           'Forgot Password?',
-          style: theme.textTheme.bodyMedium?.copyWith(color: AppColor.gold),
+          style: theme.textTheme.bodyMedium?.copyWith(color: AppColor.gold,
+          fontSize: width * 0.036),
         ),
       ),
     );

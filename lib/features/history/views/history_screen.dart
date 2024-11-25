@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/components/appbar/inner_app_bar.dart';
 import '../../../core/constant/app_colors.dart';
@@ -48,7 +49,11 @@ class HistoryScreen extends StatelessWidget {
       backgroundColor: theme.primaryColor,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(height * 0.08),
-        child: InnerAppBar(),
+        child: InnerAppBar(
+            onTap: () {
+              context.go('/home_screen?index=3');
+            }
+        ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

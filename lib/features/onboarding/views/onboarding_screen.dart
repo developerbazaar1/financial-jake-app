@@ -57,7 +57,7 @@ class OnboardingScreen extends StatelessWidget {
               'Unlock your financial potential with our cutting-edge AI technology.',
               style: TextStyle(
                 color: AppColor.lightGrey,
-                fontSize: mediaQueryData.size.width * 0.051, //20
+                fontSize: width * 0.051, //20
 
                 fontWeight: FontWeight.w400,
               ),
@@ -67,7 +67,7 @@ class OnboardingScreen extends StatelessWidget {
                 'Get notified instantly when we find savings opportunities. How? Just share a few details, and our AI will search 24/7 for better financial products for you.',
                 style: TextStyle(
                   color: AppColor.lightGrey,
-                  fontSize: mediaQueryData.size.width * 0.051, //20
+                  fontSize:width * 0.051, //20
 
                   fontWeight: FontWeight.w400,
                 )),
@@ -90,7 +90,7 @@ class OnboardingScreen extends StatelessWidget {
               style: theme.textTheme.bodyLarge?.copyWith(
                 color: theme.primaryColor,
                 fontWeight: FontWeight.w600,
-                fontSize: mediaQueryData.size.width * 0.041,
+                fontSize: width * 0.041,
               ),
             )),
       ),

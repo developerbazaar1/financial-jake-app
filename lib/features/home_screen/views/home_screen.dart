@@ -82,51 +82,62 @@ class Homescreen extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 12, horizontal: 8),
-                        decoration: BoxDecoration(
-                            border: Border.all(color: AppColor.borderColor),
-                            borderRadius: BorderRadius.circular(12),
-                            color: AppColor.secondary),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Image.asset(AppImage.uploadLogo),
-                            Text(
-                              AppText.uploaddoc,
-                              style: theme.textTheme.headlineLarge?.copyWith(
-                                fontSize: width * 0.040,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            )
-                          ],
+                      InkWell(
+                        onTap: (){
+                          context.pushReplacementNamed(RouteConstants.uploadDocumentScreen);
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 12, horizontal: 8),
+                          decoration: BoxDecoration(
+                              border: Border.all(color: AppColor.borderColor),
+                              borderRadius: BorderRadius.circular(12),
+                              color: AppColor.secondary),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image.asset(AppImage.uploadLogo),
+                              Text(
+                                AppText.uploaddoc,
+                                style: theme.textTheme.headlineLarge?.copyWith(
+                                  fontSize: width * 0.040,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 12, horizontal: 8),
-                        decoration: BoxDecoration(
-                            border: Border.all(color: AppColor.borderColor),
-                            borderRadius: BorderRadius.circular(12),
-                            color: AppColor.secondary),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Image.asset(AppImage.financial2Logo),
-                            Text(
-                              AppText.financialeducation,
-                              style: theme.textTheme.headlineLarge?.copyWith(
-                                fontSize: width * 0.040,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            )
-                          ],
+                      InkWell(
+                        onTap: (){
+                          context.pushReplacementNamed(RouteConstants.financialEducationScreen);
+
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 12, horizontal: 8),
+                          decoration: BoxDecoration(
+                              border: Border.all(color: AppColor.borderColor),
+                              borderRadius: BorderRadius.circular(12),
+                              color: AppColor.secondary),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image.asset(AppImage.financial2Logo),
+                              Text(
+                                AppText.financialeducation,
+                                style: theme.textTheme.headlineLarge?.copyWith(
+                                  fontSize: width * 0.040,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       const SizedBox(
@@ -421,37 +432,22 @@ class Homescreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: height * 0.01),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 14, horizontal: 18),
-                      decoration: BoxDecoration(
-                          border: Border.all(color: AppColor.darkGrey),
-                          borderRadius: BorderRadius.circular(10),
-                          color: AppColor.secondary),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Select a Assessment",
-                                style: theme.textTheme.headlineLarge?.copyWith(
-                                  fontSize: width * 0.040,
-                                  color: AppColor.white,
-                                  fontWeight: FontWeight.w300,
-                                ),
-                              ),
-                              Image.asset(AppImage.arrowdown)
-                            ],
-                          ),
+                    _dropdownField(
+                        "New Assessments",
+                        [
+                          "Mortgage Assesment",
+                          "Credit card Assesment",
+                          "Loan Assesment",
+                          "Auto Loan Assesment",
+                          "Equity Assesment",
                         ],
-                      ),
-                    ),
+                        controller.isOpenOrClosed,
+                        context),
                     SizedBox(height: height * 0.02),
                     Container(
                       child: CW.commonElevatedButton(
                           onPressed: () {
-                            context.pushReplacementNamed(
+                            context.pushNamed(
                                 RouteConstants.mortgageFormScreen);
                           },
                           height: height * 0.06,
@@ -461,7 +457,7 @@ class Homescreen extends StatelessWidget {
                             style: theme.textTheme.bodyLarge?.copyWith(
                               color: theme.primaryColor,
                               fontWeight: FontWeight.w600,
-                              fontSize: mediaQueryData.size.width * 0.041,
+                              fontSize: width * 0.041,
                             ),
                           )),
                     ),
@@ -473,6 +469,63 @@ class Homescreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+  Widget _dropdownField(String label, List<String> options, RxString selected,
+      BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(height: height * 0.008),
+        Text(
+          label,
+          style: theme.textTheme.bodyMedium?.copyWith(
+            fontSize: width * 0.036,
+          ),
+        ),
+        const SizedBox(height: 8),
+        Obx(
+              () => DropdownButtonFormField<String>(
+                hint: Text("Select a Assessment"),
+            value: selected.value.isEmpty ? null : selected.value,
+            onChanged: (value) => selected.value = value ?? '',
+            items: options
+                .map((option) =>
+                DropdownMenuItem(value: option, child: Text(option)))
+                .toList(),
+            dropdownColor: AppColor.secondary,
+            icon: const Icon(Icons.keyboard_arrow_down),
+            style: theme.textTheme.bodyMedium?.copyWith(fontSize: width * 0.036),
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: AppColor.secondary,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  color: AppColor.primary, // Change to your desired border color
+                  width: 1.5, // Adjust the width of the border
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  color: AppColor.primary, // Border color when not focused
+                  width: 1.5,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  color: AppColor.borderColor, // Border color when focused
+                  width: 2.0, // Thicker border on focus
+                ),
+              ),
+            ),
+          ),
+        )
+      ],
     );
   }
 }

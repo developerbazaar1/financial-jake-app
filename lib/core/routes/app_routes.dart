@@ -1,6 +1,7 @@
 import 'package:financial_wellbeing/core/routes/route_constant.dart';
 import 'package:financial_wellbeing/features/equity/views/equity_screen.dart';
 import 'package:financial_wellbeing/features/equity_details/views/equity_details_screen.dart';
+import 'package:financial_wellbeing/features/financial_education/controllers/financial_education_screen.dart';
 import 'package:financial_wellbeing/features/mortgage_assesstment/views/mortgage_assessment_screen.dart';
 import 'package:financial_wellbeing/features/mortgage_details/controllers/mortgage_details_controller.dart';
 import 'package:financial_wellbeing/features/mortgage_details/views/screen/mortgage_details_screen.dart';
@@ -16,11 +17,13 @@ import 'package:financial_wellbeing/features/sign_up/views/screen/signup_screen.
 import 'package:financial_wellbeing/features/signin/views/screen/signin_screen.dart';
 import 'package:financial_wellbeing/features/terrms&condition/views/terms_condition_screen.dart';
 import 'package:financial_wellbeing/features/tracking/views/screens/tracking_screen.dart';
+import 'package:financial_wellbeing/features/upload_document/views/upload_document_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/customer_support/views/customer_support.dart';
 
 import '../../features/edit_profile/view/edit_profile_screen.dart';
+import '../../features/financial_education/views/financial_education_screen.dart';
 import '../../features/history/views/history_screen.dart';
 import '../../features/home_screen/views/home_screen.dart';
 import '../../features/navigation menu/view/screen/navigation_menu_screen.dart';
@@ -178,6 +181,16 @@ class AppRouter {
       path: AppRoutes.termsCondtition,
       name: RouteConstants.termsCondtition,
       builder: (context, state) => TermsConditionScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.uploadDocumentScreen,
+      name: RouteConstants.uploadDocumentScreen,
+      builder: (context, state) => UploadDocumentScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.financialEducationScreen,
+      name: RouteConstants.financialEducationScreen,
+      builder: (context, state) => FinancialEducationScreen(),
     ),
 
   ]);

@@ -37,8 +37,36 @@ class MortgageFormScreen extends StatelessWidget {
           children: [
             const HeadingText(text: 'Your Mortgage \nDetails'),
             SizedBox(height: height * 0.015),
-            const UploadDocument(),
-            SizedBox(height: height * 0.02),
+             UploadDocument(text: 'Upload Documents',
+              onTap: (){},),
+            SizedBox(height: height * 0.005),
+            Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+
+                  Text(
+                    "Please upload your documents",
+                    style: theme.textTheme.bodySmall?.copyWith(fontSize: width * 0.031),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: height * 0.008),
+                  Text(
+                    "and",
+                    style: theme.textTheme.titleLarge
+                        ?.copyWith(fontSize: width * 0.046, fontWeight: FontWeight.w400),
+                  ),
+                  SizedBox(height: height * 0.008),
+                  Text(
+                    "Manually fill in the details",
+                    style: theme.textTheme.bodySmall?.copyWith(fontSize: width * 0.031),
+                  ),
+                  SizedBox(height: height * 0.02),
+                ],
+              ),
+            ),
+
             CustomeTextFeild(
               label: "Name of Mortgage",
               hintText: "Enter mortgage name (eg. My Home)",

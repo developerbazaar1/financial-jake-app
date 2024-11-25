@@ -123,17 +123,26 @@ class AppList {
     "Flexible Payment Options: Adjust your payment schedule to fit your financial situation, with the ability to increase payments or make lump-sum contributions.",
   ];
 
+  static List<String> openClosedList = ["Open", "Closed"];
+  static List<String> fixedVariable = ["Fixed", "Variable"];
+  static List<String> yesNo = ["Yes", "No"];
 
- static List<String> openClosedList = [
-   "Open", "Closed"
- ];
- static List<String> fixedVariable = [
-   "Fixed", "Variable"
- ];
- static List<String> yesNo = [
-   "Yes", "No"
- ];
+  static List FEImages = [
+    'assets/images/financial_education_images/image1.png',
+    'assets/images/financial_education_images/Frame 237820.png'
+    // 'assets/images/financial_education_images/Frame 237820 (1).png',
+    //     'assets/images/financial_education_images/Frame 237820 (2).png',
+    // 'assets/images/financial_education_images/Frame 237820 (3).png',
+    // 'assets/images/financial_education_images/Frame 237820 (4).png',
+    // 'assets/images/financial_education_images/Frame 237820 (5).png',
+  ];
+  static List FETitle = [
+    'How to Get Started with Investing',
+    'How to Get Started with Investing'
 
+  ]; static List FESubTitle = [
+    'Article , 5 min read',
+    'Video , 5 min'
 
-
+  ];
 }

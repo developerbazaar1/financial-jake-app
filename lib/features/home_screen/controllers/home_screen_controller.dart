@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
 class HomeScreenController extends GetxController {
+  var isOpenOrClosed = ''.obs;
   // @override
   // bool operator ==(Object other) {
   //   // TODO: implement ==

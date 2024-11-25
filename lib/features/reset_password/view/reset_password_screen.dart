@@ -8,16 +8,13 @@ import '../../../core/components/appbar/inner_app_bar.dart';
 import '../../../core/validator/validator.dart';
 import '../../../theme/theme_helper.dart';
 import '../../sign_up/views/widgets/textfeild.dart';
-
 // ignore: use_key_in_widget_constructors
 class ResetPasswordScreen extends StatelessWidget {
   final controller = Get.put(ResetPasswordController());
-
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-
     return Scaffold(
       backgroundColor: theme.primaryColor,
       appBar: PreferredSize(
@@ -25,7 +22,8 @@ class ResetPasswordScreen extends StatelessWidget {
         child: InnerAppBar(
           isBack: true,
           onTap: () {
-            context.pushReplacementNamed(RouteConstants.otp);
+            // context.pushReplacementNamed(RouteConstants.otp);
+            context.go('/home_screen?index=3');
           },
         ),
       ),
@@ -48,21 +46,45 @@ class ResetPasswordScreen extends StatelessWidget {
             ),
             SizedBox(height: height * 0.04),
             Obx(
-              () => Form(
+                  () => Form(
                 key: controller.form_key,
                 child: Column(
                   children: [
+                    CustomeTextFeild(
+                      maxLines: 1,
+                      controller: controller.currentPasswordController,
+                      label: 'Current Password',
+                      hintText: 'Enter your Current Password',
+                      suffixIcon: IconButton(
+                        padding: EdgeInsets.only(right: width * 0.05),
+                        onPressed: () {
+                          controller.iscurretPasswordIconVisible.value =
+                          !controller.iscurretPasswordIconVisible.value;
+                        },
+                        icon: Icon(
+                          controller.iscurretPasswordIconVisible.value
+                              ? Icons.visibility_outlined
+                              : Icons.visibility_off_outlined,
+                          color: Colors.white,
+                        ),
+                      ),
+                      obscureText: !controller.iscurretPasswordIconVisible
+                          .value, // Toggle password visibility
+                      onChanged: (value) {},
+                      validator: (value) =>
+                          Validator.isPasswordValid(value: value),
+                    ),
+                    SizedBox(height: height * 0.025),
                     CustomeTextFeild(
                       maxLines: 1,
                       controller: controller.passwordController,
                       label: 'New Password',
                       hintText: 'Create new password',
                       suffixIcon: IconButton(
-                        padding: EdgeInsets.only(right: width* 0.05),
+                        padding: EdgeInsets.only(right: width * 0.05),
                         onPressed: () {
-
                           controller.isPasswordIconVisible.value =
-                              !controller.isPasswordIconVisible.value;
+                          !controller.isPasswordIconVisible.value;
                         },
                         icon: Icon(
                           controller.isPasswordIconVisible.value
@@ -74,22 +96,21 @@ class ResetPasswordScreen extends StatelessWidget {
                       obscureText: !controller.isPasswordIconVisible
                           .value, // Toggle password visibility
                       onChanged: (value) {},
-
                       validator: (value) =>
                           Validator.isPasswordValid(value: value),
                     ),
                     SizedBox(height: height * 0.025),
                     Obx(
-                      () => CustomeTextFeild(
+                          () => CustomeTextFeild(
                         maxLines: 1,
                         controller: controller.confirmPasswordController,
                         label: 'Confirm New Password',
                         hintText: 'Re-type your new password',
                         suffixIcon: IconButton(
-                          padding: EdgeInsets.only(right: width* 0.05),
+                          padding: EdgeInsets.only(right: width * 0.05),
                           onPressed: () {
                             controller.isConfirmPasswordIconVisible.value =
-                                !controller.isConfirmPasswordIconVisible.value;
+                            !controller.isConfirmPasswordIconVisible.value;
                           },
                           icon: Icon(
                             controller.isConfirmPasswordIconVisible.value
@@ -101,7 +122,6 @@ class ResetPasswordScreen extends StatelessWidget {
                         obscureText: !controller.isConfirmPasswordIconVisible
                             .value, // Toggle password visibility
                         onChanged: (value) {},
-
                         validator: (value) =>
                             Validator.isPasswordValid(value: value),
                       ),
@@ -131,3 +151,9 @@ class ResetPasswordScreen extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
