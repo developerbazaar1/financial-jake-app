@@ -54,7 +54,7 @@ class OtpController extends GetxController {
       //   verificationId: verificationId.value,
       //   smsCode: result,
       // );
-      context.pushReplacementNamed(RouteConstants.resetPassword);
+      context.pushReplacementNamed(RouteConstants.resetPassword,extra: false);
       FocusScope.of(context).unfocus();
 
       // if (credential != null) {

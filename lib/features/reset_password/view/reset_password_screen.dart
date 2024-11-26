@@ -11,6 +11,10 @@ import '../../sign_up/views/widgets/textfeild.dart';
 
 // ignore: use_key_in_widget_constructors
 class ResetPasswordScreen extends StatelessWidget {
+  final bool? isUserLogined;
+
+
+   ResetPasswordScreen({super.key, required this.isUserLogined});
   final controller = Get.put(ResetPasswordController());
   @override
   Widget build(BuildContext context) {
@@ -23,8 +27,12 @@ class ResetPasswordScreen extends StatelessWidget {
         child: InnerAppBar(
           isBack: true,
           onTap: () {
-            // context.pushReplacementNamed(RouteConstants.otp);
-            context.go('/home_screen?index=3');
+            if(isUserLogined==true){
+              context.go('/home_screen?index=3');
+            }else{
+              context.pushReplacementNamed(RouteConstants.otp);
+            }
+
           },
         ),
       ),
@@ -134,7 +142,12 @@ class ResetPasswordScreen extends StatelessWidget {
             ),
             CW.commonElevatedButton(
                 onPressed: () {
-                  controller.clickOnResetPassword(context);
+                  if(isUserLogined==true){
+                    context.go('/home_screen?index=3');
+                  }else{
+                    context.pushReplacementNamed(RouteConstants.signinScreen);
+                  }
+                 // controller.clickOnResetPassword(context);
                 },
                 height: height * 0.065,
                 width: width,
