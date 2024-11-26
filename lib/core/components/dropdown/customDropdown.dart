@@ -3,12 +3,13 @@ import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import '../../../theme/theme_helper.dart';
 import '../../constant/app_colors.dart';
+
 class CustomDropDown extends StatelessWidget {
   const CustomDropDown(
       {super.key,
-        required this.label,
-        required this.options,
-        required this.selected});
+      required this.label,
+      required this.options,
+      required this.selected});
   final String label;
   final List<String> options;
   final RxString selected;
@@ -28,18 +29,18 @@ class CustomDropDown extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Obx(
-              () => DropdownButtonFormField<String>(
+          () => DropdownButtonFormField<String>(
             value: selected.value.isEmpty ? null : selected.value,
             onChanged: (value) => selected.value = value ?? '',
             hint: Text('Select'),
             items: options
                 .map((option) =>
-                DropdownMenuItem(value: option, child: Text(option)))
+                    DropdownMenuItem(value: option, child: Text(option)))
                 .toList(),
             dropdownColor: AppColor.secondary,
             icon: Icon(Icons.keyboard_arrow_down),
             style:
-            theme.textTheme.bodyMedium?.copyWith(fontSize: width * 0.036),
+                theme.textTheme.bodyMedium?.copyWith(fontSize: width * 0.036),
             decoration: InputDecoration(
               filled: true,
               fillColor: AppColor.secondary,
@@ -47,7 +48,7 @@ class CustomDropDown extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 borderSide: BorderSide(
                   color:
-                  AppColor.primary, // Change to your desired border color
+                      AppColor.primary, // Change to your desired border color
                   width: 1.5, // Adjust the width of the border
                 ),
               ),

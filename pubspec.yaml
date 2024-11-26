@@ -13,11 +13,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+    
+   
 
 #Network
   http: ^1.2.2
   connectivity_plus: ^6.1.0
   cached_network_image: ^3.4.1
+#file picker
+  file_picker: ^5.0.0
 
 #local storage
   get_storage: ^2.1.1

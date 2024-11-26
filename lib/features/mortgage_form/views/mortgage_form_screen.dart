@@ -8,6 +8,7 @@ import '../../../core/common/common_widget.dart';
 import '../../../core/components/appbar/inner_app_bar.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_svg.dart';
+import '../../../core/constant/app_text.dart';
 import '../../../theme/theme_helper.dart';
 
 class MortgageFormScreen extends StatelessWidget {
@@ -246,16 +247,68 @@ class UploadDocument extends StatelessWidget {
           style: theme.textTheme.bodySmall?.copyWith(fontSize: width * 0.031),
         ),
         SizedBox(height: height * 0.008),
-        Text(
-          "and",
-          style: theme.textTheme.titleLarge
-              ?.copyWith(fontSize: width * 0.046, fontWeight: FontWeight.w400),
+        // Text(
+        //   "and",
+        //   style: theme.textTheme.titleLarge
+        //       ?.copyWith(fontSize: width * 0.046, fontWeight: FontWeight.w400),
+        // ),
+        OrText(
+          text: 'Manually fill in the details',
         ),
-        SizedBox(height: height * 0.008),
-        Text(
-          "Manually fill in the details",
-          style: theme.textTheme.bodySmall?.copyWith(fontSize: width * 0.031),
+      ],
+    );
+  }
+}
+
+class OrText extends StatelessWidget {
+  const OrText({
+    super.key,
+    required this.text,
+  });
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    return Column(
+      children: [
+        SizedBox(height: height * 0.02),
+        SizedBox(
+          height: height * 0.045,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                margin: EdgeInsets.only(right: width * 0.026),
+                height: 1.5,
+                width: width / 3,
+                color: AppColor.borderColor,
+              ),
+              Text(
+                AppText.or,
+                style: theme.textTheme.bodyLarge!.copyWith(
+                  color: AppColor.lightGrey,
+                  fontSize: 20,
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: width * 0.026),
+                height: 1.5,
+                width: width / 3,
+                color: AppColor.borderColor,
+              ),
+            ],
+          ),
         ),
+        SizedBox(height: height * 0.005),
+        Center(
+          child: Text(
+            text,
+            style: theme.textTheme.bodySmall?.copyWith(color: Colors.white70),
+          ),
+        ),
+        SizedBox(height: height * 0.025),
       ],
     );
   }

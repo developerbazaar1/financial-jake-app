@@ -23,20 +23,6 @@ class Homescreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Color statusColor;
-    // Color getHeadingColor(String heading) {
-    //   switch (heading) {
-    //     case "Potential Saving Opportunity":
-    //       return Colors.green; // Green for "Potential Saving Opportunity"
-    //     case "Good":
-    //       return Colors.blue; // Blue for "Good"
-    //     case "Expired":
-    //       return Colors.red; // Red for "Expired"
-    //     default:
-    //       return Colors.grey; // Default color for other headings
-    //   }
-    // }
-
     final height = MediaQuery.sizeOf(context).height;
     final width = MediaQuery.sizeOf(context).width;
     return Scaffold(
@@ -445,14 +431,7 @@ class Homescreen extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: height * 0.01),
-                    Text(
-                      "New Assessments",
-                      style: theme.textTheme.headlineLarge?.copyWith(
-                        fontSize: width * 0.040,
-                        color: AppColor.white,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
+
                     SizedBox(height: height * 0.01),
                     _dropdownField(
                         "New Assessments",
