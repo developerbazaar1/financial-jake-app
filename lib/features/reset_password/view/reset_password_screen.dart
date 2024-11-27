@@ -111,31 +111,40 @@ class ResetPasswordScreen extends StatelessWidget {
                     ),
                     SizedBox(height: height * 0.025),
                     Obx(
-                      () => CustomeTextFeild(
+                          () => CustomeTextFeild(
                         maxLines: 1,
                         controller: controller.confirmPasswordController,
                         label: 'Confirm New Password',
                         hintText: 'Re-type your new password',
+                        obscureText: !controller.isConfirmPasswordIconVisible.value,
+                        validator: (value) {
+                          if (value != controller.passwordController.text) {
+                            return 'Passwords do not match';
+                          }
+                          return null;
+                        },
                         suffixIcon: IconButton(
-                          padding: EdgeInsets.only(right: width * 0.05),
                           onPressed: () {
                             controller.isConfirmPasswordIconVisible.value =
-                                !controller.isConfirmPasswordIconVisible.value;
+                            !controller.isConfirmPasswordIconVisible.value;
                           },
                           icon: Icon(
                             controller.isConfirmPasswordIconVisible.value
                                 ? Icons.visibility_outlined
                                 : Icons.visibility_off_outlined,
-                            color: Colors.white,
                           ),
                         ),
-                        obscureText: !controller.isConfirmPasswordIconVisible
-                            .value, // Toggle password visibility
-                        onChanged: (value) {},
-                        validator: (value) =>
-                            Validator.isPasswordValid(value: value),
+                        onChanged: (value) {
+                          if (value != controller.passwordController.text) {
+                            controller.isPasswordMatching.value = false;
+                          } else {
+                            controller.isPasswordMatching.value = true;
+                          }
+                        },
+
                       ),
                     ),
+
                     SizedBox(height: height * 0.035),
                   ],
                 ),
@@ -143,12 +152,8 @@ class ResetPasswordScreen extends StatelessWidget {
             ),
             CW.commonElevatedButton(
                 onPressed: () {
-                  if(isUserLogined==true){
-                    context.go('/home_screen?index=3');
-                  }else{
-                    context.pushReplacementNamed(RouteConstants.signinScreen);
-                  }
-                 // controller.clickOnResetPassword(context);
+
+                  controller.clickOnResetPassword(context,isUserLogined!);
                 },
                 height: height * 0.065,
                 width: width,

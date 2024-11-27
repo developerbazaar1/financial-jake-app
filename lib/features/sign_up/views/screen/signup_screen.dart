@@ -269,7 +269,7 @@ class SignUpForm extends StatelessWidget {
             label: 'Date of Birth',
             hintText: 'MM/DD/YYYY',
             controller: controller.dobController,
-            validator: (value) => Validator.isValid(value: value, title: 'Please enter DOB'),
+            validator: (value) => Validator.isValid(value: value, title: 'DOB'),
             readOnly: true,
             suffixIcon: IconButton(
               icon: SvgPicture.asset(AppSvg.calendar),

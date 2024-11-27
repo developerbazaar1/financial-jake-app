@@ -105,6 +105,7 @@ class CW {
       textInputAction:textInputAction ,
       inputFormatters: inputFormatters,
 
+
       textCapitalization: textCapitalization,
       style: style ??
           theme.textTheme.bodyMedium!.copyWith(
@@ -195,6 +196,7 @@ class CW {
     bool autofocus = false,
     bool readOnly = false,
     FocusNode? focusNode,
+     TextStyle? errorStyle,
   }) {
     return TextFormField(
       focusNode: focusNode,
@@ -211,6 +213,7 @@ class CW {
       validator: validator,
       maxLength: maxLength,
       textAlign: textAlign ?? TextAlign.start,
+
       obscureText: obscureText ?? false,
       keyboardType: keyboardType ?? TextInputType.streetAddress,
       readOnly: readOnly,
@@ -219,6 +222,8 @@ class CW {
       textCapitalization: textCapitalization,
       style: style ?? theme.textTheme.bodyMedium!.copyWith(color: Colors.black),
       decoration: InputDecoration(
+        errorStyle: theme.textTheme.bodyMedium!.copyWith(color: Colors.red,fontSize: 14),
+
         hintText: hintText,
         fillColor: fillColor ?? Colors.white,
         alignLabelWithHint: true,

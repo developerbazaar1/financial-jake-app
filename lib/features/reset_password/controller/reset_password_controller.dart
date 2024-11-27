@@ -6,6 +6,7 @@ import '../../../core/routes/route_constant.dart';
 class ResetPasswordController extends GetxController {
   RxBool iscurretPasswordIconVisible = false.obs;
   RxBool isPasswordIconVisible = false.obs;
+  RxBool isPasswordMatching = false.obs;
   RxBool isConfirmPasswordIconVisible = false.obs;
   final form_key = GlobalKey<FormState>();
   RxBool isLoading = false.obs;
@@ -14,7 +15,7 @@ class ResetPasswordController extends GetxController {
   final TextEditingController confirmPasswordController =
       TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  void clickOnResetPassword(BuildContext context) {
+  void clickOnResetPassword(BuildContext context, bool isLogined) {
     isLoading.value = true;
     if (!form_key.currentState!.validate()) {
       // Remove Loader
@@ -27,7 +28,12 @@ class ResetPasswordController extends GetxController {
     currentPasswordController.text = '';
     passwordController.text = '';
     confirmPasswordController.text = '';
-    GoRouter.of(context).pushReplacementNamed(RouteConstants.signinScreen);
+    if(isLogined==true){
+      context.go('/home_screen?index=3');
+    }else{
+      GoRouter.of(context).pushReplacementNamed(RouteConstants.signinScreen);
+    }
+
     FocusScope.of(context).unfocus();
   }
 
