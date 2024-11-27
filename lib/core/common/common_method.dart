@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constant/app_colors.dart';
 
@@ -151,6 +152,21 @@ class CM {
     int max = 999999;
     var number = min + random.nextInt(max - min);
     return number.toString();
+  }
+
+
+
+  static void launchURL(BuildContext context) async {
+    final String url = 'https://plaid.com/';
+    final Uri uri = Uri.parse(url);
+
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Could not launch $url')),
+      );
+    }
   }
 
   ///For Check Post Api Response

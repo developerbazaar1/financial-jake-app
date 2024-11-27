@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../core/common/common_method.dart';
 import '../../../../core/common/common_widget.dart';
 import '../../../../core/components/appbar/inner_app_bar.dart';
 import '../../../../core/components/checkbox/custom_checkbox.dart';
@@ -53,34 +54,26 @@ class MortgageFormScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             HeadingText(text: 'Your Mortgage \nDetails'),
-                            Container(
-                              padding: const EdgeInsets.all(15),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: AppColor.gold,
-                                  borderRadius: BorderRadius.circular(10),
+                            Padding(
+                              padding: EdgeInsets.only(top: height* 0.015),
+                              child: CW.commonElevatedButton(
+                                  height: height * 0.040,
+                                  width: width * 0.20,
+                                  onPressed: (){
+                                    CM.launchURL(context);
+                                  }, child: Text(
+                                "Plaid",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge
+                                    ?.copyWith(
+                                  color: AppColor.black,
+                                  fontSize: width * 0.035,
+                                  fontWeight: FontWeight.w600,
                                 ),
-                                height: height * 0.040,
-                                width: width * 0.20,
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 8.0),
-                                  child: Center(
-                                    child: Text(
-                                      "Plaid",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyLarge
-                                          ?.copyWith(
-                                            color: AppColor.black,
-                                            fontSize: width * 0.035,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
+                              )),
+                            )
+
                           ],
                         ),
                         SizedBox(height: height * 0.015),
