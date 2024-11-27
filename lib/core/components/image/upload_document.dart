@@ -99,56 +99,6 @@ class UploadDocument extends StatelessWidget {
             ),
           );
         }),
-        // InkWell(
-        //   onTap: onTap,
-        //   child: Container(
-        //     margin: EdgeInsets.symmetric(
-        //         horizontal: width * 0.03, vertical: height * 0.015),
-        //     decoration: BoxDecoration(
-        //       gradient: LinearGradient(
-        //         colors: [
-        //           AppColor.gradiantColor1,
-        //           AppColor.gradiantColor2,
-        //           AppColor.gradiantColor3,
-        //         ],
-        //         begin: Alignment.topLeft,
-        //         end: Alignment.bottomRight,
-        //       ),
-        //       borderRadius: BorderRadius.circular(30),
-        //     ),
-        //     padding: const EdgeInsets.all(3), // Space for the gradient border
-        //     child: Container(
-        //       decoration: BoxDecoration(
-        //         color: AppColor.secondary, // Inner background color
-        //         borderRadius: BorderRadius.circular(30),
-        //       ),
-        //       height: height * 0.135,
-        //       width: width,
-        //       child: Column(
-        //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        //         children: [
-        //           SizedBox(
-        //             height: height * 0.008,
-        //           ),
-        //           SvgPicture.asset(
-        //             AppSvg.document,
-        //           ),
-        //           Text(
-        //             text,
-        //             style: theme.textTheme.bodyLarge?.copyWith(
-        //                 color: AppColor.lightGrey,
-        //                 fontSize: width * 0.041,
-        //                 fontWeight: FontWeight.w500),
-        //             textAlign: TextAlign.center,
-        //           ),
-        //           SizedBox(
-        //             height: height * 0.008,
-        //           )
-        //         ],
-        //       ),
-        //     ),
-        //   ),
-        // ),
       ],
     );
   }
