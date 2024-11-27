@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import '../../../../core/common/common_widget.dart';
+import '../../../../core/components/appbar/inner_app_bar.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_svg.dart';
 import '../../../../core/constant/app_text.dart';
@@ -28,11 +29,24 @@ class SignUpScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: theme.primaryColor,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(height * 0.08),
+        child: InnerAppBar(
+          isBack: true,
+          onTap: () {
+
+
+              context.pushReplacementNamed(RouteConstants.signinScreen);}
+
+
+
+        ),
+      ),
       body: Padding(
         padding: EdgeInsets.only(
           left: width * 0.05,
           right: width * 0.05,
-          top: height * 0.15,
+
           bottom: height * 0.08,
         ),
         child: const SingleChildScrollView(
@@ -141,6 +155,10 @@ class SignUpForm extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     final controller = SignUpController.instance;
+
+    // Create FocusNodes for navigation between fields
+    final focusNodes = List<FocusNode>.generate(7, (index) => FocusNode());
+
     return Form(
       key: controller.form_Key,
       child: Column(
@@ -150,6 +168,8 @@ class SignUpForm extends StatelessWidget {
             controller: controller.firstNameController,
             hintText: 'Enter your first name',
             validator: (value) => Validator.isNameValid(value: value),
+            onFieldSubmitted: (_) => focusNodes[1].requestFocus(),
+            focusNode: focusNodes[0],
           ),
           SizedBox(height: height * 0.025),
           CustomeTextFeild(
@@ -157,6 +177,8 @@ class SignUpForm extends StatelessWidget {
             label: 'Last Name',
             hintText: 'Enter your last name',
             validator: (value) => Validator.isNameValid(value: value),
+            onFieldSubmitted: (_) => focusNodes[2].requestFocus(),
+            focusNode: focusNodes[1],
           ),
           SizedBox(height: height * 0.025),
           CustomeTextFeild(
@@ -169,103 +191,104 @@ class SignUpForm extends StatelessWidget {
               FilteringTextInputFormatter.digitsOnly,
               LengthLimitingTextInputFormatter(10),
             ],
+            onFieldSubmitted: (_) => focusNodes[3].requestFocus(),
+            focusNode: focusNodes[2],
           ),
           SizedBox(height: height * 0.025),
           CustomeTextFeild(
             controller: controller.emailController,
             label: 'Email',
             hintText: 'Enter your Email Address',
-            onChanged: (value) => () {},
             validator: (value) => Validator.isEmailValid(value: value),
+            onFieldSubmitted: (_) => focusNodes[4].requestFocus(),
+            focusNode: focusNodes[3],
           ),
           SizedBox(height: height * 0.025),
           Obx(
-            () => CustomeTextFeild(
-              maxLines: 1,
+                () => CustomeTextFeild(
+                  maxLines: 1,
               controller: controller.passwordController,
-              label: 'Password', hintText: 'Create a strong password',
+              label: 'Password',
+              hintText: 'Create a strong password',
+              obscureText: !controller.isPasswordIconVisible.value,
+              validator: (value) => Validator.isPasswordValid(value: value),
               suffixIcon: IconButton(
-                padding: EdgeInsets.only(right: width* 0.05),
                 onPressed: () {
                   controller.isPasswordIconVisible.value =
-                      !controller.isPasswordIconVisible.value;
+                  !controller.isPasswordIconVisible.value;
                 },
                 icon: Icon(
                   controller.isPasswordIconVisible.value
                       ? Icons.visibility_outlined
                       : Icons.visibility_off_outlined,
-                  color: Colors.white,
                 ),
               ),
-              obscureText: !controller
-                  .isPasswordIconVisible.value, // Toggle password visibility
-              onChanged: (value) {},
-
-              validator: (value) => Validator.isPasswordValid(value: value),
+              onFieldSubmitted: (_) => focusNodes[5].requestFocus(),
+              focusNode: focusNodes[4],
+            ),
+          ),
+          SizedBox(height: height * 0.025),
+          Obx(
+                () => CustomeTextFeild(
+                  maxLines: 1,
+              controller: controller.confirmPasswordController,
+              label: 'Confirm Password',
+              hintText: 'Re-type your password',
+              obscureText: !controller.isConfirmPasswordVisible.value,
+              validator: (value) {
+                if (value != controller.passwordController.text) {
+                  return 'Passwords do not match';
+                }
+                return null;
+              },
+              suffixIcon: IconButton(
+                onPressed: () {
+                  controller.isConfirmPasswordVisible.value =
+                  !controller.isConfirmPasswordVisible.value;
+                },
+                icon: Icon(
+                  controller.isConfirmPasswordVisible.value
+                      ? Icons.visibility_outlined
+                      : Icons.visibility_off_outlined,
+                ),
+              ),
+              onChanged: (value) {
+                if (value != controller.passwordController.text) {
+                  controller.isPasswordMatching.value = false;
+                } else {
+                  controller.isPasswordMatching.value = true;
+                }
+              },
+              onFieldSubmitted: (_) => focusNodes[6].requestFocus(),
+              focusNode: focusNodes[5],
             ),
           ),
           SizedBox(height: height * 0.025),
           CustomeTextFeild(
+            maxLines: 1,
             label: 'Date of Birth',
             hintText: 'MM/DD/YYYY',
             controller: controller.dobController,
-            validator: (value) => Validator.isNameValid(value: value),
+            validator: (value) => Validator.isValid(value: value, title: 'Please enter DOB'),
             readOnly: true,
             suffixIcon: IconButton(
-
-
-
-              padding: EdgeInsets.only(right: width* 0.05),
-              icon: SvgPicture.asset(AppSvg.calendar, ),
-
+              icon: SvgPicture.asset(AppSvg.calendar),
               onPressed: () async {
                 DateTime? pickedDate = await showDatePicker(
-
-                  builder: (BuildContext context, Widget? child) {
-                    return Theme(
-                      data: Theme.of(context).copyWith(
-                        colorScheme: ColorScheme.dark(
-                          primary: AppColor.gold, // Header background color
-                          onPrimary: Colors.black, // Header text color
-                          surface: Colors.black, // Dialog background color
-                          onSurface: Colors.white, // Text color
-                        ),
-                        dialogBackgroundColor: Colors.black,
-                        textTheme: TextTheme(
-                          headlineSmall: TextStyle(
-                            color: AppColor.gold,
-                            fontWeight: FontWeight.bold,
-                            fontSize: width* 0.051,
-                          ), // For the month/year at the top
-                          bodyLarge: TextStyle(
-                            color: Colors.white,
-                            fontSize: width* 0.041,
-                          ), // For the selected date
-                          labelSmall: TextStyle(
-                            color: Colors.white70,
-                            fontSize: width* 0.036,
-                          ), // For the days in the calendar grid
-                        ),
-
-                      ),
-                      child: child!,
-                    );
-                  },
                   context: context,
                   initialDate: DateTime(2006),
                   firstDate: DateTime(1900),
                   lastDate: DateTime(2006),
                 );
-
-
                 if (pickedDate != null) {
                   String formattedDate =
-                      DateFormat('MM/dd/yyyy').format(pickedDate);
+                  DateFormat('MM/dd/yyyy').format(pickedDate);
                   controller.dobController.text = formattedDate;
-
                 }
               },
             ),
+            onFieldSubmitted: (_) => FocusScope.of(context).unfocus(),
+            focusNode: focusNodes[6],
           ),
           SizedBox(height: height * 0.05),
         ],
@@ -273,6 +296,8 @@ class SignUpForm extends StatelessWidget {
     );
   }
 }
+
+
 
 class OrText extends StatelessWidget {
   const OrText({

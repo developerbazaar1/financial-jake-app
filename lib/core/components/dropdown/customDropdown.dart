@@ -8,10 +8,12 @@ class CustomDropDown extends StatelessWidget {
       {super.key,
         required this.label,
         required this.options,
-        required this.selected});
+        required this.selected,this.hintText, this.labelStyle});
   final String label;
   final List<String> options;
   final RxString selected;
+  final String? hintText;  final TextStyle? labelStyle;
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -22,25 +24,29 @@ class CustomDropDown extends StatelessWidget {
         SizedBox(height: height * 0.008),
         Text(
           label,
-          style: theme.textTheme.bodyMedium?.copyWith(
+          style: labelStyle??theme.textTheme.bodyMedium?.copyWith(
             fontSize: width * 0.036,
           ),
         ),
         const SizedBox(height: 8),
         Obx(
               () => DropdownButtonFormField<String>(
+
             value: selected.value.isEmpty ? null : selected.value,
             onChanged: (value) => selected.value = value ?? '',
-            hint: Text('Select'),
+            hint: Text(hintText??'Select'),
+
             items: options
                 .map((option) =>
                 DropdownMenuItem(value: option, child: Text(option)))
                 .toList(),
             dropdownColor: AppColor.secondary,
             icon: Icon(Icons.keyboard_arrow_down),
+
             style:
-            theme.textTheme.bodyMedium?.copyWith(fontSize: width * 0.036),
+            theme.textTheme.bodyMedium?.copyWith(fontSize: width * 0.036,fontWeight: FontWeight.w500),
             decoration: InputDecoration(
+              hintStyle:  theme.textTheme.bodyMedium?.copyWith(fontSize: width* 0.036,fontWeight: FontWeight.w500),
               filled: true,
               fillColor: AppColor.secondary,
               border: OutlineInputBorder(

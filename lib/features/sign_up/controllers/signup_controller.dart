@@ -6,18 +6,21 @@ import '../../../core/routes/route_constant.dart';
 
 class SignUpController extends GetxController {
   static SignUpController get instance => Get.find();
-  RxBool isPasswordVisible = false.obs;
+  RxBool isConfirmPasswordVisible = false.obs;
   RxBool isPasswordIconVisible = false.obs;
   RxBool isLoading = false.obs;
   final form_Key = GlobalKey<FormState>();
   //final userRepository = Get.put(UserRepository());
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController = TextEditingController();
   final TextEditingController firstNameController = TextEditingController();
   final TextEditingController lasttNameController = TextEditingController();
   final TextEditingController phoneNumberController = TextEditingController();
   final TextEditingController dobController = TextEditingController();
 
+  RxString confirmPasswordError =''.obs;
+RxBool isPasswordMatching = false.obs;
   void clickOnSignUp(BuildContext context) async {
     try {
       // Start Loading

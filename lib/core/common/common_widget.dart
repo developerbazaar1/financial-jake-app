@@ -78,11 +78,14 @@ class CW {
     bool readOnly = false,
     FocusNode? focusNode,
     BuildContext? context,
+    TextInputAction? textInputAction,
+    ValueChanged<String>? onFieldSubmitted,
   }) {
     return TextFormField(
       onTap: onTap,
       focusNode: focusNode,
       controller: controller,
+        onFieldSubmitted:onFieldSubmitted,
       onChanged: onChanged ??
           (value) {
             value = value.trim();
@@ -91,6 +94,7 @@ class CW {
             }
           },
       validator: validator,
+      cursorColor: Colors.white,
       maxLength: maxLength,
       maxLines: maxLines,
       textAlign: textAlign ?? TextAlign.start,
@@ -98,7 +102,9 @@ class CW {
       keyboardType: keyboardType ?? TextInputType.streetAddress,
       readOnly: readOnly,
       autofocus: autofocus,
+      textInputAction:textInputAction ,
       inputFormatters: inputFormatters,
+
       textCapitalization: textCapitalization,
       style: style ??
           theme.textTheme.bodyMedium!.copyWith(
