@@ -56,7 +56,7 @@ class SplashController extends GetxController {
     //   bool isFirstTime = deviceStorage.read("isFirstTime") ?? true;
     //
     //   if (isFirstTime) {
-    router.pushReplacementNamed(RouteConstants.bottomNavigation);
+    router.pushReplacementNamed(RouteConstants.onboardingScreen);
     //   } else {
     //     router.pushReplacementNamed(RouteConstants.login);
     //   }

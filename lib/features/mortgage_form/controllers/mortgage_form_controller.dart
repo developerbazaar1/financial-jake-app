@@ -25,6 +25,17 @@ class MortgageFormController extends GetxController {
   final TextEditingController phoneNumberController = TextEditingController();
   final TextEditingController dobController = TextEditingController();
 
+  //  variables for popup
+  var isPopupVisible = false.obs;
+
+  void togglePopupVisibility() {
+    isPopupVisible.value = !isPopupVisible.value;
+  }
+
+  void hidePopup() {
+    isPopupVisible.value = false;
+  }
+
   // Reactive variables for dropdowns
 
   var selectedMonth = ''.obs;
@@ -73,6 +84,8 @@ class MortgageFormController extends GetxController {
     '2023',
     '2024'
   ];
+
+  //---------------  var for upload doc--------------
 
   var uploadDoc = ''.obs;
 

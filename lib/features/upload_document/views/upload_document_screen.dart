@@ -1,11 +1,9 @@
 import 'package:financial_wellbeing/core/constant/app_images.dart';
 import 'package:financial_wellbeing/core/constant/app_svg.dart';
-import 'package:financial_wellbeing/features/upload_document/controllers/upload_documnet_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../core/common/common_widget.dart';
 import '../../../core/components/appbar/inner_app_bar.dart';
 import '../../../core/components/image/upload_document.dart';
@@ -14,11 +12,11 @@ import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_text.dart';
 import '../../../core/routes/route_constant.dart';
 import '../../../theme/theme_helper.dart';
+import '../controllers/upload_document_controlller.dart';
 
 class UploadDocumentScreen extends StatelessWidget {
   final UploadDocumentController controller =
       Get.put(UploadDocumentController());
-
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -150,13 +148,11 @@ class UploadTextDocument extends StatelessWidget {
     this.onTap,
     required this.onClear,
   });
-
   final String title, docText;
   final GestureTapCallback? onTap;
   //---------var to display file path---------
   final RxString filePath;
   final VoidCallback onClear; // To handle file removal
-
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -229,7 +225,6 @@ class UploadTextDocument extends StatelessWidget {
                                     ),
                           ),
                         ),
-
                         // Show clear icon if a file is selected
                         if (filePath.isNotEmpty)
                           IconButton(
@@ -252,13 +247,11 @@ class UploadTextDocument extends StatelessWidget {
 class UploadButton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
-
   const UploadButton({
     Key? key,
     required this.title,
     required this.onPressed,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -289,13 +282,10 @@ class UploadButton extends StatelessWidget {
 class DocumentCard extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
-
   const DocumentCard({required this.title, required this.onTap});
-
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-
     final width = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: onTap,

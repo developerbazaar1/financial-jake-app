@@ -25,6 +25,8 @@ class ProductsScreen extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(height * 0.08),
         child: InnerAppBar(
+          isBack: false,
+
           title: "My Products",
         ),
       ),

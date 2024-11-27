@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../theme/theme_helper.dart';
+import '../../constant/app_colors.dart';
 
 class SideOutlineButton extends StatelessWidget {
   SideOutlineButton(
@@ -29,7 +30,10 @@ class SideOutlineButton extends StatelessWidget {
     return Align(
       alignment: alignment ?? Alignment.centerRight,
       child: OutlinedButton(
+
         style: OutlinedButton.styleFrom(
+          backgroundColor: AppColor.secondary,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
           padding: EdgeInsets.symmetric(
               horizontal: buttonWidth ?? width * 0.035,
               vertical:
@@ -38,9 +42,11 @@ class SideOutlineButton extends StatelessWidget {
           tapTargetSize: MaterialTapTargetSize
               .shrinkWrap, // Removes extra padding around the button
           side: BorderSide(
-              color: theme.primaryColor, width: 1.3), // Optional: border color
+              color: AppColor.borderColor, width: 1.3,), // Optional: border color
+          
         ),
         onPressed: onPressed,
+        
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize
@@ -57,7 +63,7 @@ class SideOutlineButton extends StatelessWidget {
               title,
               style: buttonTextStyle ??
                   theme.textTheme.bodyMedium?.copyWith(
-                    color: theme.primaryColor,
+
                     fontWeight: FontWeight.w600,
                     fontSize: width * 0.036,
                   ),

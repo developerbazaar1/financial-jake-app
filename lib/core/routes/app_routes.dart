@@ -72,7 +72,14 @@ class AppRouter {
     GoRoute(
       name: RouteConstants.resetPassword,
       path: AppRoutes.resetPassword,
-      builder: (context, state) => ResetPasswordScreen(),
+      builder: (context, state) {
+        // Extract arguments from `state`
+
+        final bool? value = state.extra as bool?;
+        return ResetPasswordScreen(
+          isUserLogined: value,
+        );
+      },
     ),
     GoRoute(
       name: RouteConstants.trackingScreen,

@@ -5,13 +5,22 @@ class HomeScreenController extends GetxController {
   // var assessmentScore = 785.obs;
 
   var assessmentScore = <Map<String, int>>[
+    {"data1": 875},
+    {"data1": 670},
     {"data1": 200},
-    {"data1": 300},
-    {"data1": 500},
-    {"data1": 600},
     {"data1": 0},
-  ].obs;
 
+  ].obs;
+  var isPopupVisible = false.obs;
+
+  void togglePopupVisibility() {
+    isPopupVisible.value = !isPopupVisible.value;
+  }
+
+  void hidePopup() {
+    isPopupVisible.value = false;
+
+  }
   // @override
   // bool operator ==(Object other) {
   //   // TODO: implement ==

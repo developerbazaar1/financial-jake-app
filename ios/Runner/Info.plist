@@ -50,6 +50,16 @@
         <string>tel</string>
         <string>mailto</string>
     </array>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app needs access to your photo library to allow you to upload and edit your photos.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app needs access to your photo library to allow you to upload and edit your photos.</string>
+<key>UIBackgroundModes</key>
+<array>
+   <string>fetch</string>
+   <string>remote-notification</string>
+</array>
+
 
 </dict>
 </plist>
